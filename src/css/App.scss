@@ -335,7 +335,7 @@ section {
 .home {
   height: 100vh;
   position: relative;
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%,rgb(89, 0, 92) 70%, rgb(89, 0, 92) 100%);
+  background-image: linear-gradient(0deg, #ffffff 0%,#59005c 70%, #59005c 100%);
 }
 
 .home__h4 {
@@ -520,12 +520,12 @@ section {
   z-index: 10;
 }
 
-// .linus .boxes .box1{
-//   left: 300px;
-//   top: 100px;
-//   width: 30vw;
-//   opacity: 0.6;
-// }
+.linus .boxes .box1{
+  left: 300px;
+  top: 100px;
+  width: 30vw;
+  opacity: 0.6;
+}
 
 .linus__flying-images {
   display: flex;
@@ -943,7 +943,7 @@ section {
   position: absolute;
   width: 90vw;
   left: -30vw;
-  z-index: 1;
+  z-index: 0;
   overflow-x: hidden;
   filter: blur(1px);
 }
@@ -953,7 +953,7 @@ section {
   width: 90vw;
   top: 0;
   right: -10vw;
-  z-index: 1;
+  z-index: 0;
   filter: blur(1px);
 }
 
@@ -962,7 +962,7 @@ section {
   width: 90vw;
   top: 40vh;
   right: -40vw;
-  z-index: 3;
+  z-index: 0;
   filter: blur(2px);
 }
 
@@ -971,7 +971,7 @@ section {
   width: 90vw;
   top: 40vh;
   left: -20vw;
-  z-index: 1;
+  z-index: 0;
   filter: blur(1px);
 }
 
@@ -980,7 +980,7 @@ section {
   width: 90vw;
   top: -10vh;
   right: -10vw;
-  z-index: 1;
+  z-index: 0;
   filter: blur(1px);
 }
 
@@ -989,7 +989,7 @@ section {
   width: 90vw;
   top: 10vh;
   left: -20vw;
-  z-index: 1;
+  z-index: 0;
   filter: blur(3px);
 }
 

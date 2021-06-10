@@ -41,14 +41,14 @@ function Linus({ addTimeline }) {
       .addLabel("start linus")
       .to(box1, {
         rotate: 190,
-        xPercent: 150,
+        xPercent: 180,
         duration: 10,
       })
       .to(
         maskLi,
         {
           strokeDashoffset: 0,
-          duration: 1,
+          duration: 3,
         },
         "start linus"
       )
@@ -56,7 +56,7 @@ function Linus({ addTimeline }) {
         maskN,
         {
           strokeDashoffset: 0,
-          duration: 0.8,
+          duration: 2,
         },
         ">"
       )
@@ -64,7 +64,7 @@ function Linus({ addTimeline }) {
         maskU,
         {
           strokeDashoffset: 0,
-          duration: 0.8,
+          duration: 2,
         },
         ">-0.4"
       )
@@ -72,7 +72,7 @@ function Linus({ addTimeline }) {
         maskS,
         {
           strokeDashoffset: 0,
-          duration: 0.8,
+          duration: 2,
         },
         ">-0.4"
       )
