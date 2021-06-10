@@ -133,7 +133,7 @@ const Home = ({ addTimeline }) => {
           strokeDashoffset: 0,
           duration: 0.5,
         },
-        ">"
+        ">-1.4"
       )
       .to(
         maskPrick2,

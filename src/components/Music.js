@@ -24,7 +24,6 @@ function Music({ addTimeline }) {
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
-        end: -1000,
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
