@@ -335,7 +335,7 @@ section {
 .home {
   height: 100vh;
   position: relative;
-  background-image: linear-gradient(0deg, #ffffff 0%,#59005c 70%, #59005c 100%);
+  background-image: linear-gradient(0deg, #ffffff 0%,#59005c 100%);
 }
 
 .home__h4 {
@@ -468,6 +468,7 @@ section {
   grid-template-rows: repeat(auto-fit, calc(100vw / 8));
   gap: 1vw;
   transform: rotateX(-5deg);
+  background-color: white;
 }
 
 .linus__title {
@@ -626,6 +627,7 @@ section {
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fit, calc(100vw / 8));
   gap: 1vw;
+  background-color: white;
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 0%,
@@ -744,6 +746,7 @@ section {
   grid-template-rows: repeat(auto-fit, calc(100vw / 8));
   gap: 1vw;
   transform: rotatex(5deg);
+  background-color: white;
 }
 
 .design__title {
@@ -874,6 +877,7 @@ section {
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fill, calc(100vw / 8));
   gap: 1vw;
+  background-color: white;
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 0%,
@@ -1020,6 +1024,7 @@ section {
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fill, calc(100vw / 8));
   gap: 1vw;
+  background-color: white;
 }
 
 .contact__title {

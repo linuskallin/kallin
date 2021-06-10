@@ -24,6 +24,7 @@ function Music({ addTimeline }) {
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
+        end: -1000,
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -44,10 +45,10 @@ function Music({ addTimeline }) {
       [music__cloud1, music__cloud2, music__cloud3, music__cloud4, music__cloud5, music__cloud6],
       {
         xPercent: () => Math.floor(Math.random() * (40 - 10) + 10),
+        duration: 5,
       },
       {
         xPercent: () => Math.floor(Math.random() * (-40 - 10) - 10),
-        duration: 4,
       },
       "start music"
     )

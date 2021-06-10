@@ -36,7 +36,7 @@ const Home = ({ addTimeline }) => {
       .from(
         home,
         {
-          backgroundImage: "linear-gradient(0deg, #ffffff 0%, #000000 70%, #000000 100%)",
+          backgroundImage: "linear-gradient(0deg, #ffffff 0%, #000000 100%)",
           // ease: "power2.out",
           duration: 8,
         },
