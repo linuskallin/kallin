@@ -27,7 +27,6 @@ function Music({ addTimeline }) {
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
-        markers: true,
       },
     });
 
@@ -48,7 +47,7 @@ function Music({ addTimeline }) {
       },
       {
         xPercent: () => Math.floor(Math.random() * (-40 - 10) - 10),
-        duration: 5,
+        duration: 4,
       },
       "start music"
     )

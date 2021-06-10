@@ -16,7 +16,6 @@ function Contact({ addTimeline} ) {
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
-        markers: true,
       },
     });
 
@@ -110,6 +109,13 @@ function Contact({ addTimeline} ) {
         <br />
         www.linuskallin.se
         <br />
+        <span>---------------------</span>
+        <br />
+        <a href="https://www.facebook.com/linuskallin">Facebook</a>
+        <br />
+        <a href="https://www.linkedin.com/in/linus-kallin-39466639/">LinkedIn</a>
+        <br />
+        <span>---------------------</span>
         <br />
         Website made with:
         <br />
@@ -120,6 +126,16 @@ function Contact({ addTimeline} ) {
         <a href="https://greensock.com/gsap/" target="_blank" rel="noreferrer">
           GSAP
         </a>
+        <br />
+        <a href="https://greensock.com/gsap/" target="_blank" rel="noreferrer">
+          Illustrator
+        </a>
+        <br />
+        <span>---------------------</span>
+        <br />
+        Size: 10 Mb
+        <br />
+        Files: 43
       </p>
     </div>
   );

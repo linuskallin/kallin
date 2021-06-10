@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +19,9 @@ function Linus({ addTimeline }) {
   let img2 = useRef(null);
   let img3 = useRef(null);
   let img4 = useRef(null);
+  let box1 = useRef(null);
+
+  const [fullscreen, setFullscreen] = useState(false);
 
   useEffect(() => {
     const linusTl = gsap.timeline({
@@ -26,19 +29,20 @@ function Linus({ addTimeline }) {
         trigger: linus,
         pin: true,
         snap: {
-          snapTo: "labelsDirectional",
-          duration: 0.1,
+          snapTo: "labels",
+          duration: 0.5,
         },
         scrub: 0.3,
         toggleActions: "play pause reverse none",
-        markers: true,
       },
     });
 
     linusTl
       .addLabel("start linus")
-      .from(linus, {
-        rotationX: 0,
+      .to(box1, {
+        rotate: 190,
+        xPercent: 150,
+        duration: 10,
       })
       .to(
         maskLi,
@@ -52,7 +56,7 @@ function Linus({ addTimeline }) {
         maskN,
         {
           strokeDashoffset: 0,
-          duration: 0.5,
+          duration: 0.8,
         },
         ">"
       )
@@ -60,7 +64,7 @@ function Linus({ addTimeline }) {
         maskU,
         {
           strokeDashoffset: 0,
-          duration: 0.5,
+          duration: 0.8,
         },
         ">-0.4"
       )
@@ -68,56 +72,56 @@ function Linus({ addTimeline }) {
         maskS,
         {
           strokeDashoffset: 0,
-          duration: 0.5,
+          duration: 0.8,
         },
         ">-0.4"
       )
+      .to({}, { duration: 4 })
       .addLabel("img2")
-      .from(
-        img2,
-        {
-          rotate: -10,
-          opacity: 0,
-          x: -2000,
-          zIndex: 10,
-          duration: 5,
-        },
-        ">"
-      )
-      .addLabel("img3")
-      .from(
-        img3,
-        {
-          rotate: -10,
-          opacity: 0,
-          x: 2000,
-          zIndex: 10,
-          duration: 5,
-        },
-        ">"
-      )
-      .addLabel("img4")
-      .from(
-        img4,
-        {
-          rotate: 10,
-          opacity: 0,
-          x: -2000,
-          zIndex: 10,
-          duration: 5,
-        },
-        ">"
-      )
-      .addLabel("disperse")
-      .to([img2, img3, img4], {
-        xPercent: 100,
+      .from(img2, {
+        rotate: -10,
         opacity: 0,
+        xPercent: -200,
+        zIndex: 10,
         duration: 5,
       })
+      .addLabel("img3")
+      .from(img3, {
+        rotate: -10,
+        opacity: 0,
+        xPercent: 200,
+        zIndex: 10,
+        duration: 5,
+      })
+      .addLabel("img4")
+      .from(img4, {
+        rotate: 10,
+        opacity: 0,
+        xPercent: -200,
+        zIndex: 10,
+        duration: 5,
+      })
+      .to({}, { duration: 5 })
+      // .addLabel("disperse")
+      // .to([img2, img3, img4], {
+      //   xPercent: 100,
+      //   opacity: 0,
+      //   duration: 5,
+      // })
       .addLabel("end linus");
 
     addTimeline(linusTl);
-  }, [addTimeline]);
+    
+    if(fullscreen){
+      linus.style.cssText =
+        "perspective: none; position: fixed;";
+    } else if(!fullscreen){
+      linus.style.cssText =
+      "perspective: 1000px; position: fixed;";
+    }
+
+  }, [addTimeline, fullscreen]);
+
 
   return (
     <div className="wrapper__perspective" ref={(el) => (linus = el)}>
@@ -190,13 +194,28 @@ function Linus({ addTimeline }) {
           </svg>
         </div>
         <div className="linus__line"></div>
-        <div className="wrapper__image">
-          <img
-            className="linus__img"
-            src={LinusImg}
-            alt="Linus with hands behind head"
-          />
-          <h6>Photo: Johan Sund</h6>
+        {!fullscreen ? (
+          <div className="wrapper__image" onClick={() => setFullscreen(!fullscreen)}>
+            <img
+              className="linus__img"
+              src={LinusImg}
+              alt="Linus with hands behind head"
+            />
+            <h6>Photo: Johan Sund</h6>
+          </div>
+        ) : (
+          <div className="wrapper__fullscreen">
+            <p className="close" onClick={() => setFullscreen(!fullscreen)}>X</p>
+              <img
+                className="fullscreen"
+                src={LinusImg}
+                alt="Linus with hands behind head"
+              />
+              <h6 className="sub-fullscreen">Photo: Johan Sund</h6>
+          </div>
+        )}
+        <div className="boxes">
+          <div className="box1" ref={(el) => (box1 = el)}></div>
         </div>
         <p className="linus__p">
           I love music, art, movies, creativity, meditation, nature, travel,
@@ -223,24 +242,18 @@ function Linus({ addTimeline }) {
               className="linus__img2"
               src={LinusImg2}
               alt="Linus jumping with crowd in the background"
-              srcSet=""
             />
             <h6 className="sub-white">
-              På festival 
-              <br/>
+              På festival
+              <br />
               Foto: Matteus Bartlett
             </h6>
           </div>
           <div className="wrapper__image3 " ref={(el) => (img3 = el)}>
-            <img
-              className="linus__img3"
-              src={LinusImg3}
-              alt="Linus smiling"
-              srcSet=""
-            />
+            <img className="linus__img3" src={LinusImg3} alt="Linus smiling" />
             <h6 className="sub-white">
               En vanlig dag på IT-högskolan
-              <br/>
+              <br />
               Foto: IT-högskolan
             </h6>
           </div>
@@ -249,11 +262,8 @@ function Linus({ addTimeline }) {
               className="linus__img4"
               src={LinusImg4}
               alt="Linus with dreadlocks"
-              srcSet=""
             />
-            <h6 className="sub-white">
-              Dem dreads
-            </h6>
+            <h6 className="sub-white">Dem dreads</h6>
           </div>
         </div>
       </section>

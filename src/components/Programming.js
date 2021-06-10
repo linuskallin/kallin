@@ -18,13 +18,11 @@ function Programming({ addTimeline }) {
         start: "top top",
         end: "500",
         pin: true,
-        snap: {
-          snap: "labelsDirectional",
-
-        },
+        // snap: {
+        //   snap: "labelsDirectional",
+        // },
         scrub: 0.5,
         toggleActions: "play pause reverse none",
-        markers: true,
       },
     });
 
@@ -34,7 +32,7 @@ function Programming({ addTimeline }) {
         maskProgramming,
         {
           strokeDashoffset: 0,
-          duration: 2,
+          duration: 6,
         },
         "start programming"
       )
@@ -63,7 +61,7 @@ function Programming({ addTimeline }) {
         }
         `,
         ease: "none",
-        duration: 4,
+        duration: 7,
       },
       "start programming"
       )

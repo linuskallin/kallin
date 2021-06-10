@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,9 +6,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Cloud1 from "../images/other/cloud1.png";
 import Cloud2 from "../images/other/cloud2.png";
 
-const Home = forwardRef(({ addTimeline }, ref) => {
+const Home = ({ addTimeline }) => {
   gsap.registerPlugin(ScrollTrigger);
 
+  let home = useRef(null);
+  let h4 = useRef(null);
   let scroll = useRef(null);
   let cloud1 = useRef(null);
   let cloud2 = useRef(null);
@@ -24,38 +26,42 @@ const Home = forwardRef(({ addTimeline }, ref) => {
 
     const homeTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ref.current,
-        pin: true,
-        // start: "top top",
-        // end: "2000",
-        scrub: 0.5,
-        toggleActions: "play pause reverse none",
-        markers: true,
+        trigger: home,
+        toggleActions: "play none none none",
       }
     });
 
     homeTl
-      .addLabel("scroll")
-      .to(scroll, {
-        opacity: 0,
-      })
       .addLabel("start")
       .from(
-        ref.current,
+        home,
         {
-          backgroundImage: "linear-gradient(0deg, #000000, #000000)",
+          backgroundImage: "linear-gradient(0deg, #ffffff 0%, #000000 70%, #000000 100%)",
           // ease: "power2.out",
-          duration: 10,
+          duration: 8,
         },
         "start"
       )
+      .to(
+        h4,
+        {
+          color: "#000000",
+          // ease: "power2.out",
+          duration: 8,
+        },
+        "start"
+      )
+      .to("home__h4:after", {
+        borderBottomColor: "#000000",
+        duration: 8,
+      })
       .to(
         cloud1,
         {
           x: -100,
           scale: 2,
           opacity: 0.4,
-          duration: 10,
+          duration: 8,
         },
         "start"
       )
@@ -65,7 +71,7 @@ const Home = forwardRef(({ addTimeline }, ref) => {
           x: 100,
           scale: 2,
           opacity: 0.4,
-          duration: 10,
+          duration: 8,
         },
         "start"
       )
@@ -76,7 +82,7 @@ const Home = forwardRef(({ addTimeline }, ref) => {
           y: 100,
           scale: 2,
           opacity: 0.4,
-          duration: 10,
+          duration: 8,
         },
         "start"
       )
@@ -87,6 +93,7 @@ const Home = forwardRef(({ addTimeline }, ref) => {
           y: -100,
           scale: 2,
           opacity: 0.4,
+          duration: 8,
         },
         "start"
       )
@@ -97,7 +104,7 @@ const Home = forwardRef(({ addTimeline }, ref) => {
           y: 200,
           scale: 2,
           opacity: 0.4,
-          duration: 10,
+          duration: 8,
         },
         "start"
       )
@@ -108,7 +115,7 @@ const Home = forwardRef(({ addTimeline }, ref) => {
           y: -200,
           scale: 2,
           opacity: 0.4,
-          duration: 10,
+          duration: 8,
         },
         "start"
       )
@@ -116,7 +123,7 @@ const Home = forwardRef(({ addTimeline }, ref) => {
         maskLinus,
         {
           strokeDashoffset: 0,
-          duration: 7,
+          duration: 4.5,
         },
         "start+=1"
       )
@@ -124,7 +131,7 @@ const Home = forwardRef(({ addTimeline }, ref) => {
         maskPrick1,
         {
           strokeDashoffset: 0,
-          duration: 1,
+          duration: 0.5,
         },
         ">"
       )
@@ -132,18 +139,29 @@ const Home = forwardRef(({ addTimeline }, ref) => {
         maskPrick2,
         {
           strokeDashoffset: 0,
-          duration: 1,
+          duration: 0.5,
         },
         ">-0.3"
       )
+      .addLabel("scroll")
+      .to(scroll, {
+        opacity: 1,
+        duration: 2,
+      },
+      ">")
+      .to(scroll, {
+        opacity: 0,
+        duration: 2,
+      },
+      ">")
       .addLabel("end home");
 
     addTimeline(homeTl);
-  }, [addTimeline, ref]);
+  }, [addTimeline]);
 
   return (
-    <div className="home" ref={ref}>
-      <h4 className="home__h4">LINUS KALLIN - portfolio or whatever</h4>
+    <div className="home" ref={(el)=>(home = el)}>
+      <h4 className="home__h4" ref={(el)=>(h4 = el)}>LINUS KALLIN - Portfolio</h4>
       <div className="scroll" ref={(el)=>(scroll=el)}>
         <p>Scroll down</p>
         <p className="arrow">--{`>`}</p>
@@ -277,6 +295,6 @@ const Home = forwardRef(({ addTimeline }, ref) => {
       />
     </div>
   );
-});
+}
 
 export default (Home);

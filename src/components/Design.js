@@ -26,7 +26,6 @@ function Design({ addTimeline }) {
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
-        markers: true,
       },
     });
 

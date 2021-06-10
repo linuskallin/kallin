@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -18,8 +18,6 @@ function App() {
   
   gsap.registerPlugin(ScrollTrigger);
 
-  let homeRef = useRef(null)
-
   const [masterTl] = useState(gsap.timeline())
 
   const addTimeline = (tl, position) => {
@@ -31,8 +29,8 @@ function App() {
       {/* {loading &&
         < Loader />
       } */}
-      < Menu homeRef={homeRef} addTimeline={addTimeline}/>
-      < Home ref={homeRef} addTimeline={addTimeline}/>
+      < Home addTimeline={addTimeline}/>
+      < Menu addTimeline={addTimeline}/>
       < Linus addTimeline={addTimeline}/>
       < Programming addTimeline={addTimeline}/>
       < Design addTimeline={addTimeline}/>
