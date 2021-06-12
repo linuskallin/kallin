@@ -4,7 +4,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Rudolstadt from "../images/other/rudolstadt.jpg";
+import RudolstadtSmall from "../images/other/rudolstadt-s.jpg";
 import Syster from "../images/other/syster.jpg";
+import SysterSmall from "../images/other/syster-s.jpg";
 import Cloud1 from "../images/other/cloud1.png";
 import Cloud2 from "../images/other/cloud2.png";
 
@@ -24,6 +26,7 @@ function Music({ addTimeline }) {
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
+        end: +1000,
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -43,11 +46,10 @@ function Music({ addTimeline }) {
     .fromTo(
       [music__cloud1, music__cloud2, music__cloud3, music__cloud4, music__cloud5, music__cloud6],
       {
-        xPercent: () => Math.floor(Math.random() * (40 - 10) + 10),
         duration: 5,
       },
       {
-        xPercent: () => Math.floor(Math.random() * (-40 - 10) - 10),
+        xPercent: 40,
       },
       "start music"
     )
@@ -115,7 +117,13 @@ function Music({ addTimeline }) {
       <div className="wrapper__image">
         <img
           className="music__img"
-          src={Rudolstadt}
+          srcSet={
+            `${RudolstadtSmall} 700w,
+            ${Rudolstadt} 1500w`
+          }
+          sizes="(min-width: 1500px) 700px, 700px"
+          src={RudolstadtSmall}
+          loading="lazy"
           alt="Rudolstadt festival"
         />
         <h6 className="sub-white">
@@ -127,7 +135,13 @@ function Music({ addTimeline }) {
       <div className="wrapper__image2">
         <img
           className="music__img"
-          src={Syster}
+          srcSet={
+            `${SysterSmall} 700w,
+            ${Syster} 1500w`
+          }
+          sizes="(min-width: 1500px) 1500px, 700px"
+          src={SysterSmall}
+          loading="lazy"
           alt="Syster Sol på Öland Roots"
         />
         <h6>

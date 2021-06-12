@@ -3,9 +3,12 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Malmo from "../images/other/malmo.png";
-import Kallblod from "../images/other/design2.jpg";
+import Malmo from "../images/other/malmo.jpg";
+import MalmoSmall from "../images/other/malmo-s.jpg";
+import Oland from "../images/other/design2.jpg";
+import OlandSmall from "../images/other/design2-s.jpg";
 import Bland from "../images/other/bland.jpg";
+import BlandSmall from "../images/other/bland-s.jpg";
 
 function Design({ addTimeline }) {
   gsap.registerPlugin(ScrollTrigger);
@@ -187,19 +190,43 @@ function Design({ addTimeline }) {
         </div>
         <div className="design__line"></div>
         <div className="wrapper__image">
-          <img className="design__img" src={Malmo} alt="" />
+          <img 
+          className="design__img" 
+          srcSet={
+            `${MalmoSmall} 700w,
+            ${Malmo} 1500w`
+          }
+          src={Malmo} 
+          loading="lazy"
+          alt="" />
           <a href="https://www.akademibokhandeln.se/bok/minnen-fran-malmo-del-2-fran-regementsgatan-till-kopenhamnsvagen/9789163943034/">
             <h6>Inset from "Minnen från Malmö"</h6>
           </a>
         </div>
         <div className="wrapper__image2">
-          <img className="design__img" src={Kallblod} alt="" />
+          <img 
+          className="design__img" 
+          srcSet={
+            `${OlandSmall} 700w,
+            ${Oland} 1500w`
+          }
+          src={Oland} 
+          loading="lazy"
+          alt="" />
           <a href="https://www.naturbokhandeln.se/sv/articles/2.304.10957/under-olands-himlar-johansson">
             <h6>Cover of "Under Ölands himlar"</h6>
           </a>
         </div>
         <div className="wrapper__image3">
-          <img className="design__img" src={Bland} alt="" />
+          <img 
+          className="design__img" 
+          srcSet={
+            `${BlandSmall} 700w,
+            ${Bland} 1500w`
+          }
+          src={Bland} 
+          loading="lazy"
+          alt="" />
           <a href="https://open.spotify.com/album/27Lwtp6YBQGHYXAzR2IxYY?si=18fD6qdwRT-LmT_95_vOSw">
             <h6>
               CD-cover of "Each Bend I Pass" by <i>The Bland</i>

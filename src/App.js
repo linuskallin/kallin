@@ -1,41 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// import Loader from './components/Loader'
-import Menu from './components/Menu'
-import Home from './components/Home'
-import Linus from './components/Linus'
-import Programming from './components/Programming'
-import Design from './components/Design'
-import Music from './components/Music'
-import Contact from './components/Contact'
+import Menu from "./components/Menu";
+import Home from "./components/Home";
+import Linus from "./components/Linus";
+import Programming from "./components/Programming";
+import Design from "./components/Design";
+import Music from "./components/Music";
+import Contact from "./components/Contact";
 
-import './css/App.scss';
+import "./css/App.scss";
 
 function App() {
-  
   gsap.registerPlugin(ScrollTrigger);
 
-  const [masterTl] = useState(gsap.timeline())
+  const [masterTl] = useState(gsap.timeline());
 
   const addTimeline = (tl, position) => {
-    masterTl.add(tl, position)
-  }
+    masterTl.add(tl, position);
+  };
 
   return (
     <div className="App">
-      {/* {loading &&
-        < Loader />
-      } */}
-      < Home addTimeline={addTimeline}/>
-      < Menu addTimeline={addTimeline}/>
-      < Linus addTimeline={addTimeline}/>
-      < Programming addTimeline={addTimeline}/>
-      < Design addTimeline={addTimeline}/>
-      < Music addTimeline={addTimeline}/>
-      < Contact addTimeline={addTimeline}/>
+      <Home addTimeline={addTimeline} />
+      <Menu addTimeline={addTimeline} />
+      <Linus addTimeline={addTimeline} />
+      <Programming addTimeline={addTimeline} />
+      <Design addTimeline={addTimeline} />
+      <Music addTimeline={addTimeline} />
+      <Contact addTimeline={addTimeline} />
     </div>
   );
 }

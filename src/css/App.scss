@@ -46,6 +46,10 @@ ul {
   font-size: unquote("clamp(0.8rem, 0.5231rem + 0.7692vw, 2rem)");
 }
 
+ul{
+  padding-inline-start: 20px;
+}
+
 li {
   margin: 15px;
 }

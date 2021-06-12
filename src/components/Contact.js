@@ -127,7 +127,7 @@ function Contact({ addTimeline} ) {
           GSAP
         </a>
         <br />
-        <a href="https://greensock.com/gsap/" target="_blank" rel="noreferrer">
+        <a href="https://www.adobe.com/se/products/illustrator.html" target="_blank" rel="noreferrer">
           Illustrator
         </a>
         <br />

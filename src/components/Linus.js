@@ -16,6 +16,8 @@ function Linus({ addTimeline }) {
   let maskN = useRef(null);
   let maskU = useRef(null);
   let maskS = useRef(null);
+  let p = useRef(null);
+  let img1 = useRef(null);
   let img2 = useRef(null);
   let img3 = useRef(null);
   let img4 = useRef(null);
@@ -77,6 +79,32 @@ function Linus({ addTimeline }) {
         ">-0.4"
       )
       .to({}, { duration: 4 })
+      .fromTo(
+        img1,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          duration: 6,
+          y: 0,
+        },
+        "start linus"
+      )
+      .fromTo(
+        p,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          duration: 6,
+          y: 0,
+        },
+        "start linus>1"
+      )
       .addLabel("img2")
       .from(img2, {
         rotate: -10,
@@ -111,17 +139,13 @@ function Linus({ addTimeline }) {
       .addLabel("end linus");
 
     addTimeline(linusTl);
-    
-    if(fullscreen){
-      linus.style.cssText =
-        "perspective: none; position: fixed;";
-    } else if(!fullscreen){
-      linus.style.cssText =
-      "perspective: 1000px; position: fixed;";
+
+    if (fullscreen) {
+      linus.style.cssText = "perspective: none; position: fixed;";
+    } else if (!fullscreen) {
+      linus.style.cssText = "perspective: 1000px; position: fixed;";
     }
-
   }, [addTimeline, fullscreen]);
-
 
   return (
     <div className="wrapper__perspective" ref={(el) => (linus = el)}>
@@ -195,7 +219,11 @@ function Linus({ addTimeline }) {
         </div>
         <div className="linus__line"></div>
         {!fullscreen ? (
-          <div className="wrapper__image" onClick={() => setFullscreen(!fullscreen)}>
+          <div
+            className="wrapper__image"
+            onClick={() => setFullscreen(!fullscreen)}
+            ref={(el) => (img1 = el)}
+          >
             <img
               className="linus__img"
               src={LinusImg}
@@ -205,19 +233,21 @@ function Linus({ addTimeline }) {
           </div>
         ) : (
           <div className="wrapper__fullscreen">
-            <p className="close" onClick={() => setFullscreen(!fullscreen)}>X</p>
-              <img
-                className="fullscreen"
-                src={LinusImg}
-                alt="Linus with hands behind head"
-              />
-              <h6 className="sub-fullscreen">Photo: Johan Sund</h6>
+            <p className="close" onClick={() => setFullscreen(!fullscreen)}>
+              X
+            </p>
+            <img
+              className="fullscreen"
+              src={LinusImg}
+              alt="Linus with hands behind head"
+            />
+            <h6 className="sub-fullscreen">Photo: Johan Sund</h6>
           </div>
         )}
         <div className="boxes">
           <div className="box1" ref={(el) => (box1 = el)}></div>
         </div>
-        <p className="linus__p">
+        <p className="linus__p" ref={(el) => (p = el)}>
           I love music, art, movies, creativity, meditation, nature, travel,
           learning new things, discussions, meeting people.
           <br />
@@ -241,6 +271,7 @@ function Linus({ addTimeline }) {
             <img
               className="linus__img2"
               src={LinusImg2}
+              loading="lazy"
               alt="Linus jumping with crowd in the background"
             />
             <h6 className="sub-white">
@@ -250,7 +281,12 @@ function Linus({ addTimeline }) {
             </h6>
           </div>
           <div className="wrapper__image3 " ref={(el) => (img3 = el)}>
-            <img className="linus__img3" src={LinusImg3} alt="Linus smiling" />
+            <img
+              className="linus__img3"
+              src={LinusImg3}
+              loading="lazy"
+              alt="Linus smiling"
+            />
             <h6 className="sub-white">
               En vanlig dag på IT-högskolan
               <br />
@@ -261,6 +297,7 @@ function Linus({ addTimeline }) {
             <img
               className="linus__img4"
               src={LinusImg4}
+              loading="lazy"
               alt="Linus with dreadlocks"
             />
             <h6 className="sub-white">Dem dreads</h6>

@@ -175,12 +175,14 @@ function Programming({ addTimeline }) {
           className="programming__iframe1"
           title="stockholmcityfilms.se"
           src="https://www.stockholmcityfilms.se"
+          loading="lazy"
           frameBorder="0"
         ></iframe>
         <a
           href="https://www.stockholmcityfilms.se"
           target="_blank"
           rel="noreferrer noopener"
+          loading="lazy"
           frameBorder="0"
         >
           <h6>stockholmcityfilms.se</h6>
