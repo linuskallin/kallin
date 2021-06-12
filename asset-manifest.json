@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/kallin/static/css/main.aa30de42.chunk.css",
-    "main.js": "/kallin/static/js/main.51e423b9.chunk.js",
-    "main.js.map": "/kallin/static/js/main.51e423b9.chunk.js.map",
+    "main.css": "/kallin/static/css/main.c201026e.chunk.css",
+    "main.js": "/kallin/static/js/main.c5c6a2fa.chunk.js",
+    "main.js.map": "/kallin/static/js/main.c5c6a2fa.chunk.js.map",
     "runtime-main.js": "/kallin/static/js/runtime-main.676d5f49.js",
     "runtime-main.js.map": "/kallin/static/js/runtime-main.676d5f49.js.map",
     "static/js/2.82ab2a42.chunk.js": "/kallin/static/js/2.82ab2a42.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.4e2c74c1.chunk.js": "/kallin/static/js/3.4e2c74c1.chunk.js",
     "static/js/3.4e2c74c1.chunk.js.map": "/kallin/static/js/3.4e2c74c1.chunk.js.map",
     "index.html": "/kallin/index.html",
-    "static/css/main.aa30de42.chunk.css.map": "/kallin/static/css/main.aa30de42.chunk.css.map",
+    "static/css/main.c201026e.chunk.css.map": "/kallin/static/css/main.c201026e.chunk.css.map",
     "static/js/2.82ab2a42.chunk.js.LICENSE.txt": "/kallin/static/js/2.82ab2a42.chunk.js.LICENSE.txt",
     "static/media/Code1.966f2d40.svg": "/kallin/static/media/Code1.966f2d40.svg",
     "static/media/Home2.4f52fdf7.svg": "/kallin/static/media/Home2.4f52fdf7.svg",
@@ -18,22 +18,27 @@
     "static/media/Note1.d4930fc2.svg": "/kallin/static/media/Note1.d4930fc2.svg",
     "static/media/Pen.b1ca3d9a.svg": "/kallin/static/media/Pen.b1ca3d9a.svg",
     "static/media/Smiley.61f10e03.svg": "/kallin/static/media/Smiley.61f10e03.svg",
-    "static/media/bland.7aa885b8.jpg": "/kallin/static/media/bland.7aa885b8.jpg",
+    "static/media/bland-s.c54eb4ad.jpg": "/kallin/static/media/bland-s.c54eb4ad.jpg",
+    "static/media/bland.38d27eb9.jpg": "/kallin/static/media/bland.38d27eb9.jpg",
     "static/media/cloud1.624755bb.png": "/kallin/static/media/cloud1.624755bb.png",
     "static/media/cloud2.8a965477.png": "/kallin/static/media/cloud2.8a965477.png",
-    "static/media/design2.8044ec3a.jpg": "/kallin/static/media/design2.8044ec3a.jpg",
+    "static/media/design2-s.8a85c835.jpg": "/kallin/static/media/design2-s.8a85c835.jpg",
+    "static/media/design2.0b3deeea.jpg": "/kallin/static/media/design2.0b3deeea.jpg",
     "static/media/linus.6ca134b1.jpg": "/kallin/static/media/linus.6ca134b1.jpg",
-    "static/media/linus1.38a8e78d.jpg": "/kallin/static/media/linus1.38a8e78d.jpg",
+    "static/media/linus1.06366d7a.jpg": "/kallin/static/media/linus1.06366d7a.jpg",
     "static/media/linus2.36702b62.jpg": "/kallin/static/media/linus2.36702b62.jpg",
     "static/media/linus3.01654e84.jpg": "/kallin/static/media/linus3.01654e84.jpg",
-    "static/media/malmo.cbe39aa8.png": "/kallin/static/media/malmo.cbe39aa8.png",
-    "static/media/rudolstadt.7b1fdfdf.jpg": "/kallin/static/media/rudolstadt.7b1fdfdf.jpg",
-    "static/media/syster.1e806f0b.jpg": "/kallin/static/media/syster.1e806f0b.jpg"
+    "static/media/malmo-s.4d78ca59.jpg": "/kallin/static/media/malmo-s.4d78ca59.jpg",
+    "static/media/malmo.6c3fa37a.jpg": "/kallin/static/media/malmo.6c3fa37a.jpg",
+    "static/media/rudolstadt-s.c8822c8b.jpg": "/kallin/static/media/rudolstadt-s.c8822c8b.jpg",
+    "static/media/rudolstadt.ba1dfef2.jpg": "/kallin/static/media/rudolstadt.ba1dfef2.jpg",
+    "static/media/syster-s.aea21836.jpg": "/kallin/static/media/syster-s.aea21836.jpg",
+    "static/media/syster.35506bf1.jpg": "/kallin/static/media/syster.35506bf1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.676d5f49.js",
     "static/js/2.82ab2a42.chunk.js",
-    "static/css/main.aa30de42.chunk.css",
-    "static/js/main.51e423b9.chunk.js"
+    "static/css/main.c201026e.chunk.css",
+    "static/js/main.c5c6a2fa.chunk.js"
   ]
 }
