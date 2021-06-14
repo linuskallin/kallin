@@ -7,6 +7,7 @@ function Programming({ addTimeline }) {
   gsap.registerPlugin(TextPlugin);
 
   let programming = useRef(null);
+  let p = useRef(null);
   let iframe1 = useRef(null);
   let iframe2 = useRef(null);
   let maskProgramming = useRef(null);
@@ -33,6 +34,19 @@ function Programming({ addTimeline }) {
         {
           strokeDashoffset: 0,
           duration: 6,
+        },
+        "start programming"
+      )
+      .fromTo(
+        p,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          duration: 6,
+          y: 0,
         },
         "start programming"
       )
@@ -182,7 +196,6 @@ function Programming({ addTimeline }) {
           href="https://www.stockholmcityfilms.se"
           target="_blank"
           rel="noreferrer noopener"
-          loading="lazy"
           frameBorder="0"
         >
           <h6>stockholmcityfilms.se</h6>
@@ -193,6 +206,7 @@ function Programming({ addTimeline }) {
           className="programming__iframe2"
           title="språkkraft.se"
           src="https://sprakkraft.se"
+          loading="lazy"
           alt=""
         />
         <a
@@ -203,7 +217,7 @@ function Programming({ addTimeline }) {
           <h6>sprakkraft.se</h6>
         </a>
       </div>
-      <div className="programming__p">
+      <div className="programming__p" ref={(el) => (p = el)}>
         <p>
           I haven't been programming for so long, I acctually started studying
           front-end-programming in the fall of 2019. But I've still managed to

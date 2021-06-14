@@ -16,6 +16,10 @@ function Design({ addTimeline }) {
   let design = useRef(null);
   let maskGraphic = useRef(null);
   let maskDesign = useRef(null);
+  let p = useRef(null);
+  let img1 = useRef(null);
+  let img2 = useRef(null);
+  let img3 = useRef(null);
   let box1 = useRef(null);
   let box2 = useRef(null);
   let box3 = useRef(null);
@@ -25,7 +29,6 @@ function Design({ addTimeline }) {
       scrollTrigger: {
         trigger: design,
         start: "top top",
-        end: "+=1000",
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -53,6 +56,20 @@ function Design({ addTimeline }) {
       .from(design, {
         rotationX: 0,
       })
+      .fromTo(
+        p,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          duration: 6,
+          y: 0,
+        },
+        "start design"
+      )
+      .addLabel("boxes")
       .from(
         box1,
         {
@@ -60,7 +77,7 @@ function Design({ addTimeline }) {
           rotate: 90,
           duration: 7,
         },
-        "start design"
+        "boxes"
       )
       .from(
         box2,
@@ -69,7 +86,7 @@ function Design({ addTimeline }) {
           rotate: 90,
           duration: 7,
         },
-        "start design"
+        "boxes"
       )
       .from(
         box3,
@@ -79,7 +96,46 @@ function Design({ addTimeline }) {
           rotate: -90,
           duration: 7,
         },
-        "start design"
+        "boxes"
+      )
+      .fromTo(
+        img1,
+        {
+          opacity: 0,
+          x: -100,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+          x: 0,
+        },
+        "boxes>1"
+      )
+      .fromTo(
+        img2,
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+          x: 0,
+        },
+        "boxes>2"
+      )
+      .fromTo(
+        img3,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+          y: 0,
+        },
+        "boxes>3"
       )
       .addLabel("end design");
 
@@ -189,7 +245,7 @@ function Design({ addTimeline }) {
           </svg>
         </div>
         <div className="design__line"></div>
-        <div className="wrapper__image">
+        <div className="wrapper__image" ref={(el) => (img1 = el)}>
           <img 
           className="design__img" 
           srcSet={
@@ -203,7 +259,7 @@ function Design({ addTimeline }) {
             <h6>Inset from "Minnen från Malmö"</h6>
           </a>
         </div>
-        <div className="wrapper__image2">
+        <div className="wrapper__image2" ref={(el) => (img2 = el)}>
           <img 
           className="design__img" 
           srcSet={
@@ -217,7 +273,7 @@ function Design({ addTimeline }) {
             <h6>Cover of "Under Ölands himlar"</h6>
           </a>
         </div>
-        <div className="wrapper__image3">
+        <div className="wrapper__image3" ref={(el) => (img3 = el)}>
           <img 
           className="design__img" 
           srcSet={
@@ -233,7 +289,7 @@ function Design({ addTimeline }) {
             </h6>
           </a>
         </div>
-        <p className="design__p">
+        <p className="design__p" ref={(el) => (p = el)}>
           Graphic design is something I've been doing since about 2014 but have
           had a lifelong interest in. I've mostly done books, both insets and
           covers, but also some LP/CD-covers, posters, websites, etc. I'm always

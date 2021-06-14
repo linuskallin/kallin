@@ -15,6 +15,9 @@ function Music({ addTimeline }) {
 
   let music = useRef(null);
   let maskMusic = useRef(null);
+  let p = useRef(null);
+  let img1 = useRef(null);
+  let img2 = useRef(null);
   let music__cloud1 = useRef(null);
   let music__cloud2 = useRef(null);
   let music__cloud3 = useRef(null);
@@ -26,7 +29,6 @@ function Music({ addTimeline }) {
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
-        end: +1000,
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -44,12 +46,41 @@ function Music({ addTimeline }) {
       "start music"
     )
     .fromTo(
-      [music__cloud1, music__cloud2, music__cloud3, music__cloud4, music__cloud5, music__cloud6],
+      p,
       {
-        duration: 5,
+        opacity: 0,
+        y: 100,
       },
       {
-        xPercent: 40,
+        opacity: 1,
+        duration: 6,
+        y: 0,
+      },
+      "start music"
+    )
+    .fromTo(
+      img1,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      {
+        opacity: 1,
+        duration: 6,
+        x: 0,
+      },
+      "start music"
+    )
+    .fromTo(
+      img2,
+      {
+        opacity: 0,
+        x: -100,
+      },
+      {
+        opacity: 1,
+        duration: 6,
+        x: 0,
       },
       "start music"
     )
@@ -114,7 +145,7 @@ function Music({ addTimeline }) {
       </div>
 
       <div className="music__line"></div>
-      <div className="wrapper__image">
+      <div className="wrapper__image" ref={(el) => (img1 = el)}>
         <img
           className="music__img"
           srcSet={
@@ -132,7 +163,7 @@ function Music({ addTimeline }) {
           Foto: Matthias Kimpel
         </h6>
       </div>
-      <div className="wrapper__image2">
+      <div className="wrapper__image2" ref={(el) => (img2 = el)}>
         <img
           className="music__img"
           srcSet={
@@ -150,7 +181,7 @@ function Music({ addTimeline }) {
           Foto: Ali Jehad
         </h6>
       </div>
-      <div className="music__p">
+      <div className="music__p" ref={(el) => (p = el)}> 
         <p>
           Music is my biggest passion. I've been playing piano since I was 12.
           And since then I've been doing all kinds of stuff related to music:
