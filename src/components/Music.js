@@ -18,20 +18,22 @@ function Music({ addTimeline }) {
   let p = useRef(null);
   let img1 = useRef(null);
   let img2 = useRef(null);
-  let music__cloud1 = useRef(null);
-  let music__cloud2 = useRef(null);
-  let music__cloud3 = useRef(null);
-  let music__cloud4 = useRef(null);
-  let music__cloud5 = useRef(null);
-  let music__cloud6 = useRef(null);
+  // let music__cloud1 = useRef(null);
+  // let music__cloud2 = useRef(null);
+  // let music__cloud3 = useRef(null);
+  // let music__cloud4 = useRef(null);
+  // let music__cloud5 = useRef(null);
+  // let music__cloud6 = useRef(null);
 
   useEffect(() => {
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
+        start: "top middle",
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
+        markers: true,
       },
     });
 
@@ -212,37 +214,37 @@ function Music({ addTimeline }) {
         className="music__cloud1"
         src={Cloud1}
         alt="Cloud"
-        ref={(el) => (music__cloud1 = el)}
+        // ref={(el) => (music__cloud1 = el)}
       />
       <img
         className="music__cloud2"
         src={Cloud2}
         alt="Cloud"
-        ref={(el) => (music__cloud2 = el)}
+        // ref={(el) => (music__cloud2 = el)}
       />
       <img
         className="music__cloud3"
         src={Cloud1}
         alt="Cloud"
-        ref={(el) => (music__cloud3 = el)}
+        // ref={(el) => (music__cloud3 = el)}
       />
       <img
         className="music__cloud4"
         src={Cloud2}
         alt="Cloud"
-        ref={(el) => (music__cloud4 = el)}
+        // ref={(el) => (music__cloud4 = el)}
       />
       <img
         className="music__cloud5"
         src={Cloud1}
         alt="Cloud"
-        ref={(el) => (music__cloud5 = el)}
+        // ref={(el) => (music__cloud5 = el)}
       />
       <img
         className="music__cloud6"
         src={Cloud2}
         alt="Cloud"
-        ref={(el) => (music__cloud6 = el)}
+        // ref={(el) => (music__cloud6 = el)}
       />
     </section>
   );

@@ -29,6 +29,7 @@ function Design({ addTimeline }) {
       scrollTrigger: {
         trigger: design,
         start: "top top",
+        end: "500",
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -73,8 +74,8 @@ function Design({ addTimeline }) {
       .from(
         box1,
         {
-          x: 400,
-          rotate: 90,
+          x: 150,
+          rotate: 45,
           duration: 7,
         },
         "boxes"
@@ -82,8 +83,8 @@ function Design({ addTimeline }) {
       .from(
         box2,
         {
-          right: 300,
-          rotate: 90,
+          right: 70,
+          rotate: 45,
           duration: 7,
         },
         "boxes"
@@ -91,9 +92,9 @@ function Design({ addTimeline }) {
       .from(
         box3,
         {
-          x: 300,
-          top: 300,
-          rotate: -90,
+          x: 70,
+          top: 400,
+          rotate: -45,
           duration: 7,
         },
         "boxes"

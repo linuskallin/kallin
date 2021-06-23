@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Cloud1 from "../images/other/cloud1.png";
-import Cloud2 from "../images/other/cloud2.png";
+// import Cloud1 from "../images/other/cloud1.png";
+// import Cloud2 from "../images/other/cloud2.png";
 
 const Home = ({ addTimeline }) => {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,12 +12,12 @@ const Home = ({ addTimeline }) => {
   let home = useRef(null);
   let h4 = useRef(null);
   let scroll = useRef(null);
-  let cloud1 = useRef(null);
-  let cloud2 = useRef(null);
-  let cloud3 = useRef(null);
-  let cloud4 = useRef(null);
-  let cloud5 = useRef(null);
-  let cloud6 = useRef(null);
+  // let cloud1 = useRef(null);
+  // let cloud2 = useRef(null);
+  // let cloud3 = useRef(null);
+  // let cloud4 = useRef(null);
+  // let cloud5 = useRef(null);
+  // let cloud6 = useRef(null);
   let maskLinus = useRef(null);
   let maskPrick1 = useRef(null);
   let maskPrick2 = useRef(null);
@@ -37,7 +37,6 @@ const Home = ({ addTimeline }) => {
         home,
         {
           backgroundImage: "linear-gradient(0deg, #ffffff 0%, #000000 100%)",
-          // ease: "power2.out",
           duration: 8,
         },
         "start"
@@ -46,79 +45,74 @@ const Home = ({ addTimeline }) => {
         h4,
         {
           color: "#000000",
-          // ease: "power2.out",
           duration: 8,
         },
         "start"
       )
-      .to("home__h4:after", {
-        borderBottomColor: "#000000",
-        duration: 8,
-      })
-      .to(
-        cloud1,
-        {
-          x: -100,
-          scale: 2,
-          opacity: 0.4,
-          duration: 8,
-        },
-        "start"
-      )
-      .to(
-        cloud2,
-        {
-          x: 100,
-          scale: 2,
-          opacity: 0.4,
-          duration: 8,
-        },
-        "start"
-      )
-      .to(
-        cloud3,
-        {
-          x: -200,
-          y: 100,
-          scale: 2,
-          opacity: 0.4,
-          duration: 8,
-        },
-        "start"
-      )
-      .to(
-        cloud4,
-        {
-          x: 200,
-          y: -100,
-          scale: 2,
-          opacity: 0.4,
-          duration: 8,
-        },
-        "start"
-      )
-      .to(
-        cloud5,
-        {
-          x: -300,
-          y: 200,
-          scale: 2,
-          opacity: 0.4,
-          duration: 8,
-        },
-        "start"
-      )
-      .to(
-        cloud6,
-        {
-          x: 300,
-          y: -200,
-          scale: 2,
-          opacity: 0.4,
-          duration: 8,
-        },
-        "start"
-      )
+      // .to(
+      //   cloud1,
+      //   {
+      //     x: -100,
+      //     scale: 2,
+      //     opacity: 0.4,
+      //     duration: 8,
+      //   },
+      //   "start"
+      // )
+      // .to(
+      //   cloud2,
+      //   {
+      //     x: 100,
+      //     scale: 2,
+      //     opacity: 0.4,
+      //     duration: 8,
+      //   },
+      //   "start"
+      // )
+      // .to(
+      //   cloud3,
+      //   {
+      //     x: -200,
+      //     y: 100,
+      //     scale: 2,
+      //     opacity: 0.4,
+      //     duration: 8,
+      //   },
+      //   "start"
+      // )
+      // .to(
+      //   cloud4,
+      //   {
+      //     x: 200,
+      //     y: -100,
+      //     scale: 2,
+      //     opacity: 0.4,
+      //     duration: 8,
+      //   },
+      //   "start"
+      // )
+      // .to(
+      //   cloud5,
+      //   {
+      //     x: -300,
+      //     y: 200,
+      //     scale: 2,
+      //     opacity: 0.4,
+      //     duration: 8,
+      //   },
+      //   "start"
+      // )
+      // .to(
+      //   cloud6,
+      //   {
+      //     x: 300,
+      //     y: -200,
+      //     scale: 2,
+      //     opacity: 0.4,
+      //     duration: 8,
+      //   },
+      //   "start"
+      // )
       .to(
         maskLinus,
         {
@@ -257,7 +251,7 @@ const Home = ({ addTimeline }) => {
           </g>
         </svg>
       </div>
-      <img
+      {/* <img
         className="home__cloud1"
         src={Cloud1}
         alt="Cloud"
@@ -292,7 +286,7 @@ const Home = ({ addTimeline }) => {
         src={Cloud2}
         alt="Cloud"
         ref={(el) => (cloud6 = el)}
-      />
+      /> */}
     </div>
   );
 }
