@@ -17,7 +17,7 @@ function Programming({ addTimeline }) {
       scrollTrigger: {
         trigger: programming,
         start: "top top",
-        end: "500",
+        end: "2000",
         pin: true,
         // snap: {
         //   snap: "labelsDirectional",
@@ -28,6 +28,11 @@ function Programming({ addTimeline }) {
     });
 
     programmingTl
+      .addLabel("programming fadein")
+      .from(programming, {
+        opacity: 0,
+        duration: 4,
+      })
       .addLabel("start programming")
       .to(
         maskProgramming,
@@ -95,7 +100,12 @@ function Programming({ addTimeline }) {
       )
       .addLabel("paus")
       .to({}, {duration: 3}, ">")
-      .addLabel("end programming");
+      .addLabel("end programming")
+      .to([], {duration: 4})
+      .to(programming, {
+        opacity: 0,
+        duration: 4,
+      })
 
     addTimeline(programmingTl);
   }, [addTimeline]);
@@ -185,13 +195,13 @@ function Programming({ addTimeline }) {
       </div>
       <div className="programming__line"></div>
       <div className="wrapper__image" ref={(el) => (iframe1 = el)}>
-        {/* <iframe
+        <iframe
           className="programming__iframe1"
           title="stockholmcityfilms.se"
           src="https://www.stockholmcityfilms.se"
           loading="lazy"
           frameBorder="0"
-        /> */}
+        />
         <a
           href="https://www.stockholmcityfilms.se"
           target="_blank"
@@ -202,13 +212,13 @@ function Programming({ addTimeline }) {
         </a>
       </div>
       <div className="wrapper__image2" ref={(el) => (iframe2 = el)}>
-        {/* <iframe
+        <iframe
           className="programming__iframe2"
           title="språkkraft.se"
           src="https://sprakkraft.se"
           loading="lazy"
           alt=""
-        /> */}
+        />
         <a
           href="https://sprakkraft.se"
           target="_blank"

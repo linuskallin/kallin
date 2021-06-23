@@ -13,6 +13,7 @@ function Contact({ addTimeline} ) {
     const contactTl = gsap.timeline({
       scrollTrigger: {
         trigger: contact,
+        end: "2000",
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -20,22 +21,30 @@ function Contact({ addTimeline} ) {
     });
 
     contactTl
+      .addLabel("contact fadein")
+      .from(contact, {
+        opacity: 0,
+        duration: 4,
+      })
       .addLabel("start contact")
       .to(
         maskContact,
         {
           strokeDashoffset: 0,
+          duration: 6
         },
         "start contact"
       )
-      .addLabel("end contact");
+      .to([],{duration: 4})
+      .addLabel("end contact")
 
     addTimeline(contactTl);
   }, [addTimeline]);
 
 
   return (
-    <div id="contact" className="contact" ref={(el)=>(contact = el)}>
+    <div className="wrapper__perspective" ref={(el)=>(contact = el)}>
+    <div id="contact" className="contact" >
       <div className="contact__title">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.41 25.43">
           <defs>
@@ -137,6 +146,7 @@ function Contact({ addTimeline} ) {
         <br />
         Files: 43
       </p>
+    </div>
     </div>
   );
 }

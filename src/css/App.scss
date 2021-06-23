@@ -1042,6 +1042,7 @@ section {
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fill, calc(100vw / 8));
   gap: 1vw;
+  transform: rotateX(-5deg);
   background-color: white;
 }
 

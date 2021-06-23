@@ -30,6 +30,7 @@ function Linus({ addTimeline }) {
       scrollTrigger: {
         trigger: linus,
         pin: true,
+        end: "4000",
         snap: {
           snapTo: "labels",
           duration: 0.5,
@@ -40,6 +41,12 @@ function Linus({ addTimeline }) {
     });
 
     linusTl
+      .addLabel("linus fadein")
+      .from(linus,{
+        opacity: 0,
+        duration: 4,
+      },
+      "linus fadein")
       .addLabel("start linus")
       .to(box1, {
         rotate: 190,
@@ -136,7 +143,11 @@ function Linus({ addTimeline }) {
       //   opacity: 0,
       //   duration: 5,
       // })
-      .addLabel("end linus");
+      .addLabel("end linus")
+      .to(linus,{
+        opacity: 0,
+        duration: 4,
+      })
 
     addTimeline(linusTl);
 

@@ -29,7 +29,7 @@ function Design({ addTimeline }) {
       scrollTrigger: {
         trigger: design,
         start: "top top",
-        end: "500",
+        end: "3000",
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -37,6 +37,11 @@ function Design({ addTimeline }) {
     });
 
     designTl
+      .addLabel("design fadein")
+      .from(design, {
+        opacity: 0,
+        duration: 4,
+      })
       .addLabel("start design")
       .to(
         maskGraphic,
@@ -138,7 +143,11 @@ function Design({ addTimeline }) {
         },
         "boxes>3"
       )
-      .addLabel("end design");
+      .addLabel("end design")
+      .to(design, {
+        opacity: 0,
+        duration: 4,
+      })
 
     addTimeline(designTl);
   }, [addTimeline]);

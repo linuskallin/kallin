@@ -30,6 +30,7 @@ function Music({ addTimeline }) {
       scrollTrigger: {
         trigger: music,
         start: "top middle",
+        end: "3000",
         pin: true,
         scrub: 0.5,
         toggleActions: "play pause reverse none",
@@ -38,6 +39,11 @@ function Music({ addTimeline }) {
     });
 
     musicTl
+    .addLabel("music fadein")
+    .from(music, {
+      opacity: 0,
+      duration: 4,
+    })
     .addLabel("start music")
     .to(
       maskMusic,
@@ -86,7 +92,11 @@ function Music({ addTimeline }) {
       },
       "start music"
     )
-    .addLabel("end music");
+    .addLabel("end music")
+    .to(music, {
+      opacity: 0,
+      duration: 4,
+    })
 
     addTimeline(musicTl);
   }, [addTimeline]);
