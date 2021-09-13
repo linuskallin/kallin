@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/kallin/static/css/main.d31c0485.chunk.css",
-    "main.js": "/kallin/static/js/main.30c07a72.chunk.js",
-    "main.js.map": "/kallin/static/js/main.30c07a72.chunk.js.map",
-    "runtime-main.js": "/kallin/static/js/runtime-main.676d5f49.js",
-    "runtime-main.js.map": "/kallin/static/js/runtime-main.676d5f49.js.map",
-    "static/js/2.82ab2a42.chunk.js": "/kallin/static/js/2.82ab2a42.chunk.js",
-    "static/js/2.82ab2a42.chunk.js.map": "/kallin/static/js/2.82ab2a42.chunk.js.map",
-    "static/js/3.4e2c74c1.chunk.js": "/kallin/static/js/3.4e2c74c1.chunk.js",
-    "static/js/3.4e2c74c1.chunk.js.map": "/kallin/static/js/3.4e2c74c1.chunk.js.map",
+    "main.css": "/kallin/static/css/main.5abd45fa.chunk.css",
+    "main.js": "/kallin/static/js/main.de0e04c3.chunk.js",
+    "main.js.map": "/kallin/static/js/main.de0e04c3.chunk.js.map",
+    "runtime-main.js": "/kallin/static/js/runtime-main.9b96996e.js",
+    "runtime-main.js.map": "/kallin/static/js/runtime-main.9b96996e.js.map",
+    "static/js/2.a5ada1a3.chunk.js": "/kallin/static/js/2.a5ada1a3.chunk.js",
+    "static/js/2.a5ada1a3.chunk.js.map": "/kallin/static/js/2.a5ada1a3.chunk.js.map",
+    "static/js/3.cb24b8c8.chunk.js": "/kallin/static/js/3.cb24b8c8.chunk.js",
+    "static/js/3.cb24b8c8.chunk.js.map": "/kallin/static/js/3.cb24b8c8.chunk.js.map",
     "index.html": "/kallin/index.html",
-    "static/css/main.d31c0485.chunk.css.map": "/kallin/static/css/main.d31c0485.chunk.css.map",
-    "static/js/2.82ab2a42.chunk.js.LICENSE.txt": "/kallin/static/js/2.82ab2a42.chunk.js.LICENSE.txt",
+    "static/css/main.5abd45fa.chunk.css.map": "/kallin/static/css/main.5abd45fa.chunk.css.map",
+    "static/js/2.a5ada1a3.chunk.js.LICENSE.txt": "/kallin/static/js/2.a5ada1a3.chunk.js.LICENSE.txt",
     "static/media/Code1.966f2d40.svg": "/kallin/static/media/Code1.966f2d40.svg",
     "static/media/Home2.4f52fdf7.svg": "/kallin/static/media/Home2.4f52fdf7.svg",
     "static/media/Mail1.c65ee696.svg": "/kallin/static/media/Mail1.c65ee696.svg",
@@ -36,9 +36,9 @@
     "static/media/syster.35506bf1.jpg": "/kallin/static/media/syster.35506bf1.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.676d5f49.js",
-    "static/js/2.82ab2a42.chunk.js",
-    "static/css/main.d31c0485.chunk.css",
-    "static/js/main.30c07a72.chunk.js"
+    "static/js/runtime-main.9b96996e.js",
+    "static/js/2.a5ada1a3.chunk.js",
+    "static/css/main.5abd45fa.chunk.css",
+    "static/js/main.de0e04c3.chunk.js"
   ]
 }
