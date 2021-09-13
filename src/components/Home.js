@@ -36,16 +36,9 @@ const Home = ({ addTimeline }) => {
       .from(
         home,
         {
-          backgroundImage: "linear-gradient(0deg, #ffffff 0%, #000000 100%)",
+          background: "radial-gradient(closest-side, #ffffff, #ffcfc0, #ffcfc0)",
           duration: 8,
-        },
-        "start"
-      )
-      .to(
-        h4,
-        {
-          color: "#000000",
-          duration: 8,
+          // delay: 2,
         },
         "start"
       )
@@ -137,17 +130,26 @@ const Home = ({ addTimeline }) => {
         },
         ">-0.3"
       )
+      .from(
+        h4,
+        {
+          opacity: 0,
+          yPercent: -10,
+          delay: 5,
+          duration: 2,
+        },
+        "start",
+      )
       .addLabel("scroll")
-      .to(scroll, {
-        opacity: 1,
-        duration: 2,
-      },
-      ">")
-      .to(scroll, {
+      .fromTo(scroll, {
         opacity: 0,
         duration: 2,
       },
-      ">")
+      {
+        opacity: 1,
+        duration: 2,
+      },
+      "scroll")
       .addLabel("end home");
 
     addTimeline(homeTl);
@@ -155,6 +157,7 @@ const Home = ({ addTimeline }) => {
 
   return (
     <div className="home" ref={(el)=>(home = el)}>
+      <section id="home">
       <h4 className="home__h4" ref={(el)=>(h4 = el)}>LINUS KALLIN - Portfolio</h4>
       <div className="scroll" ref={(el)=>(scroll=el)}>
         <p>Scroll down</p>
@@ -287,6 +290,7 @@ const Home = ({ addTimeline }) => {
         alt="Cloud"
         ref={(el) => (cloud6 = el)}
       /> */}
+    </section>
     </div>
   );
 }

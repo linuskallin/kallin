@@ -16,6 +16,7 @@ function Music({ addTimeline }) {
   let music = useRef(null);
   let maskMusic = useRef(null);
   let p = useRef(null);
+  let p2 = useRef(null);
   let img1 = useRef(null);
   let img2 = useRef(null);
   // let music__cloud1 = useRef(null);
@@ -32,9 +33,8 @@ function Music({ addTimeline }) {
         start: "top middle",
         end: "3000",
         pin: true,
-        scrub: 0.5,
+        scrub: 0,
         toggleActions: "play pause reverse none",
-        markers: true,
       },
     });
 
@@ -49,7 +49,7 @@ function Music({ addTimeline }) {
       maskMusic,
       {
         strokeDashoffset: 0,
-        duration: 5,
+        duration: 20,
       },
       "start music"
     )
@@ -74,24 +74,50 @@ function Music({ addTimeline }) {
       },
       {
         opacity: 1,
-        duration: 6,
+        duration: 4,
         x: 0,
       },
       "start music"
+    )
+    .to({}, {duration: 2}, ">")
+    .addLabel("part2")
+    .to(p, {
+      opacity: 0,
+      duration: 4,
+    },
+    "part2"
+    )
+    .to(img1, {
+      opacity: 0,
+      duration: 2,
+    },
+    "part2")
+    .addLabel("part3")
+    .fromTo(p2, {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        duration: 6,
+        y: 0,
+      },
+      "part3"
     )
     .fromTo(
       img2,
       {
         opacity: 0,
-        x: -100,
+        x: 100,
       },
       {
         opacity: 1,
-        duration: 6,
+        duration: 4,
         x: 0,
       },
-      "start music"
+      "part3"
     )
+    .to({}, {duration: 6}, ">")
     .addLabel("end music")
     .to(music, {
       opacity: 0,
@@ -102,7 +128,7 @@ function Music({ addTimeline }) {
   }, [addTimeline]);
 
   return (
-    <section id="music" className="music" ref={(el) => (music = el)}>
+    <section  id="music" className="music" ref={(el) => (music = el)}>
       <div className="music__title">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.66 31.84">
           <defs>
@@ -210,6 +236,8 @@ function Music({ addTimeline }) {
           <li>Creating music videos</li>
         </ul>
         <br />
+      </div>
+      <div className="music__p2" ref={(el) => (p2 = el)}>
         <p>A selection of artists I've played with:</p>
         <ul>
           <li>Svenska Akademien</li>

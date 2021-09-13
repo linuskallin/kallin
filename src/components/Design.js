@@ -31,7 +31,7 @@ function Design({ addTimeline }) {
         start: "top top",
         end: "3000",
         pin: true,
-        scrub: 0.5,
+        scrub: 0,
         toggleActions: "play pause reverse none",
       },
     });
@@ -47,7 +47,7 @@ function Design({ addTimeline }) {
         maskGraphic,
         {
           strokeDashoffset: 0,
-          duration: 1,
+          duration: 6,
         },
         "start design"
       )
@@ -55,9 +55,9 @@ function Design({ addTimeline }) {
         maskDesign,
         {
           strokeDashoffset: 0,
-          duration: 1,
+          duration: 6,
         },
-        ">-0.75"
+        ">-1"
       )
       .from(design, {
         rotationX: 0,

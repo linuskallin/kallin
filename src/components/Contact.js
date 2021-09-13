@@ -15,7 +15,7 @@ function Contact({ addTimeline} ) {
         trigger: contact,
         end: "2000",
         pin: true,
-        scrub: 0.5,
+        scrub: 0,
         toggleActions: "play pause reverse none",
       },
     });
@@ -44,7 +44,7 @@ function Contact({ addTimeline} ) {
 
   return (
     <div className="wrapper__perspective" ref={(el)=>(contact = el)}>
-    <div id="contact" className="contact" >
+    <section id="contact" className="contact" >
       <div className="contact__title">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.41 25.43">
           <defs>
@@ -146,7 +146,8 @@ function Contact({ addTimeline} ) {
         <br />
         Files: 43
       </p>
-    </div>
+    <h5 className="contact__h5">Contact</h5>
+    </section>
     </div>
   );
 }

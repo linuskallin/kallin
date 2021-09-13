@@ -8,6 +8,9 @@ function Programming({ addTimeline }) {
 
   let programming = useRef(null);
   let p = useRef(null);
+  let li1 = useRef(null);
+  let li2 = useRef(null);
+  let li3 = useRef(null);
   let iframe1 = useRef(null);
   let iframe2 = useRef(null);
   let maskProgramming = useRef(null);
@@ -22,7 +25,7 @@ function Programming({ addTimeline }) {
         // snap: {
         //   snap: "labelsDirectional",
         // },
-        scrub: 0.5,
+        scrub: 0,
         toggleActions: "play pause reverse none",
       },
     });
@@ -38,7 +41,7 @@ function Programming({ addTimeline }) {
         maskProgramming,
         {
           strokeDashoffset: 0,
-          duration: 6,
+          duration: 20,
         },
         "start programming"
       )
@@ -54,6 +57,45 @@ function Programming({ addTimeline }) {
           y: 0,
         },
         "start programming"
+      )
+      .fromTo(
+        li1,
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
+      )
+      .fromTo(
+        li2,
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
+      )
+      .fromTo(
+        li3,
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
       )
       .to("#code", {
         paused: false,
@@ -80,26 +122,42 @@ function Programming({ addTimeline }) {
         }
         `,
         ease: "none",
-        duration: 7,
+        duration: 10,
       },
       "start programming"
       )
-      .addLabel("iframe1")
-      .from(iframe1, {
+      .addLabel("pause")
+      .to({}, {duration: 8}, "pause")
+      .addLabel("iframe")
+      .to( p, {
+        opacity: 0,
+        duration: 4,
+      },
+      "iframe")
+      .fromTo(iframe1, {
         xPercent: -150,
+        opacity: 0,
+      },
+      {
+        xPercent: 0,
+        opacity: 1,
         duration: 4,
       },
-      "start programming+=2"
+      "iframe"
       )
-      .addLabel("iframe2")
-      .from(iframe2, {
+      .fromTo(iframe2, {
         xPercent: 150,
+        opacity: 0,
+      },
+      {
+        xPercent: 0,
+        opacity: 1,
         duration: 4,
       },
-      ">+2"
+      ">+4"
       )
       .addLabel("paus")
-      .to({}, {duration: 3}, ">")
+      .to({}, {duration: 8}, "paus")
       .addLabel("end programming")
       .to([], {duration: 4})
       .to(programming, {
@@ -235,7 +293,7 @@ function Programming({ addTimeline }) {
           Next to this text you can se two websites that I've built.
         </p>
         <ul>
-          <li>
+          <li ref={(el) => (li1 = el)}>
             <a
               href="https://sprakraft.se"
               target="_blank"
@@ -245,7 +303,7 @@ function Programming({ addTimeline }) {
             </a>{" "}
             as part of an 2 month internship at the NGO Språkkraft.
           </li>
-          <li>
+          <li ref={(el) => (li2 = el)}>
             <a
               href="https://stockholmcityfilms.se"
               target="_blank"
@@ -256,7 +314,7 @@ function Programming({ addTimeline }) {
             for a production company that produces movies and tv-shows. I spent
             a few days on it.
           </li>
-          <li>
+          <li ref={(el) => (li3 = el)}>
             <a
               href="https://linuskallin.se"
               target="_blank"
@@ -264,7 +322,7 @@ function Programming({ addTimeline }) {
             >
               <i>linuskallin.se</i>
             </a>{" "}
-            which I did as my examination project. It took me about two weeks to
+            which I did as my examination project. It took me about three weeks to
             complete it.
           </li>
         </ul>

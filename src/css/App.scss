@@ -67,7 +67,7 @@ h2 {
 
 h4 {
   text-decoration: none;
-  color: $orange;
+  // color: $orange;
   font-weight: 400;
 }
 
@@ -560,6 +560,7 @@ section {
   object-fit: cover;
   filter: sepia(0.7);
   opacity: 1;
+  display: block;
 }
 
 .linus__img2,
@@ -687,13 +688,13 @@ section {
 }
 
 .programming .wrapper__image {
-  grid-area: 4 / 2 / 6 / 5;
+  grid-area: 2 / 2 / 4 / 5;
   height: 50vh;
   z-index: 3;
 }
 
 .programming .wrapper__image2 {
-  grid-area: 4 / 5 / 6 / 8;
+  grid-area: 2 / 5 / 4 / 8;
   height: 50vh;
   z-index: 3;
 }
@@ -942,7 +943,7 @@ section {
 }
 
 .music .wrapper__image2 {
-  grid-area: 4 / 5 / 6 / 8;
+  grid-area: 2 / 5 / 4 / 8;
 }
 
 .music__img {
@@ -953,6 +954,11 @@ section {
 }
 
 .music__p {
+  grid-area: 2 / 2 / 4 / 5;
+  z-index: 2;
+}
+
+.music__p2 {
   grid-area: 2 / 2 / 4 / 5;
   z-index: 2;
 }

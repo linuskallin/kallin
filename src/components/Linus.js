@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, forwardRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,7 +8,7 @@ import LinusImg2 from "../images/other/linus.jpg";
 import LinusImg3 from "../images/other/linus2.jpg";
 import LinusImg4 from "../images/other/linus3.jpg";
 
-function Linus({ addTimeline }) {
+function Linus({ addTimeline, forwardRef }) {
   gsap.registerPlugin(ScrollTrigger);
 
   let linus = useRef(null);
@@ -26,16 +26,18 @@ function Linus({ addTimeline }) {
   const [fullscreen, setFullscreen] = useState(false);
 
   useEffect(() => {
+    console.log(forwardRef)
+
     const linusTl = gsap.timeline({
       scrollTrigger: {
         trigger: linus,
         pin: true,
         end: "4000",
-        snap: {
-          snapTo: "labels",
-          duration: 0.5,
-        },
-        scrub: 0.3,
+        // snap: {
+        //   snapTo: "labels",
+        //   duration: 0.5,
+        // },
+        scrub: 0,
         toggleActions: "play pause reverse none",
       },
     });
@@ -85,7 +87,7 @@ function Linus({ addTimeline }) {
         },
         ">-0.4"
       )
-      .to({}, { duration: 4 })
+      .to([], { duration: 4 })
       .fromTo(
         img1,
         {
@@ -142,7 +144,8 @@ function Linus({ addTimeline }) {
       //   xPercent: 100,
       //   opacity: 0,
       //   duration: 5,
-      // })
+      // },
+      // "disperse")
       .addLabel("end linus")
       .to(linus,{
         opacity: 0,
@@ -156,7 +159,7 @@ function Linus({ addTimeline }) {
     } else if (!fullscreen) {
       linus.style.cssText = "perspective: 1000px; position: fixed;";
     }
-  }, [addTimeline, fullscreen]);
+  }, [addTimeline, fullscreen, forwardRef]);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (linus = el)}>
@@ -229,7 +232,6 @@ function Linus({ addTimeline }) {
           </svg>
         </div>
         <div className="linus__line"></div>
-        {!fullscreen ? (
           <div
             className="wrapper__image"
             onClick={() => setFullscreen(!fullscreen)}
@@ -242,19 +244,19 @@ function Linus({ addTimeline }) {
             />
             <h6>Photo: Johan Sund</h6>
           </div>
-        ) : (
-          <div className="wrapper__fullscreen">
-            <p className="close" onClick={() => setFullscreen(!fullscreen)}>
-              X
-            </p>
-            <img
-              className="fullscreen"
-              src={LinusImg}
-              alt="Linus with hands behind head"
-            />
-            <h6 className="sub-fullscreen">Photo: Johan Sund</h6>
-          </div>
-        )}
+          {fullscreen &&
+            <div className="wrapper__fullscreen">
+              <p className="close" onClick={() => setFullscreen(!fullscreen)}>
+                X
+              </p>
+              <img
+                className="fullscreen"
+                src={LinusImg}
+                alt="Linus with hands behind head"
+              />
+              <h6 className="sub-fullscreen">Photo: Johan Sund</h6>
+            </div>
+          }
         <div className="boxes">
           <div className="box1" ref={(el) => (box1 = el)}></div>
         </div>
@@ -272,7 +274,7 @@ function Linus({ addTimeline }) {
           Freelancing as a musician/graphic-designer/whatever since 2013.
           <br />
           <br />
-          My latest endeavour has been to learn Front End Programming and in
+          My latest endeavour has been to learn Front End Programming and in the summer of
           2021 I finished my two year Higher Vocational Education
           (Yrkeshögskola) as a Front End Developer.
         </p>
@@ -319,4 +321,4 @@ function Linus({ addTimeline }) {
   );
 }
 
-export default Linus;
+export default forwardRef(Linus);
