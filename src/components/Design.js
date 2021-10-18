@@ -31,7 +31,7 @@ function Design({ addTimeline }) {
         start: "top top",
         end: "3000",
         pin: true,
-        scrub: 0,
+        scrub: true,
         toggleActions: "play pause reverse none",
       },
     });
@@ -47,7 +47,7 @@ function Design({ addTimeline }) {
         maskGraphic,
         {
           strokeDashoffset: 0,
-          duration: 6,
+          duration: 8,
         },
         "start design"
       )
@@ -55,9 +55,9 @@ function Design({ addTimeline }) {
         maskDesign,
         {
           strokeDashoffset: 0,
-          duration: 6,
+          duration: 8,
         },
-        ">-1"
+        ">-6.5"
       )
       .from(design, {
         rotationX: 0,
@@ -105,44 +105,46 @@ function Design({ addTimeline }) {
         "boxes"
       )
       .fromTo(
-        img1,
+        [img1, img2, img3],
         {
           opacity: 0,
           x: -100,
+          stagger: 10,
         },
         {
           opacity: 1,
-          duration: 2,
           x: 0,
+          duration: 10,
+          stagger: 4,
         },
-        "boxes>1"
+        "boxes"
       )
-      .fromTo(
-        img2,
-        {
-          opacity: 0,
-          x: 100,
-        },
-        {
-          opacity: 1,
-          duration: 2,
-          x: 0,
-        },
-        "boxes>2"
-      )
-      .fromTo(
-        img3,
-        {
-          opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          duration: 2,
-          y: 0,
-        },
-        "boxes>3"
-      )
+      // .fromTo(
+      //   img2,
+      //   {
+      //     opacity: 0,
+      //     x: 100,
+      //   },
+      //   {
+      //     opacity: 1,
+      //     duration: 2,
+      //     x: 0,
+      //   },
+      //   "boxes>2"
+      // )
+      // .fromTo(
+      //   img3,
+      //   {
+      //     opacity: 0,
+      //     y: 100,
+      //   },
+      //   {
+      //     opacity: 1,
+      //     duration: 2,
+      //     y: 0,
+      //   },
+      //   "boxes>4"
+      // )
       .addLabel("end design")
       .to(design, {
         opacity: 0,

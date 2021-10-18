@@ -26,7 +26,7 @@ function Linus({ addTimeline, forwardRef }) {
   const [fullscreen, setFullscreen] = useState(false);
 
   useEffect(() => {
-    console.log(forwardRef)
+    // console.log(forwardRef)
 
     const linusTl = gsap.timeline({
       scrollTrigger: {
@@ -37,7 +37,7 @@ function Linus({ addTimeline, forwardRef }) {
         //   snapTo: "labels",
         //   duration: 0.5,
         // },
-        scrub: 0,
+        scrub: true,
         toggleActions: "play pause reverse none",
       },
     });

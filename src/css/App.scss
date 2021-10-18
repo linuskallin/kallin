@@ -69,6 +69,7 @@ h4 {
   text-decoration: none;
   // color: $orange;
   font-weight: 400;
+  visibility: hidden;
 }
 
 h5 {
@@ -804,11 +805,11 @@ section {
 }
 
 .design .wrapper__image2 {
-  grid-area: 4 / 5 / 5 / 8;
+  grid-area: 4 / 2 / 5 / 5;
 }
 
 .design .wrapper__image3 {
-  grid-area: 5 / 3 / 6 / 6;
+  grid-area: 4 / 2 / 5 / 5;
 }
 
 .design__img {
@@ -940,10 +941,17 @@ section {
 
 .music .wrapper__image {
   grid-area: 2 / 5 / 4 / 8;
+  z-index: 5;
 }
 
 .music .wrapper__image2 {
   grid-area: 2 / 5 / 4 / 8;
+  z-index: 6;
+}
+
+.music .wrapper__image3 {
+  grid-area: 2 / 5 / 4 / 8;
+  z-index: 7;
 }
 
 .music__img {
@@ -953,12 +961,14 @@ section {
   z-index: 2;
 }
 
-.music__p {
-  grid-area: 2 / 2 / 4 / 5;
-  z-index: 2;
+.music__iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 4;
 }
 
-.music__p2 {
+.music__p, .music__p2, .music__p3 {
   grid-area: 2 / 2 / 4 / 5;
   z-index: 2;
 }
@@ -1075,6 +1085,30 @@ section {
   stroke-dashoffset: -300;
 }
 
+.contact__drawing {
+  position: absolute;
+  pointer-events: none;
+  top: 20vw;
+  left: 3vw;
+  transform: rotate(180deg);
+  width: 50vw;
+  height: 50vh;
+  z-index: 100;
+}
+
+.contact-drawing {
+  fill: #ff0000;
+}
+
+.contact-mask2 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+  stroke-width: 39px;
+  stroke-dasharray: 3800;
+  stroke-dashoffset: -3800;
+}
+
 .contact__line {
   grid-area: 1 / 2 / 2 / 8;
   background: $light-grey;
@@ -1095,5 +1129,9 @@ section {
 @media only screen and (max-width: 900px) {
   .contact__title {
     width: 21vw;
+  }
+  .contact__drawing {
+    top: 4vw;
+    left: 4vw;
   }
 }

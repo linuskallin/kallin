@@ -25,7 +25,7 @@ function Programming({ addTimeline }) {
         // snap: {
         //   snap: "labelsDirectional",
         // },
-        scrub: 0,
+        scrub: true,
         toggleActions: "play pause reverse none",
       },
     });

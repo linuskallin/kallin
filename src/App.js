@@ -27,12 +27,12 @@ function App() {
   return (
     <div className="App" ref={(el) => (appRef = el)}>
       <Home addTimeline={addTimeline} />
-      <Menu addTimeline={addTimeline} masterTl={masterTl}/>
       <Linus addTimeline={addTimeline} forwardRef={appRef}/>
       <Programming addTimeline={addTimeline} />
       <Design addTimeline={addTimeline} />
       <Music addTimeline={addTimeline} />
       <Contact addTimeline={addTimeline} />
+      <Menu addTimeline={addTimeline} />
     </div>
   );
 }

@@ -3,21 +3,12 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// import Cloud1 from "../images/other/cloud1.png";
-// import Cloud2 from "../images/other/cloud2.png";
-
 const Home = ({ addTimeline }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   let home = useRef(null);
   let h4 = useRef(null);
   let scroll = useRef(null);
-  // let cloud1 = useRef(null);
-  // let cloud2 = useRef(null);
-  // let cloud3 = useRef(null);
-  // let cloud4 = useRef(null);
-  // let cloud5 = useRef(null);
-  // let cloud6 = useRef(null);
   let maskLinus = useRef(null);
   let maskPrick1 = useRef(null);
   let maskPrick2 = useRef(null);
@@ -33,79 +24,6 @@ const Home = ({ addTimeline }) => {
 
     homeTl
       .addLabel("start")
-      .from(
-        home,
-        {
-          background: "radial-gradient(closest-side, #ffffff, #ffcfc0, #ffcfc0)",
-          duration: 8,
-          // delay: 2,
-        },
-        "start"
-      )
-      // .to(
-      //   cloud1,
-      //   {
-      //     x: -100,
-      //     scale: 2,
-      //     opacity: 0.4,
-      //     duration: 8,
-      //   },
-      //   "start"
-      // )
-      // .to(
-      //   cloud2,
-      //   {
-      //     x: 100,
-      //     scale: 2,
-      //     opacity: 0.4,
-      //     duration: 8,
-      //   },
-      //   "start"
-      // )
-      // .to(
-      //   cloud3,
-      //   {
-      //     x: -200,
-      //     y: 100,
-      //     scale: 2,
-      //     opacity: 0.4,
-      //     duration: 8,
-      //   },
-      //   "start"
-      // )
-      // .to(
-      //   cloud4,
-      //   {
-      //     x: 200,
-      //     y: -100,
-      //     scale: 2,
-      //     opacity: 0.4,
-      //     duration: 8,
-      //   },
-      //   "start"
-      // )
-      // .to(
-      //   cloud5,
-      //   {
-      //     x: -300,
-      //     y: 200,
-      //     scale: 2,
-      //     opacity: 0.4,
-      //     duration: 8,
-      //   },
-      //   "start"
-      // )
-      // .to(
-      //   cloud6,
-      //   {
-      //     x: 300,
-      //     y: -200,
-      //     scale: 2,
-      //     opacity: 0.4,
-      //     duration: 8,
-      //   },
-      //   "start"
-      // )
       .to(
         maskLinus,
         {
@@ -135,8 +53,9 @@ const Home = ({ addTimeline }) => {
         {
           opacity: 0,
           yPercent: -10,
-          delay: 5,
-          duration: 2,
+          ease: "power3.in",
+          delay: 1,
+          duration: 4,
         },
         "start",
       )
@@ -254,42 +173,6 @@ const Home = ({ addTimeline }) => {
           </g>
         </svg>
       </div>
-      {/* <img
-        className="home__cloud1"
-        src={Cloud1}
-        alt="Cloud"
-        ref={(el) => (cloud1 = el)}
-      />
-      <img
-        className="home__cloud2"
-        src={Cloud2}
-        alt="Cloud"
-        ref={(el) => (cloud2 = el)}
-      />
-      <img
-        className="home__cloud3"
-        src={Cloud1}
-        alt="Cloud"
-        ref={(el) => (cloud3 = el)}
-      />
-      <img
-        className="home__cloud4"
-        src={Cloud2}
-        alt="Cloud"
-        ref={(el) => (cloud4 = el)}
-      />
-      <img
-        className="home__cloud5"
-        src={Cloud1}
-        alt="Cloud"
-        ref={(el) => (cloud5 = el)}
-      />
-      <img
-        className="home__cloud6"
-        src={Cloud2}
-        alt="Cloud"
-        ref={(el) => (cloud6 = el)}
-      /> */}
     </section>
     </div>
   );

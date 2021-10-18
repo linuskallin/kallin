@@ -17,8 +17,10 @@ function Music({ addTimeline }) {
   let maskMusic = useRef(null);
   let p = useRef(null);
   let p2 = useRef(null);
+  let p3 = useRef(null);
   let img1 = useRef(null);
   let img2 = useRef(null);
+  let img3 = useRef(null);
   // let music__cloud1 = useRef(null);
   // let music__cloud2 = useRef(null);
   // let music__cloud3 = useRef(null);
@@ -33,7 +35,7 @@ function Music({ addTimeline }) {
         start: "top middle",
         end: "3000",
         pin: true,
-        scrub: 0,
+        scrub: true,
         toggleActions: "play pause reverse none",
       },
     });
@@ -56,11 +58,11 @@ function Music({ addTimeline }) {
     .fromTo(
       p,
       {
-        opacity: 0,
+        autoAlpha: 0,
         y: 100,
       },
       {
-        opacity: 1,
+        autoAlpha: 1,
         duration: 6,
         y: 0,
       },
@@ -69,11 +71,11 @@ function Music({ addTimeline }) {
     .fromTo(
       img1,
       {
-        opacity: 0,
+        autoAlpha: 0,
         x: 100,
       },
       {
-        opacity: 1,
+        autoAlpha: 1,
         duration: 4,
         x: 0,
       },
@@ -82,23 +84,23 @@ function Music({ addTimeline }) {
     .to({}, {duration: 2}, ">")
     .addLabel("part2")
     .to(p, {
-      opacity: 0,
+      autoAlpha: 0,
       duration: 4,
     },
     "part2"
     )
     .to(img1, {
-      opacity: 0,
+      autoAlpha: 0,
       duration: 2,
     },
     "part2")
     .addLabel("part3")
     .fromTo(p2, {
-        opacity: 0,
+        autoAlpha: 0,
         y: 100,
       },
       {
-        opacity: 1,
+        autoAlpha: 1,
         duration: 6,
         y: 0,
       },
@@ -107,17 +109,55 @@ function Music({ addTimeline }) {
     .fromTo(
       img2,
       {
-        opacity: 0,
+        autoAlpha: 0,
         x: 100,
       },
       {
-        opacity: 1,
+        autoAlpha: 1,
         duration: 4,
         x: 0,
       },
       "part3"
     )
-    .to({}, {duration: 6}, ">")
+    .to({}, {duration: 8}, ">")
+    .addLabel("part4")
+    .to(p2, {
+      autoAlpha: 0,
+      duration: 4,
+    },
+    "part4"
+    )
+    .to(img2, {
+      autoAlpha: 0,
+      duration: 2,
+    },
+    "part4")
+    .addLabel("part5")
+    .fromTo(p3, {
+      autoAlpha: 0,
+      y: 100,
+    },
+    {
+      autoAlpha: 1,
+      duration: 6,
+      y: 0,
+    },
+    "part5"
+    )
+    .fromTo(
+      img3,
+      {
+        autoAlpha: 0,
+        x: 100,
+      },
+      {
+        autoAlpha: 1,
+        duration: 4,
+        x: 0,
+      },
+      "part5"
+    )
+    .to({}, {duration: 8}, ">")
     .addLabel("end music")
     .to(music, {
       opacity: 0,
@@ -183,22 +223,10 @@ function Music({ addTimeline }) {
       </div>
 
       <div className="music__line"></div>
-      <div className="wrapper__image" ref={(el) => (img1 = el)}>
-        <img
-          className="music__img"
-          srcSet={
-            `${RudolstadtSmall} 700w,
-            ${Rudolstadt} 1500w`
-          }
-          sizes="(min-width: 1500px) 700px, 700px"
-          src={RudolstadtSmall}
-          loading="lazy"
-          alt="Rudolstadt festival"
-        />
+      <div className="wrapper__image3" ref={(el) => (img3 = el)}>
+        <iframe className="music__iframe" src="https://www.youtube.com/embed/9jx4wgAle_Y?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         <h6 className="sub-white">
-          Rudolstadt festival with Partiet, thousands in the crowd
-          <br />
-          Foto: Matthias Kimpel
+          Co-written and produced both the music and this video for Kallblod.
         </h6>
       </div>
       <div className="wrapper__image2" ref={(el) => (img2 = el)}>
@@ -219,6 +247,24 @@ function Music({ addTimeline }) {
           Foto: Ali Jehad
         </h6>
       </div>
+      <div className="wrapper__image" ref={(el) => (img1 = el)}>
+        <img
+          className="music__img"
+          srcSet={
+            `${RudolstadtSmall} 700w,
+            ${Rudolstadt} 1500w`
+          }
+          sizes="(min-width: 1500px) 700px, 700px"
+          src={RudolstadtSmall}
+          loading="lazy"
+          alt="Rudolstadt festival"
+        />
+        <h6 className="sub-white">
+          Rudolstadt festival with Partiet, thousands in the crowd
+          <br />
+          Foto: Matthias Kimpel
+        </h6>
+      </div>
       <div className="music__p" ref={(el) => (p = el)}> 
         <p>
           Music is my biggest passion. I've been playing piano since I was 12.
@@ -231,6 +277,7 @@ function Music({ addTimeline }) {
           <li>Recording</li>
           <li>Producing</li>
           <li>Writing songs</li>
+          <li>Writing film music</li>
           <li>Mixing</li>
           <li>Mastering</li>
           <li>Creating music videos</li>
@@ -245,6 +292,15 @@ function Music({ addTimeline }) {
           <li>Looptroop Rockers</li>
           <li>Dani M</li>
           <li>Amy Diamond</li>
+        </ul>
+        <br />
+      </div>
+      <div className="music__p3" ref={(el) => (p3 = el)}>
+        <p>Worked with sound and music at:</p>
+        <ul>
+          <li>Sveriges Television (SVT)</li>
+          <li>Sveriges Radio (SR)</li>
+          <li>Medborgarskolan, Sensus</li>
         </ul>
       </div>
       <h5 className="music__h5">Music</h5>

@@ -11,46 +11,16 @@ import Pen from "../images/svg/Pen.svg";
 import Note from "../images/svg/Note1.svg";
 import Mail from "../images/svg/Mail1.svg";
 
-const Menu = ({ addTimeline, masterTl }) => {
+const Menu = ({ addTimeline }) => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
 
   let menu = useRef(null);
-
-useEffect(()=>{
-
-  const sections = gsap.utils.toArray("section");
-  const navLinks = gsap.utils.toArray(".menu__dot-svg");
   
-  console.log(sections);
-
-  sections.forEach((section, i) => {
-  ScrollTrigger.create({
-    trigger: section,
-    start: "top bottom",
-    end: "bottom",
-    // markers: true,
-  
-    onEnter: () => {
-      navLinks.forEach((e) => {
-        e.classList.remove("menu--active");
-      });
-      navLinks[i].classList.add("menu--active");
-    },
-    onEnterBack: () => {
-      navLinks.forEach((e) => {
-        e.classList.remove("menu--active");
-      });
-      navLinks[i].classList.add("menu--active");
-    }
-  })
-  });
-}, [addTimeline])
-
   useEffect(() => {
-
+  
     const menuTl = gsap.timeline();
-
+  
     menuTl
       .from(
         menu,
@@ -58,13 +28,48 @@ useEffect(()=>{
           opacity: 0,
           xPercent: -40,
           ease: "power3.in",
-          duration: 7,
+          delay: 1,
+          duration: 4,
         },
         "start"
       )
-
+  
     addTimeline(menuTl, "start");
   }, [addTimeline]);
+  
+  useEffect(()=>{
+
+    const sections = gsap.utils.toArray("section");
+    const navLinks = gsap.utils.toArray(".menu__dot-svg");
+
+    sections.forEach((section, i) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top middle",
+      end: "+=200%",
+      markers: true,
+    
+      onToggle: () => {
+        navLinks.forEach((e) => {
+          e.classList.remove("menu--active");
+        });
+        navLinks[i].classList.add("menu--active");
+      }
+      // onEnter: () => {
+      //   navLinks.forEach((e) => {
+      //     e.classList.remove("menu--active");
+      //   });
+      //   navLinks[i].classList.add("menu--active");
+      // },
+      // onEnterBack: () => {
+      //   navLinks.forEach((e) => {
+      //     e.classList.remove("menu--active");
+      //   });
+      //   navLinks[i].classList.add("menu--active");
+      // }
+    })
+    });
+  }, [addTimeline])
 
   const tooltipAdd = (el) => {
     if(el.currentTarget.className.includes("menu__dot-svg")){
