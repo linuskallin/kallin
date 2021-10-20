@@ -7,7 +7,6 @@ const Home = ({ addTimeline }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   let home = useRef(null);
-  let h4 = useRef(null);
   let scroll = useRef(null);
   let maskLinus = useRef(null);
   let maskPrick1 = useRef(null);
@@ -18,7 +17,10 @@ const Home = ({ addTimeline }) => {
     const homeTl = gsap.timeline({
       scrollTrigger: {
         trigger: home,
-        toggleActions: "play none none none",
+        pin: true,
+        scrub: true,
+        fastScrollEnd: true,
+        toggleActions: "play pause reverse none",
       }
     });
 
@@ -27,49 +29,60 @@ const Home = ({ addTimeline }) => {
       .to(
         maskLinus,
         {
-          strokeDashoffset: 0,
-          duration: 4.5,
-        },
-        "start+=1"
+          onEnter: ()=>{
+            gsap.to(maskLinus, {
+              strokeDashoffset: 0,
+              duration: 4.8,
+            })
+          }
+        }
       )
       .to(
         maskPrick1,
         {
-          strokeDashoffset: 0,
-          duration: 0.5,
-        },
-        ">-1.4"
+          onEnter: ()=>{
+            gsap.to(maskPrick1, {
+              strokeDashoffset: 0,
+              duration: 0.5,
+              delay: 3.3
+            })
+          }
+        }
       )
       .to(
         maskPrick2,
         {
-          strokeDashoffset: 0,
-          duration: 0.5,
+          onEnter: ()=>{
+            gsap.to(maskPrick2, {
+              strokeDashoffset: 0,
+              duration: 0.5,
+              delay: 3.6
+            })
+          }
         },
-        ">-0.3"
-      )
-      .from(
-        h4,
-        {
-          opacity: 0,
-          yPercent: -10,
-          ease: "power3.in",
-          delay: 1,
-          duration: 4,
-        },
-        "start",
       )
       .addLabel("scroll")
-      .fromTo(scroll, {
+      .fromTo(scroll, 
+      {
         opacity: 0,
-        duration: 2,
       },
       {
-        opacity: 1,
-        duration: 2,
+        onEnter: ()=>{
+          gsap.to(scroll, {
+            opacity: 1,
+            duration: 2,
+            delay: 5.5
+          })
+        }
       },
       "scroll")
-      .addLabel("end home");
+      .addLabel("end home")
+      .to(home, 
+      {
+        autoAlpha: 0,
+        duration: 4,
+      },
+      ">")
 
     addTimeline(homeTl);
   }, [addTimeline]);
@@ -77,7 +90,7 @@ const Home = ({ addTimeline }) => {
   return (
     <div className="home" ref={(el)=>(home = el)}>
       <section id="home">
-      <h4 className="home__h4" ref={(el)=>(h4 = el)}>LINUS KALLIN - Portfolio</h4>
+      <h4 className="home__h4">LINUS KALLIN - Portfolio</h4>
       <div className="scroll" ref={(el)=>(scroll=el)}>
         <p>Scroll down</p>
         <p className="arrow">--{`>`}</p>

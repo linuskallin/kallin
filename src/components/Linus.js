@@ -33,6 +33,8 @@ function Linus({ addTimeline, forwardRef }) {
         trigger: linus,
         pin: true,
         end: "4000",
+        fastScrollEnd: true,
+        pinSpacing: true,
         // snap: {
         //   snapTo: "labels",
         //   duration: 0.5,

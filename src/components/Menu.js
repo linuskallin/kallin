@@ -45,8 +45,8 @@ const Menu = ({ addTimeline }) => {
     sections.forEach((section, i) => {
     ScrollTrigger.create({
       trigger: section,
-      start: "top middle",
-      end: "+=200%",
+      start: "top top",
+      end: "bottom top",
       markers: true,
     
       onToggle: () => {

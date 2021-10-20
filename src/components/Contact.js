@@ -15,6 +15,7 @@ function Contact({ addTimeline} ) {
       scrollTrigger: {
         trigger: contact,
         end: "2000",
+        fastScrollEnd: true,
         pin: true,
         scrub: true,
         toggleActions: "play pause reverse none",

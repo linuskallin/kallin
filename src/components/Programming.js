@@ -21,6 +21,7 @@ function Programming({ addTimeline }) {
         trigger: programming,
         start: "top top",
         end: "2000",
+        fastScrollEnd: true,
         pin: true,
         // snap: {
         //   snap: "labelsDirectional",
@@ -122,7 +123,7 @@ function Programming({ addTimeline }) {
         }
         `,
         ease: "none",
-        duration: 10,
+        duration: 14,
       },
       "start programming"
       )
@@ -141,7 +142,7 @@ function Programming({ addTimeline }) {
       {
         xPercent: 0,
         opacity: 1,
-        duration: 4,
+        duration: 10,
       },
       "iframe"
       )
@@ -152,14 +153,13 @@ function Programming({ addTimeline }) {
       {
         xPercent: 0,
         opacity: 1,
-        duration: 4,
+        duration: 10,
       },
       ">+4"
       )
       .addLabel("paus")
-      .to({}, {duration: 8}, "paus")
+      .to({}, {duration: 14}, "paus")
       .addLabel("end programming")
-      .to([], {duration: 4})
       .to(programming, {
         opacity: 0,
         duration: 4,
@@ -268,6 +268,11 @@ function Programming({ addTimeline }) {
         >
           <h6>stockholmcityfilms.se</h6>
         </a>
+        <div className="scroll-inside">
+          <p className="arrow-up">--{`>`}</p>
+          <p>scroll & click
+            <br/> inside frames</p>
+        </div>
       </div>
       <div className="wrapper__image2" ref={(el) => (iframe2 = el)}>
         <iframe
@@ -290,7 +295,7 @@ function Programming({ addTimeline }) {
           I haven't been programming for so long, I acctually started studying
           front-end-programming in the fall of 2019. But I've still managed to
           make a few things and be a part of a few projects that I can show you.
-          Next to this text you can se two websites that I've built.
+          Next to this text you can se three websites that I've built.
         </p>
         <ul>
           <li ref={(el) => (li1 = el)}>
@@ -322,7 +327,7 @@ function Programming({ addTimeline }) {
             >
               <i>linuskallin.se</i>
             </a>{" "}
-            which I did as my examination project. It took me about three weeks to
+            which I did as my examination project. It took me about one month to
             complete it.
           </li>
         </ul>

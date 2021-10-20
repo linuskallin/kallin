@@ -30,6 +30,7 @@ function Design({ addTimeline }) {
         trigger: design,
         start: "top top",
         end: "3000",
+        fastScrollEnd: true,
         pin: true,
         scrub: true,
         toggleActions: "play pause reverse none",

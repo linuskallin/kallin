@@ -34,6 +34,7 @@ function Music({ addTimeline }) {
         trigger: music,
         start: "top middle",
         end: "3000",
+        fastScrollEnd: true,
         pin: true,
         scrub: true,
         toggleActions: "play pause reverse none",
@@ -56,7 +57,7 @@ function Music({ addTimeline }) {
       "start music"
     )
     .fromTo(
-      p,
+      img1,
       {
         autoAlpha: 0,
         y: 100,
@@ -68,16 +69,17 @@ function Music({ addTimeline }) {
       },
       "start music"
     )
+    .to({}, {duration: 1}, ">")
     .fromTo(
-      img1,
+      p,
       {
         autoAlpha: 0,
-        x: 100,
+        y: 100,
       },
       {
         autoAlpha: 1,
-        duration: 4,
-        x: 0,
+        duration: 6,
+        y: 0,
       },
       "start music"
     )
@@ -91,11 +93,13 @@ function Music({ addTimeline }) {
     )
     .to(img1, {
       autoAlpha: 0,
-      duration: 2,
+      duration: 4,
     },
     "part2")
     .addLabel("part3")
-    .fromTo(p2, {
+    .fromTo(
+      img2,
+      {
         autoAlpha: 0,
         y: 100,
       },
@@ -106,16 +110,15 @@ function Music({ addTimeline }) {
       },
       "part3"
     )
-    .fromTo(
-      img2,
-      {
+    .to({}, {duration: 1}, ">")
+    .fromTo(p2, {
         autoAlpha: 0,
-        x: 100,
+        y: 100,
       },
       {
         autoAlpha: 1,
-        duration: 4,
-        x: 0,
+        duration: 6,
+        y: 0,
       },
       "part3"
     )
@@ -129,10 +132,24 @@ function Music({ addTimeline }) {
     )
     .to(img2, {
       autoAlpha: 0,
-      duration: 2,
+      duration: 4,
     },
     "part4")
     .addLabel("part5")
+    .fromTo(
+      img3,
+      {
+        autoAlpha: 0,
+        y: 100,
+      },
+      {
+        autoAlpha: 1,
+        duration: 6,
+        y: 0,
+      },
+      "part5"
+    )
+    .to({}, {duration: 1}, ">")
     .fromTo(p3, {
       autoAlpha: 0,
       y: 100,
@@ -143,19 +160,6 @@ function Music({ addTimeline }) {
       y: 0,
     },
     "part5"
-    )
-    .fromTo(
-      img3,
-      {
-        autoAlpha: 0,
-        x: 100,
-      },
-      {
-        autoAlpha: 1,
-        duration: 4,
-        x: 0,
-      },
-      "part5"
     )
     .to({}, {duration: 8}, ">")
     .addLabel("end music")
