@@ -105,52 +105,145 @@ function Design({ addTimeline }) {
         },
         "boxes"
       )
+      .addLabel("boxes click")
       .fromTo(
-        [img1, img2, img3],
+        img1,
         {
-          opacity: 0,
-          x: -100,
-          stagger: 10,
+          xPercent: -300,
+          rotate: 5
         },
         {
-          opacity: 1,
-          x: 0,
+          xPercent: -100,
           duration: 10,
-          stagger: 4,
+          ease: "circ.in",
         },
-        "boxes"
+        "start design"
       )
-      // .fromTo(
-      //   img2,
-      //   {
-      //     opacity: 0,
-      //     x: 100,
-      //   },
-      //   {
-      //     opacity: 1,
-      //     duration: 2,
-      //     x: 0,
-      //   },
-      //   "boxes>2"
-      // )
-      // .fromTo(
-      //   img3,
-      //   {
-      //     opacity: 0,
-      //     y: 100,
-      //   },
-      //   {
-      //     opacity: 1,
-      //     duration: 2,
-      //     y: 0,
-      //   },
-      //   "boxes>4"
-      // )
+      .to(
+        img1,
+        {
+          xPercent: 0,
+          scale: 1.6,
+          rotate: 0,
+          duration: 5,
+          ease: "circ.out",
+        },
+        ">"
+      )
+      .to(
+        img1,
+        {
+          xPercent: 100,
+          scale: 1,
+          rotate: -5,
+          duration: 5,
+          ease: "circ.in",
+        },
+        "boxes click"
+      )
+      .to(
+        img1,
+        {
+          xPercent: 300,
+          duration: 10,
+          ease: "circ.out",
+        },
+        ">"
+      )
+      .fromTo(
+        img2,
+        {
+          xPercent: -300,
+          rotate: 5
+        },
+        {
+          xPercent: -100,
+          duration: 10,
+          delay: 5,
+          ease: "circ.in",
+        },
+        "-=25",
+      )
+      .to(
+        img2,
+        {
+          xPercent: 0,
+          scale: 1.6,
+          rotate: 0,
+          duration: 5,
+          ease: "circ.out",
+        },
+        ">"
+      )
+      .to(
+        img2,
+        {
+          xPercent: 100,
+          scale: 1,
+          rotate: -5,
+          duration: 5,
+          ease: "circ.in",
+        },
+        ">"
+      )
+      .to(
+        img2,
+        {
+          xPercent: 300,
+          duration: 10,
+          ease: "circ.out",
+        },
+        ">"
+      )
+      .fromTo(
+        img3,
+        {
+          xPercent: -300,
+          rotate: 5,
+        },
+        {
+          xPercent: -100,
+          duration: 10,
+          ease: "circ.in",
+        },
+        "-=20",
+      )
+      .to(
+        img3,
+        {
+          xPercent: 0,
+          scale: 1.6,
+          rotate: 0,
+          duration: 5,
+          ease: "circ.out",
+        },
+        ">"
+      )
+      .to(
+        img3,
+        {
+          xPercent: 100,
+          scale: 1,
+          rotate: -5,
+          duration: 5,
+          ease: "circ.in",
+        },
+        ">"
+      )
+      .to(
+        img3,
+        {
+          xPercent: 300,
+          duration: 10,
+          ease: "circ.out",
+        },
+        ">"
+      )
       .addLabel("end design")
       .to(design, {
         opacity: 0,
         duration: 4,
-      })
+      });
 
     addTimeline(designTl);
   }, [addTimeline]);
@@ -258,49 +351,48 @@ function Design({ addTimeline }) {
           </svg>
         </div>
         <div className="design__line"></div>
-        <div className="wrapper__image" ref={(el) => (img1 = el)}>
-          <img 
-          className="design__img" 
-          srcSet={
-            `${MalmoSmall} 700w,
-            ${Malmo} 1500w`
-          }
-          src={Malmo} 
-          loading="lazy"
-          alt="" />
-          <a href="https://www.akademibokhandeln.se/bok/minnen-fran-malmo-del-2-fran-regementsgatan-till-kopenhamnsvagen/9789163943034/">
-            <h6>Inset from "Minnen från Malmö"</h6>
-          </a>
-        </div>
-        <div className="wrapper__image2" ref={(el) => (img2 = el)}>
-          <img 
-          className="design__img" 
-          srcSet={
-            `${OlandSmall} 700w,
-            ${Oland} 1500w`
-          }
-          src={Oland} 
-          loading="lazy"
-          alt="" />
-          <a href="https://www.naturbokhandeln.se/sv/articles/2.304.10957/under-olands-himlar-johansson">
-            <h6>Cover of "Under Ölands himlar"</h6>
-          </a>
-        </div>
-        <div className="wrapper__image3" ref={(el) => (img3 = el)}>
-          <img 
-          className="design__img" 
-          srcSet={
-            `${BlandSmall} 700w,
-            ${Bland} 1500w`
-          }
-          src={Bland} 
-          loading="lazy"
-          alt="" />
-          <a href="https://open.spotify.com/album/27Lwtp6YBQGHYXAzR2IxYY?si=18fD6qdwRT-LmT_95_vOSw">
-            <h6>
-              CD-cover of "Each Bend I Pass" by <i>The Bland</i>
-            </h6>
-          </a>
+        <div className="wrapper-3d">
+          <div className="wrapper__image" ref={(el) => (img1 = el)}>
+            <img
+              className="design__img"
+              srcSet={`${MalmoSmall} 700w,
+            ${Malmo} 1500w`}
+              src={Malmo}
+              loading="lazy"
+              alt=""
+            />
+            <a href="https://www.akademibokhandeln.se/bok/minnen-fran-malmo-del-2-fran-regementsgatan-till-kopenhamnsvagen/9789163943034/">
+              <h6>Inset from "Minnen från Malmö"</h6>
+            </a>
+          </div>
+          <div className="wrapper__image2" ref={(el) => (img2 = el)}>
+            <img
+              className="design__img"
+              srcSet={`${OlandSmall} 700w,
+            ${Oland} 1500w`}
+              src={Oland}
+              loading="lazy"
+              alt=""
+            />
+            <a href="https://www.naturbokhandeln.se/sv/articles/2.304.10957/under-olands-himlar-johansson">
+              <h6>Cover of "Under Ölands himlar"</h6>
+            </a>
+          </div>
+          <div className="wrapper__image3" ref={(el) => (img3 = el)}>
+            <img
+              className="design__img"
+              srcSet={`${BlandSmall} 700w,
+            ${Bland} 1500w`}
+              src={Bland}
+              loading="lazy"
+              alt=""
+            />
+            <a href="https://open.spotify.com/album/27Lwtp6YBQGHYXAzR2IxYY?si=18fD6qdwRT-LmT_95_vOSw">
+              <h6>
+                CD-cover of "Each Bend I Pass" by <i>The Bland</i>
+              </h6>
+            </a>
+          </div>
         </div>
         <p className="design__p" ref={(el) => (p = el)}>
           Graphic design is something I've been doing since about 2014 but have

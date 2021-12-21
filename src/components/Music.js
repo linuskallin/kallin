@@ -42,137 +42,155 @@ function Music({ addTimeline }) {
     });
 
     musicTl
-    .addLabel("music fadein")
-    .from(music, {
-      opacity: 0,
-      duration: 4,
-    })
-    .addLabel("start music")
-    .to(
-      maskMusic,
-      {
-        strokeDashoffset: 0,
-        duration: 20,
-      },
-      "start music"
-    )
-    .fromTo(
-      img1,
-      {
-        autoAlpha: 0,
-        y: 100,
-      },
-      {
-        autoAlpha: 1,
-        duration: 6,
-        y: 0,
-      },
-      "start music"
-    )
-    .to({}, {duration: 1}, ">")
-    .fromTo(
-      p,
-      {
-        autoAlpha: 0,
-        y: 100,
-      },
-      {
-        autoAlpha: 1,
-        duration: 6,
-        y: 0,
-      },
-      "start music"
-    )
-    .to({}, {duration: 2}, ">")
-    .addLabel("part2")
-    .to(p, {
-      autoAlpha: 0,
-      duration: 4,
-    },
-    "part2"
-    )
-    .to(img1, {
-      autoAlpha: 0,
-      duration: 4,
-    },
-    "part2")
-    .addLabel("part3")
-    .fromTo(
-      img2,
-      {
-        autoAlpha: 0,
-        y: 100,
-      },
-      {
-        autoAlpha: 1,
-        duration: 6,
-        y: 0,
-      },
-      "part3"
-    )
-    .to({}, {duration: 1}, ">")
-    .fromTo(p2, {
-        autoAlpha: 0,
-        y: 100,
-      },
-      {
-        autoAlpha: 1,
-        duration: 6,
-        y: 0,
-      },
-      "part3"
-    )
-    .to({}, {duration: 8}, ">")
-    .addLabel("part4")
-    .to(p2, {
-      autoAlpha: 0,
-      duration: 4,
-    },
-    "part4"
-    )
-    .to(img2, {
-      autoAlpha: 0,
-      duration: 4,
-    },
-    "part4")
-    .addLabel("part5")
-    .fromTo(
-      img3,
-      {
-        autoAlpha: 0,
-        y: 100,
-      },
-      {
-        autoAlpha: 1,
-        duration: 6,
-        y: 0,
-      },
-      "part5"
-    )
-    .to({}, {duration: 1}, ">")
-    .fromTo(p3, {
-      autoAlpha: 0,
-      y: 100,
-    },
-    {
-      autoAlpha: 1,
-      duration: 6,
-      y: 0,
-    },
-    "part5"
-    )
-    .to({}, {duration: 8}, ">")
-    .addLabel("end music")
-    .to(music, {
-      opacity: 0,
-      duration: 4,
-    })
+      .addLabel("music fadein")
+      .from(music, {
+        opacity: 0,
+        duration: 4,
+      })
+      .addLabel("start music")
+      .to(
+        maskMusic,
+        {
+          strokeDashoffset: 0,
+          duration: 20,
+        },
+        "start music"
+      )
+      .fromTo(
+        img1,
+        {
+          autoAlpha: 0,
+          y: 100,
+        },
+        {
+          autoAlpha: 1,
+          duration: 6,
+          y: 0,
+        },
+        "start music"
+      )
+      .to({}, { duration: 1 }, ">")
+      .fromTo(
+        p,
+        {
+          autoAlpha: 0,
+          y: 100,
+        },
+        {
+          autoAlpha: 1,
+          duration: 6,
+          y: 0,
+        },
+        "start music"
+      )
+      .to({}, { duration: 2 }, ">")
+      .addLabel("part2")
+      .to(
+        p,
+        {
+          autoAlpha: 0,
+          y: -100,
+          duration: 4,
+        },
+        "part2"
+      )
+      .to(
+        img1,
+        {
+          autoAlpha: 0,
+          y: -100,
+          duration: 4,
+        },
+        "part2"
+      )
+      .addLabel("part3")
+      .fromTo(
+        img2,
+        {
+          autoAlpha: 0,
+          y: 100,
+        },
+        {
+          autoAlpha: 1,
+          duration: 6,
+          y: 0,
+        },
+        "part3"
+      )
+      .to({}, { duration: 1 }, ">")
+      .fromTo(
+        p2,
+        {
+          autoAlpha: 0,
+          y: 100,
+        },
+        {
+          autoAlpha: 1,
+          duration: 6,
+          y: 0,
+        },
+        "part3"
+      )
+      .to({}, { duration: 8 }, ">")
+      .addLabel("part4")
+      .to(
+        p2,
+        {
+          autoAlpha: 0,
+          y: -100,
+          duration: 4,
+        },
+        "part4"
+      )
+      .to(
+        img2,
+        {
+          autoAlpha: 0,
+          y: -100,
+          duration: 4,
+        },
+        "part4"
+      )
+      .addLabel("part5")
+      .fromTo(
+        img3,
+        {
+          autoAlpha: 0,
+          y: 100,
+        },
+        {
+          autoAlpha: 1,
+          duration: 6,
+          y: 0,
+        },
+        "part5"
+      )
+      .to({}, { duration: 1 }, ">")
+      .fromTo(
+        p3,
+        {
+          autoAlpha: 0,
+          y: 100,
+        },
+        {
+          autoAlpha: 1,
+          duration: 6,
+          y: 0,
+        },
+        "part5"
+      )
+      .to({}, { duration: 8 }, ">")
+      .addLabel("end music")
+      .to(music, {
+        opacity: 0,
+        duration: 4,
+      });
 
     addTimeline(musicTl);
   }, [addTimeline]);
 
   return (
-    <section  id="music" className="music" ref={(el) => (music = el)}>
+    <section id="music" className="music" ref={(el) => (music = el)}>
       <div className="music__title">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.66 31.84">
           <defs>
@@ -228,7 +246,14 @@ function Music({ addTimeline }) {
 
       <div className="music__line"></div>
       <div className="wrapper__image3" ref={(el) => (img3 = el)}>
-        <iframe className="music__iframe" src="https://www.youtube.com/embed/9jx4wgAle_Y?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        <iframe
+          className="music__iframe"
+          src="https://www.youtube.com/embed/9jx4wgAle_Y?controls=0"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
         <h6 className="sub-white">
           Co-written and produced both the music and this video for Kallblod.
         </h6>
@@ -236,15 +261,14 @@ function Music({ addTimeline }) {
       <div className="wrapper__image2" ref={(el) => (img2 = el)}>
         <img
           className="music__img"
-          srcSet={
-            `${SysterSmall} 700w,
-            ${Syster} 1500w`
-          }
+          srcSet={`${SysterSmall} 700w,
+            ${Syster} 1500w`}
           sizes="(min-width: 1500px) 1500px, 700px"
           src={SysterSmall}
           loading="lazy"
           alt="Syster Sol på Öland Roots"
         />
+        <p className="arrow-img">me --{`>`}</p>
         <h6>
           Playing with Syster Sol at Öland Roots
           <br />
@@ -254,10 +278,8 @@ function Music({ addTimeline }) {
       <div className="wrapper__image" ref={(el) => (img1 = el)}>
         <img
           className="music__img"
-          srcSet={
-            `${RudolstadtSmall} 700w,
-            ${Rudolstadt} 1500w`
-          }
+          srcSet={`${RudolstadtSmall} 700w,
+            ${Rudolstadt} 1500w`}
           sizes="(min-width: 1500px) 700px, 700px"
           src={RudolstadtSmall}
           loading="lazy"
@@ -269,7 +291,7 @@ function Music({ addTimeline }) {
           Foto: Matthias Kimpel
         </h6>
       </div>
-      <div className="music__p" ref={(el) => (p = el)}> 
+      <div className="music__p" ref={(el) => (p = el)}>
         <p>
           Music is my biggest passion. I've been playing piano since I was 12.
           And since then I've been doing all kinds of stuff related to music:
@@ -281,7 +303,7 @@ function Music({ addTimeline }) {
           <li>Recording</li>
           <li>Producing</li>
           <li>Writing songs</li>
-          <li>Writing film music</li>
+          <li>Writing film scores</li>
           <li>Mixing</li>
           <li>Mastering</li>
           <li>Creating music videos</li>

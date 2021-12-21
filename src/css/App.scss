@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;900&display=swap');
-@import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 body,
 html {
@@ -129,17 +128,6 @@ span {
 
 // ------------------------------------------- WRAPPERS & STUFF
 
-.loader {
-  background-color: white;
-  position: absolute;
-  text-align: center;
-  vertical-align: middle;
-  width: 100vw;
-  height: 100vh;
-  z-index: 50;
-  transition: all 1s ease-in-out;
-}
-
 .wrapper__image,
 .wrapper__image2,
 .wrapper__image3,
@@ -147,81 +135,8 @@ span {
   position: relative;
   // height: 100%;
   z-index: 5;
-  // transition: all $medium ease-in-out;
+  // transition: transform $medium ease-in-out;
 }
-
-.wrapper__fullscreen {
-  position: fixed;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba($color: #000000, $alpha: 0.8);
-  z-index: 199;
-}
-
-.fullscreen {
-  z-index: 200;
-  position: relative;
-  left: 5vw;
-  top: 5vh;
-  height: 90%;
-  width: 90%;
-  object-fit: cover;
-  z-index: 200;
-  grid-area: unset;
-  pointer-events: none;
-  transform: none;
-  transition: all $fast ease-in-out;
-}
-
-.close {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: $main-font;
-  font-size: 30px;
-  color: white;
-  width: 6vw;
-  height: 6vw;
-  left: 5vw;
-  top: 40px;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 300;
-  transition: all $fast ease-in-out;
-  cursor: pointer;
-}
-
-.close:hover {
-  opacity: 1;
-}
-
-.sub-fullscreen {
-  position: absolute;
-  right: 6vw;
-  bottom: 50px;
-  z-index: 300;
-  opacity: 1;
-}
-
-// .wrapper__image:after,
-// .wrapper__image2:after,
-// .wrapper__image3:after,
-// .wrapper__image4:after {
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   font-family: $main-font;
-//   font-size: 30px;
-//   content: "X";
-//   width: 40px;
-//   height: 40px;
-//   right: 15px;
-//   top: 10px;
-//   background-color: white;
-//   opacity: 0.5
-// }
 
 .wrapper__image:after:hover,
 .wrapper__image2:after:hover,
@@ -230,20 +145,21 @@ span {
   opacity: 1;
 }
 
-.wrapper__image:hover,
-.wrapper__image2:hover,
-.wrapper__image3:hover,
-.wrapper__image4:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 5px 30px -6px rgba(0, 0, 0, 0.5);
-  transition: all $medium ease-in-out;
-}
+// .wrapper__image:hover,
+// .wrapper__image2:hover,
+// .wrapper__image3:hover,
+// .wrapper__image4:hover {
+//   box-shadow: 0px 5px 30px -6px rgba(0, 0, 0, 0.5);
+//   transition: all $medium ease-in-out;
+//   transform: scale(1.05) !important;
+// }
 
 .wrapper__image:hover h6,
 .wrapper__image2:hover h6,
 .wrapper__image3:hover h6,
 .wrapper__image4:hover h6 {
   opacity: 1;
+  transition: all $medium ease-in-out;
 }
 
 .wrapper__perspective {
@@ -330,7 +246,7 @@ section {
 
 .menu--active {
   transform: scale(1.1);
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .menu--active img {
@@ -556,14 +472,11 @@ section {
   width: 40vw;
   height: 40vw;
   object-fit: cover;
+  object-position: top;
+  transform-origin: top;
   filter: sepia(0.7);
   opacity: 1;
   display: block;
-}
-
-.linus__img2,
-.linus__img3 {
-  object-position: top;
 }
 
 .linus__flying-images .wrapper__image2,
@@ -576,6 +489,7 @@ section {
 .linus__flying-images .wrapper__image3:hover,
 .linus__flying-images .wrapper__image4:hover {
   z-index: 100;
+  transform: scale(1.05);
 }
 
 .linus__flying-images .wrapper__image2 {
@@ -591,13 +505,7 @@ section {
 
 .linus__flying-images .wrapper__image4 {
   right: 80vw;
-  transform: rotate(2deg);
-  transform: scale(0.9);
-}
-
-.linus__img2,
-.linus__img3 {
-  transform-origin: top;
+  transform: rotate(2deg) scale(0.9);
 }
 
 .linus__p {
@@ -751,14 +659,14 @@ section {
 
 .scroll-inside {
   position: relative;
-  transform: rotate(30deg) translateX(-25%) translateY(100%);
+  transform: rotate(30deg) translateX(-25%) translateY(100%) scale(0.7);
   display: inline-block;
   animation: blink 1s linear 1s infinite alternate;
   pointer-events: none;
 }
 
 .arrow-up {
-  transform: rotate(-90deg) translateX(20%);
+  transform: rotate(-90deg) translateX(10%);
   transform-origin: center;
 }
 
@@ -853,24 +761,41 @@ section {
   align-self: flex-end;
 }
 
-.design .wrapper__image {
-  grid-area: 4 / 2 / 5 / 5;
+.design .wrapper-3d{
+  grid-area: 4 / 4 / 6 / 6;
+  display: inline-block;
+  position: absolute;
+  width: 30vw;
 }
 
-.design .wrapper__image2 {
-  grid-area: 4 / 2 / 5 / 5;
+.design .wrapper__image, .design .wrapper__image2, .design .wrapper__image3 {
+  overflow: visible;
+  transform-style: preserve-3d;
+  transform-origin: center;
 }
 
-.design .wrapper__image3 {
-  grid-area: 4 / 2 / 5 / 5;
+.design .wrapper__image{
+  position: absolute;
+  z-index: 50;
+}
+
+.design .wrapper__image2{
+  position: absolute;
+  z-index: 40;
+}
+
+.design .wrapper__image3{
+  position: absolute;
 }
 
 .design__img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  // height: 100%;
+  overflow: visible;
+  // object-fit: cover;
   object-position: center;
   align-self: end;
+  display: block;
 }
 
 .design__p {
@@ -998,13 +923,22 @@ section {
 }
 
 .music .wrapper__image2 {
-  grid-area: 2 / 2 / 4 / 5;
+  grid-area: 2 / 5 / 4 / 8;
   z-index: 6;
 }
 
 .music .wrapper__image3 {
   grid-area: 2 / 5 / 4 / 8;
   z-index: 7;
+}
+
+.music .arrow-img{
+  color: white;
+  position: relative;
+  bottom: -25%;
+  right: -25%;
+  transform: rotate(90deg);
+  animation: blink 1s linear 1s infinite alternate;
 }
 
 .music__img {
@@ -1021,13 +955,8 @@ section {
   z-index: 4;
 }
 
-.music__p, .music__p3 {
+.music__p, .music__p2, .music__p3 {
   grid-area: 2 / 2 / 4 / 5;
-  z-index: 2;
-}
-
-.music__p2{
-  grid-area: 2 / 5 / 4 / 8;
   z-index: 2;
 }
 

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, forwardRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,7 +8,7 @@ import LinusImg2 from "../images/other/linus.jpg";
 import LinusImg3 from "../images/other/linus2.jpg";
 import LinusImg4 from "../images/other/linus3.jpg";
 
-function Linus({ addTimeline, forwardRef }) {
+function Linus({ addTimeline }) {
   gsap.registerPlugin(ScrollTrigger);
 
   let linus = useRef(null);
@@ -22,8 +22,6 @@ function Linus({ addTimeline, forwardRef }) {
   let img3 = useRef(null);
   let img4 = useRef(null);
   let box1 = useRef(null);
-
-  const [fullscreen, setFullscreen] = useState(false);
 
   useEffect(() => {
     // console.log(forwardRef)
@@ -46,17 +44,20 @@ function Linus({ addTimeline, forwardRef }) {
 
     linusTl
       .addLabel("linus fadein")
-      .from(linus,{
-        opacity: 0,
-        duration: 4,
-      },
-      "linus fadein")
+      .from(
+        linus,
+        {
+          opacity: 0,
+          duration: 4,
+        },
+        "linus fadein"
+      )
       .addLabel("start linus")
       .to(box1, {
         rotate: 190,
         xPercent: 180,
         duration: 10,
-      })
+      }, ">-2")
       .to(
         maskLi,
         {
@@ -149,19 +150,13 @@ function Linus({ addTimeline, forwardRef }) {
       // },
       // "disperse")
       .addLabel("end linus")
-      .to(linus,{
+      .to(linus, {
         opacity: 0,
         duration: 4,
-      })
+      });
 
     addTimeline(linusTl);
-
-    if (fullscreen) {
-      linus.style.cssText = "perspective: none; position: fixed;";
-    } else if (!fullscreen) {
-      linus.style.cssText = "perspective: 1000px; position: fixed;";
-    }
-  }, [addTimeline, fullscreen, forwardRef]);
+  }, [addTimeline]);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (linus = el)}>
@@ -234,31 +229,14 @@ function Linus({ addTimeline, forwardRef }) {
           </svg>
         </div>
         <div className="linus__line"></div>
-          <div
-            className="wrapper__image"
-            onClick={() => setFullscreen(!fullscreen)}
-            ref={(el) => (img1 = el)}
-          >
-            <img
-              className="linus__img"
-              src={LinusImg}
-              alt="Linus with hands behind head"
-            />
-            <h6>Photo: Johan Sund</h6>
-          </div>
-          {fullscreen &&
-            <div className="wrapper__fullscreen">
-              <p className="close" onClick={() => setFullscreen(!fullscreen)}>
-                X
-              </p>
-              <img
-                className="fullscreen"
-                src={LinusImg}
-                alt="Linus with hands behind head"
-              />
-              <h6 className="sub-fullscreen">Photo: Johan Sund</h6>
-            </div>
-          }
+        <div className="wrapper__image" ref={(el) => (img1 = el)}>
+          <img
+            className="linus__img"
+            src={LinusImg}
+            alt="Linus with hands behind head"
+          />
+          <h6>Photo: Johan Sund</h6>
+        </div>
         <div className="boxes">
           <div className="box1" ref={(el) => (box1 = el)}></div>
         </div>
@@ -276,8 +254,8 @@ function Linus({ addTimeline, forwardRef }) {
           Freelancing as a musician/graphic-designer/whatever since 2013.
           <br />
           <br />
-          My latest endeavour has been to learn Front End Programming and in the summer of
-          2021 I finished my two year Higher Vocational Education
+          My latest endeavour has been to learn Front End Programming and in the
+          summer of 2021 I finished my two year Higher Vocational Education
           (Yrkeshögskola) as a Front End Developer.
         </p>
         <h5 className="linus__h5">Linus</h5>
@@ -290,9 +268,9 @@ function Linus({ addTimeline, forwardRef }) {
               alt="Linus jumping with crowd in the background"
             />
             <h6 className="sub-white">
-              På festival
+              Festival vibes
               <br />
-              Foto: Matteus Bartlett
+              Photo: Matteus Bartlett
             </h6>
           </div>
           <div className="wrapper__image3 " ref={(el) => (img3 = el)}>
@@ -303,9 +281,9 @@ function Linus({ addTimeline, forwardRef }) {
               alt="Linus smiling"
             />
             <h6 className="sub-white">
-              En vanlig dag på IT-högskolan
+              A regular day at IT-Högskolan
               <br />
-              Foto: IT-högskolan
+              Photo: IT-högskolan
             </h6>
           </div>
           <div className="wrapper__image4" ref={(el) => (img4 = el)}>
@@ -323,4 +301,4 @@ function Linus({ addTimeline, forwardRef }) {
   );
 }
 
-export default forwardRef(Linus);
+export default Linus;

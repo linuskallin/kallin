@@ -98,9 +98,11 @@ function Programming({ addTimeline }) {
         },
         ">"
       )
-      .to("#code", {
-        paused: false,
-        text: `
+      .to(
+        "#code",
+        {
+          paused: false,
+          text: `
         componentDidUpdate() {
           if(window.location.pathname !== this.state.pathname){
             this.handleScopePosition()
@@ -122,48 +124,55 @@ function Programming({ addTimeline }) {
           }
         }
         `,
-        ease: "none",
-        duration: 14,
-      },
-      "start programming"
+          ease: "none",
+          duration: 14,
+        },
+        "start programming"
       )
       .addLabel("pause")
-      .to({}, {duration: 8}, "pause")
+      .to({}, { duration: 8 }, "pause")
       .addLabel("iframe")
-      .to( p, {
-        opacity: 0,
-        duration: 4,
-      },
-      "iframe")
-      .fromTo(iframe1, {
-        xPercent: -150,
-        opacity: 0,
-      },
-      {
-        xPercent: 0,
-        opacity: 1,
-        duration: 10,
-      },
-      "iframe"
+      .to(
+        p,
+        {
+          opacity: 0,
+          duration: 4,
+        },
+        "iframe"
       )
-      .fromTo(iframe2, {
-        xPercent: 150,
-        opacity: 0,
-      },
-      {
-        xPercent: 0,
-        opacity: 1,
-        duration: 10,
-      },
-      ">+4"
+      .fromTo(
+        iframe1,
+        {
+          xPercent: -150,
+          opacity: 0,
+        },
+        {
+          xPercent: 0,
+          opacity: 1,
+          duration: 10,
+        },
+        "iframe"
+      )
+      .fromTo(
+        iframe2,
+        {
+          xPercent: 150,
+          opacity: 0,
+        },
+        {
+          xPercent: 0,
+          opacity: 1,
+          duration: 10,
+        },
+        ">+4"
       )
       .addLabel("paus")
-      .to({}, {duration: 14}, "paus")
+      .to({}, { duration: 14 }, "paus")
       .addLabel("end programming")
       .to(programming, {
         opacity: 0,
         duration: 4,
-      })
+      });
 
     addTimeline(programmingTl);
   }, [addTimeline]);
@@ -270,8 +279,10 @@ function Programming({ addTimeline }) {
         </a>
         <div className="scroll-inside">
           <p className="arrow-up">--{`>`}</p>
-          <p>scroll & click
-            <br/> inside frames</p>
+          <p>
+            scroll & click
+            <br /> inside frames
+          </p>
         </div>
       </div>
       <div className="wrapper__image2" ref={(el) => (iframe2 = el)}>
