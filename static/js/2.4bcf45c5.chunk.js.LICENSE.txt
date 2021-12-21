@@ -5,7 +5,7 @@ object-assign
 */
 
 /*!
- * CSSPlugin 3.6.1
+ * CSSPlugin 3.8.0
  * https://greensock.com
  *
  * Copyright 2008-2021, GreenSock. All rights reserved.
@@ -15,7 +15,7 @@ object-assign
 */
 
 /*!
- * GSAP 3.6.1
+ * GSAP 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -25,7 +25,7 @@ object-assign
 */
 
 /*!
- * ScrollToPlugin 3.6.1
+ * ScrollToPlugin 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -35,7 +35,7 @@ object-assign
 */
 
 /*!
- * ScrollTrigger 3.6.1
+ * ScrollTrigger 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -45,7 +45,7 @@ object-assign
 */
 
 /*!
- * TextPlugin 3.6.1
+ * TextPlugin 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -55,7 +55,7 @@ object-assign
 */
 
 /*!
- * strings: 3.6.1
+ * strings: 3.8.0
  * https://greensock.com
  *
  * Copyright 2008-2021, GreenSock. All rights reserved.
