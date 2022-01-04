@@ -390,9 +390,8 @@ section {
 // ------------------------------------------- LINUS
 
 .linus {
-  // height: 100vh;
+  height: 100vh;
   padding-top: 2px;
-  padding-bottom: 20vh;
   position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
@@ -580,7 +579,7 @@ section {
 // ------------------------------------------- PROGRAMMING
 
 .programming {
-  // height: 100vh;
+  height: 100vh;
   position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
@@ -725,7 +724,7 @@ section {
 // ------------------------------------------- GRAPHIC DESIGN
 
 .design {
-  // height: 100vh;
+  height: 100vh;
   position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
@@ -778,9 +777,9 @@ section {
   transform-style: preserve-3d;
   transform-origin: center;
   position: absolute;
-  width: 40vw;
+  width: 35vw;
   top: 25vh;
-  left: 27%;
+  left: 30%;
   z-index: 1000;
 }
 
@@ -867,7 +866,7 @@ section {
 // ------------------------------------------- MUSIC
 
 .music {
-  // height: 100vh;
+  height: 100vh;
   position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;

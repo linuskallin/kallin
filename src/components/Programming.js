@@ -12,7 +12,6 @@ function Programming({ addTimeline }) {
   let li2 = useRef(null);
   let li3 = useRef(null);
   let iframe1 = useRef(null);
-  let iframe2 = useRef(null);
   let maskProgramming = useRef(null);
 
   useEffect(() => {
@@ -153,19 +152,6 @@ function Programming({ addTimeline }) {
         },
         "iframe"
       )
-      .fromTo(
-        iframe2,
-        {
-          xPercent: 150,
-          opacity: 0,
-        },
-        {
-          xPercent: 0,
-          opacity: 1,
-          duration: 10,
-        },
-        ">+4"
-      )
       .addLabel("paus")
       .to({}, { duration: 14 }, "paus")
       .addLabel("end programming")
@@ -281,25 +267,9 @@ function Programming({ addTimeline }) {
           <p className="arrow-up">--{`>`}</p>
           <p>
             scroll & click
-            <br /> inside frames
+            <br /> inside frame
           </p>
         </div>
-      </div>
-      <div className="wrapper__image2" ref={(el) => (iframe2 = el)}>
-        <iframe
-          className="programming__iframe2"
-          title="språkkraft.se"
-          src="https://sprakkraft.se"
-          loading="lazy"
-          alt=""
-        />
-        <a
-          href="https://sprakkraft.se"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <h6>sprakkraft.se</h6>
-        </a>
       </div>
       <div className="programming__p" ref={(el) => (p = el)}>
         <p>
