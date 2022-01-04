@@ -292,6 +292,7 @@ function Music({ addTimeline }) {
         </h6>
       </div>
       <div className="music__p" ref={(el) => (p = el)}>
+        <br/>
         <p>
           Music is my biggest passion. I've been playing piano since I was 12.
           And since then I've been doing all kinds of stuff related to music:
@@ -311,6 +312,7 @@ function Music({ addTimeline }) {
         <br />
       </div>
       <div className="music__p2" ref={(el) => (p2 = el)}>
+        <br/>
         <p>A selection of artists I've played with:</p>
         <ul>
           <li>Svenska Akademien</li>
@@ -322,6 +324,7 @@ function Music({ addTimeline }) {
         <br />
       </div>
       <div className="music__p3" ref={(el) => (p3 = el)}>
+        <br/>
         <p>Worked with sound and music at:</p>
         <ul>
           <li>Sveriges Television (SVT)</li>

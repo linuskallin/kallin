@@ -351,7 +351,7 @@ function Design({ addTimeline }) {
           </svg>
         </div>
         <div className="design__line"></div>
-        <div className="wrapper-3d">
+
           <div className="wrapper__image" ref={(el) => (img1 = el)}>
             <img
               className="design__img"
@@ -393,7 +393,6 @@ function Design({ addTimeline }) {
               </h6>
             </a>
           </div>
-        </div>
         <p className="design__p" ref={(el) => (p = el)}>
           Graphic design is something I've been doing since about 2014 but have
           had a lifelong interest in. I've mostly done books, both insets and

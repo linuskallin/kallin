@@ -241,6 +241,7 @@ function Linus({ addTimeline }) {
           <div className="box1" ref={(el) => (box1 = el)}></div>
         </div>
         <p className="linus__p" ref={(el) => (p = el)}>
+          <br />
           I love music, art, movies, creativity, meditation, nature, travel,
           learning new things, discussions, meeting people.
           <br />
