@@ -3,12 +3,12 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Malmo from "../images/other/malmo.jpg";
-import MalmoSmall from "../images/other/malmo-s.jpg";
-import Oland from "../images/other/design2.jpg";
-import OlandSmall from "../images/other/design2-s.jpg";
-import Bland from "../images/other/bland.jpg";
-import BlandSmall from "../images/other/bland-s.jpg";
+import Malmo from "../images/other/malmo.webp";
+import MalmoSmall from "../images/other/malmo-s.webp";
+import Oland from "../images/other/design2.webp";
+import OlandSmall from "../images/other/design2-s.webp";
+import Bland from "../images/other/bland.webp";
+import BlandSmall from "../images/other/bland-s.webp";
 
 function Design({ addTimeline }) {
   gsap.registerPlugin(ScrollTrigger);

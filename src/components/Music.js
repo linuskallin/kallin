@@ -3,12 +3,12 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Rudolstadt from "../images/other/rudolstadt.jpg";
-import RudolstadtSmall from "../images/other/rudolstadt-s.jpg";
-import Syster from "../images/other/syster.jpg";
-import SysterSmall from "../images/other/syster-s.jpg";
-import Cloud1 from "../images/other/cloud1.png";
-import Cloud2 from "../images/other/cloud2.png";
+import Rudolstadt from "../images/other/rudolstadt.webp";
+import RudolstadtSmall from "../images/other/rudolstadt-s.webp";
+import Syster from "../images/other/syster.webp";
+import SysterSmall from "../images/other/syster-s.webp";
+import Cloud1 from "../images/other/cloud1.webp";
+import Cloud2 from "../images/other/cloud2.webp";
 
 function Music({ addTimeline }) {
   gsap.registerPlugin(ScrollTrigger);

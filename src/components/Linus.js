@@ -3,10 +3,10 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import LinusImg from "../images/other/linus1.jpg";
-import LinusImg2 from "../images/other/linus.jpg";
-import LinusImg3 from "../images/other/linus2.jpg";
-import LinusImg4 from "../images/other/linus3.jpg";
+import LinusImg from "../images/other/linus1.webp";
+import LinusImg2 from "../images/other/linus.webp";
+import LinusImg3 from "../images/other/linus2.webp";
+import LinusImg4 from "../images/other/linus3.webp";
 
 function Linus({ addTimeline }) {
   gsap.registerPlugin(ScrollTrigger);
