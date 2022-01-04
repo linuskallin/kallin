@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/kallin/static/css/main.fcd4c14a.chunk.css",
-    "main.js": "/kallin/static/js/main.89de8f60.chunk.js",
-    "main.js.map": "/kallin/static/js/main.89de8f60.chunk.js.map",
+    "main.css": "/kallin/static/css/main.c7682f95.chunk.css",
+    "main.js": "/kallin/static/js/main.9fbf371c.chunk.js",
+    "main.js.map": "/kallin/static/js/main.9fbf371c.chunk.js.map",
     "runtime-main.js": "/kallin/static/js/runtime-main.9812d8e3.js",
     "runtime-main.js.map": "/kallin/static/js/runtime-main.9812d8e3.js.map",
     "static/js/2.4bcf45c5.chunk.js": "/kallin/static/js/2.4bcf45c5.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.1051d52c.chunk.js": "/kallin/static/js/3.1051d52c.chunk.js",
     "static/js/3.1051d52c.chunk.js.map": "/kallin/static/js/3.1051d52c.chunk.js.map",
     "index.html": "/kallin/index.html",
-    "static/css/main.fcd4c14a.chunk.css.map": "/kallin/static/css/main.fcd4c14a.chunk.css.map",
+    "static/css/main.c7682f95.chunk.css.map": "/kallin/static/css/main.c7682f95.chunk.css.map",
     "static/js/2.4bcf45c5.chunk.js.LICENSE.txt": "/kallin/static/js/2.4bcf45c5.chunk.js.LICENSE.txt",
     "static/media/Code1.966f2d40.svg": "/kallin/static/media/Code1.966f2d40.svg",
     "static/media/Home2.4f52fdf7.svg": "/kallin/static/media/Home2.4f52fdf7.svg",
@@ -38,7 +38,7 @@
   "entrypoints": [
     "static/js/runtime-main.9812d8e3.js",
     "static/js/2.4bcf45c5.chunk.js",
-    "static/css/main.fcd4c14a.chunk.css",
-    "static/js/main.89de8f60.chunk.js"
+    "static/css/main.c7682f95.chunk.css",
+    "static/js/main.9fbf371c.chunk.js"
   ]
 }
