@@ -1,12 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import LinusImg from "../images/other/linus1.webp";
-import LinusImg2 from "../images/other/linus.webp";
-import LinusImg3 from "../images/other/linus2.webp";
-import LinusImg4 from "../images/other/linus3.webp";
+import LinusImg from "../images/other/linus4.jpg";
+import LinusImg2 from "../images/other/linus-s.webp";
+import LinusImg3 from "../images/other/linus2-s.webp";
+import LinusImg4 from "../images/other/linus3-s.webp";
 
 function Linus({ addTimeline }) {
   gsap.registerPlugin(ScrollTrigger);
@@ -30,13 +30,8 @@ function Linus({ addTimeline }) {
       scrollTrigger: {
         trigger: linus,
         pin: true,
-        end: "4000",
+        pinSpacing: false,
         fastScrollEnd: true,
-        pinSpacing: true,
-        // snap: {
-        //   snapTo: "labels",
-        //   duration: 0.5,
-        // },
         scrub: true,
         toggleActions: "play pause reverse none",
       },
@@ -47,17 +42,21 @@ function Linus({ addTimeline }) {
       .from(
         linus,
         {
-          opacity: 0,
-          duration: 4,
+          autoAlpha: 0,
+          duration: 2,
         },
-        "linus fadein"
+        "linus fadein>-10"
       )
       .addLabel("start linus")
-      .to(box1, {
-        rotate: 190,
-        xPercent: 180,
-        duration: 10,
-      }, ">-2")
+      .to(
+        box1,
+        {
+          rotate: 190,
+          xPercent: 180,
+          duration: 10,
+        },
+        ">-2"
+      )
       .to(
         maskLi,
         {
@@ -141,7 +140,7 @@ function Linus({ addTimeline }) {
         zIndex: 10,
         duration: 5,
       })
-      .to({}, { duration: 5 })
+      .to({}, { duration: 4 })
       // .addLabel("disperse")
       // .to([img2, img3, img4], {
       //   xPercent: 100,
@@ -151,8 +150,8 @@ function Linus({ addTimeline }) {
       // "disperse")
       .addLabel("end linus")
       .to(linus, {
-        opacity: 0,
-        duration: 4,
+        autoAlpha: 0,
+        duration: 2,
       });
 
     addTimeline(linusTl);
@@ -235,13 +234,12 @@ function Linus({ addTimeline }) {
             src={LinusImg}
             alt="Linus with hands behind head"
           />
-          <h6>Photo: Johan Sund</h6>
+          <h6>Photo: Anton Torstensson</h6>
         </div>
         <div className="boxes">
           <div className="box1" ref={(el) => (box1 = el)}></div>
         </div>
         <p className="linus__p" ref={(el) => (p = el)}>
-          <br />
           I love music, art, movies, creativity, meditation, nature, travel,
           learning new things, discussions, meeting people.
           <br />
@@ -269,7 +267,7 @@ function Linus({ addTimeline }) {
               alt="Linus jumping with crowd in the background"
             />
             <h6 className="sub-white">
-              Festival vibes
+              Festival vibes on Öland Roots
               <br />
               Photo: Matteus Bartlett
             </h6>
@@ -294,7 +292,7 @@ function Linus({ addTimeline }) {
               loading="lazy"
               alt="Linus with dreadlocks"
             />
-            <h6 className="sub-white">Dem dreads</h6>
+            <h6 className="sub-white">Dreads 2007</h6>
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,8 +17,9 @@ const Home = ({ addTimeline }) => {
       scrollTrigger: {
         trigger: home,
         pin: true,
-        scrub: true,
+        pinSpacing: false,
         fastScrollEnd: true,
+        scrub: true,
         toggleActions: "play pause reverse none",
       },
     });
@@ -63,7 +64,7 @@ const Home = ({ addTimeline }) => {
             gsap.to(scroll, {
               opacity: 1,
               duration: 2,
-              delay: 6.5,
+              delay: 4.5,
             });
           },
         },
@@ -74,7 +75,7 @@ const Home = ({ addTimeline }) => {
         home,
         {
           autoAlpha: 0,
-          duration: 4,
+          duration: 2,
         },
         ">"
       );

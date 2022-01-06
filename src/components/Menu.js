@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -27,7 +27,7 @@ const Menu = ({ addTimeline }) => {
         xPercent: -40,
         ease: "power3.in",
         // delay: 1,
-        duration: 4,
+        duration: 3,
       },
       "start"
     );
@@ -42,8 +42,8 @@ const Menu = ({ addTimeline }) => {
     sections.forEach((section, i) => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top top",
-        end: "bottom top",
+        // start: "top top",
+        // end: "bottom top",
         // markers: true,
 
         onToggle: () => {
@@ -86,7 +86,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Home} alt="Home" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 2800 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3800 })}
         title="Linus"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -95,7 +95,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Smiley} alt="Smiley" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 6500 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 7800 })}
         title="Programming"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -113,7 +113,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Pen} alt="Pen" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 14000 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 15000 })}
         title="Music"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}

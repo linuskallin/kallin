@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -28,10 +28,9 @@ function Design({ addTimeline }) {
     const designTl = gsap.timeline({
       scrollTrigger: {
         trigger: design,
-        start: "top top",
-        end: "3000",
         fastScrollEnd: true,
         pin: true,
+        pinSpacing: false,
         scrub: true,
         toggleActions: "play pause reverse none",
       },
@@ -40,8 +39,8 @@ function Design({ addTimeline }) {
     designTl
       .addLabel("design fadein")
       .from(design, {
-        opacity: 0,
-        duration: 4,
+        autoAlpha: 0,
+        duration: 2,
       })
       .addLabel("start design")
       .to(
@@ -110,7 +109,7 @@ function Design({ addTimeline }) {
         img1,
         {
           xPercent: -300,
-          rotate: 5
+          rotate: 5,
         },
         {
           xPercent: -100,
@@ -154,7 +153,7 @@ function Design({ addTimeline }) {
         img2,
         {
           xPercent: -300,
-          rotate: 5
+          rotate: 5,
         },
         {
           xPercent: -100,
@@ -162,7 +161,7 @@ function Design({ addTimeline }) {
           delay: 5,
           ease: "circ.in",
         },
-        "-=25",
+        "-=25"
       )
       .to(
         img2,
@@ -206,7 +205,7 @@ function Design({ addTimeline }) {
           duration: 10,
           ease: "circ.in",
         },
-        "-=20",
+        "-=20"
       )
       .to(
         img3,
@@ -241,8 +240,8 @@ function Design({ addTimeline }) {
       )
       .addLabel("end design")
       .to(design, {
-        opacity: 0,
-        duration: 4,
+        autoAlpha: 0,
+        duration: 2,
       });
 
     addTimeline(designTl);
@@ -352,47 +351,47 @@ function Design({ addTimeline }) {
         </div>
         <div className="design__line"></div>
 
-          <div className="wrapper__image" ref={(el) => (img1 = el)}>
-            <img
-              className="design__img"
-              srcSet={`${MalmoSmall} 700w,
+        <div className="wrapper__image" ref={(el) => (img1 = el)}>
+          <img
+            className="design__img"
+            srcSet={`${MalmoSmall} 700w,
             ${Malmo} 1500w`}
-              src={Malmo}
-              loading="lazy"
-              alt=""
-            />
-            <a href="https://www.akademibokhandeln.se/bok/minnen-fran-malmo-del-2-fran-regementsgatan-till-kopenhamnsvagen/9789163943034/">
-              <h6>Inset from "Minnen från Malmö"</h6>
-            </a>
-          </div>
-          <div className="wrapper__image2" ref={(el) => (img2 = el)}>
-            <img
-              className="design__img"
-              srcSet={`${OlandSmall} 700w,
+            src={Malmo}
+            loading="lazy"
+            alt=""
+          />
+          <a href="https://www.akademibokhandeln.se/bok/minnen-fran-malmo-del-2-fran-regementsgatan-till-kopenhamnsvagen/9789163943034/">
+            <h6>Inset from "Minnen från Malmö"</h6>
+          </a>
+        </div>
+        <div className="wrapper__image2" ref={(el) => (img2 = el)}>
+          <img
+            className="design__img"
+            srcSet={`${OlandSmall} 700w,
             ${Oland} 1500w`}
-              src={Oland}
-              loading="lazy"
-              alt=""
-            />
-            <a href="https://www.naturbokhandeln.se/sv/articles/2.304.10957/under-olands-himlar-johansson">
-              <h6>Cover of "Under Ölands himlar"</h6>
-            </a>
-          </div>
-          <div className="wrapper__image3" ref={(el) => (img3 = el)}>
-            <img
-              className="design__img"
-              srcSet={`${BlandSmall} 700w,
+            src={Oland}
+            loading="lazy"
+            alt=""
+          />
+          <a href="https://www.naturbokhandeln.se/sv/articles/2.304.10957/under-olands-himlar-johansson">
+            <h6>Cover of "Under Ölands himlar"</h6>
+          </a>
+        </div>
+        <div className="wrapper__image3" ref={(el) => (img3 = el)}>
+          <img
+            className="design__img"
+            srcSet={`${BlandSmall} 700w,
             ${Bland} 1500w`}
-              src={Bland}
-              loading="lazy"
-              alt=""
-            />
-            <a href="https://open.spotify.com/album/27Lwtp6YBQGHYXAzR2IxYY?si=18fD6qdwRT-LmT_95_vOSw">
-              <h6>
-                CD-cover of "Each Bend I Pass" by <i>The Bland</i>
-              </h6>
-            </a>
-          </div>
+            src={Bland}
+            loading="lazy"
+            alt=""
+          />
+          <a href="https://open.spotify.com/album/27Lwtp6YBQGHYXAzR2IxYY?si=18fD6qdwRT-LmT_95_vOSw">
+            <h6>
+              CD-cover of "Each Bend I Pass" by <i>The Bland</i>
+            </h6>
+          </a>
+        </div>
         <p className="design__p" ref={(el) => (p = el)}>
           Graphic design is something I've been doing since about 2014 but have
           had a lifelong interest in. I've mostly done books, both insets and

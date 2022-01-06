@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -32,10 +32,9 @@ function Music({ addTimeline }) {
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
-        start: "top middle",
-        end: "3000",
         fastScrollEnd: true,
         pin: true,
+        pinSpacing: false,
         scrub: true,
         toggleActions: "play pause reverse none",
       },
@@ -44,8 +43,8 @@ function Music({ addTimeline }) {
     musicTl
       .addLabel("music fadein")
       .from(music, {
-        opacity: 0,
-        duration: 4,
+        autoAlpha: 0,
+        duration: 2,
       })
       .addLabel("start music")
       .to(
@@ -182,15 +181,16 @@ function Music({ addTimeline }) {
       .to({}, { duration: 8 }, ">")
       .addLabel("end music")
       .to(music, {
-        opacity: 0,
-        duration: 4,
+        autoAlpha: 0,
+        duration: 2,
       });
 
     addTimeline(musicTl);
   }, [addTimeline]);
 
   return (
-    <section id="music" className="music" ref={(el) => (music = el)}>
+    <div className="wrapper__perspective" ref={(el) => (music = el)}>
+    <section id="music" className="music">
       <div className="music__title">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.66 31.84">
           <defs>
@@ -249,10 +249,10 @@ function Music({ addTimeline }) {
         <iframe
           className="music__iframe"
           loading="lazy"
-          src="https://www.youtube.com/embed/9jx4wgAle_Y?controls=0"
+          src="https://www.youtube.com/embed/9jx4wgAle_Y?controls=0&modestbranding=1"
           title="YouTube video player"
           frameBorder="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
         <h6 className="sub-white">
@@ -293,7 +293,6 @@ function Music({ addTimeline }) {
         </h6>
       </div>
       <div className="music__p" ref={(el) => (p = el)}>
-        <br/>
         <p>
           Music is my biggest passion. I've been playing piano since I was 12.
           And since then I've been doing all kinds of stuff related to music:
@@ -313,7 +312,6 @@ function Music({ addTimeline }) {
         <br />
       </div>
       <div className="music__p2" ref={(el) => (p2 = el)}>
-        <br/>
         <p>A selection of artists I've played with:</p>
         <ul>
           <li>Svenska Akademien</li>
@@ -325,7 +323,6 @@ function Music({ addTimeline }) {
         <br />
       </div>
       <div className="music__p3" ref={(el) => (p3 = el)}>
-        <br/>
         <p>Worked with sound and music at:</p>
         <ul>
           <li>Sveriges Television (SVT)</li>
@@ -371,6 +368,7 @@ function Music({ addTimeline }) {
         // ref={(el) => (music__cloud6 = el)}
       />
     </section>
+    </div>
   );
 }
 

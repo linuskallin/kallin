@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,8 +14,8 @@ function Contact({ addTimeline }) {
     const contactTl = gsap.timeline({
       scrollTrigger: {
         trigger: contact,
-        end: "2000",
         fastScrollEnd: true,
+        // end: "4500",
         pin: true,
         scrub: true,
         toggleActions: "play pause reverse none",
@@ -25,8 +25,8 @@ function Contact({ addTimeline }) {
     contactTl
       .addLabel("contact fadein")
       .from(contact, {
-        opacity: 0,
-        duration: 4,
+        autoAlpha: 0,
+        duration: 2,
       })
       .addLabel("start contact")
       .to(
@@ -171,7 +171,7 @@ function Contact({ addTimeline }) {
           <br />
           <span>---------------------</span>
           <br />
-          Size: 4,6 Mb
+          Size: 3,9 Mb
           <br />
           Files: 48
         </p>
