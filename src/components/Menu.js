@@ -46,7 +46,7 @@ const Menu = ({ addTimeline }) => {
         trigger: section,
         start: "top top",
         end: "bottom top",
-        markers: true,
+        // markers: true,
 
         onToggle: () => {
           navLinks.forEach((e) => {

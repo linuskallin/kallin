@@ -21,14 +21,16 @@ function Music({ addTimeline }) {
   let img1 = useRef(null);
   let img2 = useRef(null);
   let img3 = useRef(null);
-  // let music__cloud1 = useRef(null);
-  // let music__cloud2 = useRef(null);
-  // let music__cloud3 = useRef(null);
-  // let music__cloud4 = useRef(null);
-  // let music__cloud5 = useRef(null);
-  // let music__cloud6 = useRef(null);
+  let music__cloud1 = useRef(null);
+  let music__cloud2 = useRef(null);
+  let music__cloud3 = useRef(null);
+  let music__cloud4 = useRef(null);
+  let music__cloud5 = useRef(null);
+  let music__cloud6 = useRef(null);
 
   useEffect(() => {
+    const clouds = [music__cloud1, music__cloud2, music__cloud3, music__cloud4, music__cloud5, music__cloud6]
+
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
@@ -185,6 +187,14 @@ function Music({ addTimeline }) {
         duration: 2,
       });
 
+      clouds.forEach((cloud, i) => {
+        musicTl.from(cloud, {
+          xPercent: Math.floor(Math.random() * 50),
+          duration: 65,
+        }, "music fadein")
+      })
+
+
     addTimeline(musicTl);
   }, [addTimeline]);
 
@@ -299,7 +309,7 @@ function Music({ addTimeline }) {
         </p>
         <ul>
           <li>
-            Playing live gigs all over Sweden, Europe and sometimes The World
+            Playing live gigs all over Sweden, Europe and even The World
           </li>
           <li>Recording</li>
           <li>Producing</li>
@@ -312,12 +322,14 @@ function Music({ addTimeline }) {
         <br />
       </div>
       <div className="music__p2" ref={(el) => (p2 = el)}>
-        <p>A selection of artists I've played with:</p>
+        <p>A selection of fun artists I've played with:</p>
         <ul>
+          <li>Looptroop Rockers</li>
           <li>Svenska Akademien</li>
           <li>Syster Sol</li>
-          <li>Looptroop Rockers</li>
           <li>Dani M</li>
+          <li>Broder John</li>
+          <li>Beata Ehrnman</li>
           <li>Amy Diamond</li>
         </ul>
         <br />
@@ -327,7 +339,8 @@ function Music({ addTimeline }) {
         <ul>
           <li>Sveriges Television (SVT)</li>
           <li>Sveriges Radio (SR)</li>
-          <li>Medborgarskolan, Sensus</li>
+          <li>Medborgarskolan</li>
+          <li>Sensus</li>
         </ul>
       </div>
       <h5 className="music__h5">Music</h5>
@@ -335,37 +348,37 @@ function Music({ addTimeline }) {
         className="music__cloud1"
         src={Cloud1}
         alt="Cloud"
-        // ref={(el) => (music__cloud1 = el)}
+        ref={(el) => (music__cloud1 = el)}
       />
       <img
         className="music__cloud2"
         src={Cloud2}
         alt="Cloud"
-        // ref={(el) => (music__cloud2 = el)}
+        ref={(el) => (music__cloud2 = el)}
       />
       <img
         className="music__cloud3"
         src={Cloud1}
         alt="Cloud"
-        // ref={(el) => (music__cloud3 = el)}
+        ref={(el) => (music__cloud3 = el)}
       />
       <img
         className="music__cloud4"
         src={Cloud2}
         alt="Cloud"
-        // ref={(el) => (music__cloud4 = el)}
+        ref={(el) => (music__cloud4 = el)}
       />
       <img
         className="music__cloud5"
         src={Cloud1}
         alt="Cloud"
-        // ref={(el) => (music__cloud5 = el)}
+        ref={(el) => (music__cloud5 = el)}
       />
       <img
         className="music__cloud6"
         src={Cloud2}
         alt="Cloud"
-        // ref={(el) => (music__cloud6 = el)}
+        ref={(el) => (music__cloud6 = el)}
       />
     </section>
     </div>
