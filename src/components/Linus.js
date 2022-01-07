@@ -4,9 +4,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import LinusImg from "../images/other/linus4.jpg";
-import LinusImg2 from "../images/other/linus-s.webp";
-import LinusImg3 from "../images/other/linus2-s.webp";
-import LinusImg4 from "../images/other/linus3-s.webp";
+import LinusImg2 from "../images/other/linus.webp";
+import LinusImg2Small from "../images/other/linus-s.webp";
+import LinusImg3 from "../images/other/linus2.webp";
+import LinusImg3Small from "../images/other/linus2-s.webp";
+import LinusImg4 from "../images/other/linus3.webp";
+import LinusImg4Small from "../images/other/linus3-s.webp";
 
 function Linus({ addTimeline }) {
   gsap.registerPlugin(ScrollTrigger);
@@ -262,6 +265,9 @@ function Linus({ addTimeline }) {
           <div className="wrapper__image2" ref={(el) => (img2 = el)}>
             <img
               className="linus__img2"
+              srcSet={`${LinusImg2Small} 700w,
+              ${LinusImg2} 1500w`}
+              sizes="(min-width: 1500px) 1500px, 700px"
               src={LinusImg2}
               loading="lazy"
               alt="Linus jumping with crowd in the background"
@@ -275,6 +281,9 @@ function Linus({ addTimeline }) {
           <div className="wrapper__image3 " ref={(el) => (img3 = el)}>
             <img
               className="linus__img3"
+              srcSet={`${LinusImg3Small} 700w,
+              ${LinusImg3} 1500w`}
+              sizes="(min-width: 1500px) 1500px, 700px"
               src={LinusImg3}
               loading="lazy"
               alt="Linus smiling"
@@ -288,6 +297,9 @@ function Linus({ addTimeline }) {
           <div className="wrapper__image4" ref={(el) => (img4 = el)}>
             <img
               className="linus__img4"
+              srcSet={`${LinusImg4Small} 700w,
+              ${LinusImg4} 1500w`}
+              sizes="(min-width: 1500px) 1500px, 700px"
               src={LinusImg4}
               loading="lazy"
               alt="Linus with dreadlocks"

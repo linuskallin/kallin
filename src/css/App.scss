@@ -130,8 +130,8 @@ span {
 
 // ------------------------------------------- WRAPPERS & STUFF
 
-.pin-spacer{
-  z-index: 0 !important;
+div.pin-spacer{
+  z-index: initial !important;
 }
 
 .wrapper__image,
@@ -170,6 +170,7 @@ span {
 
 .wrapper__perspective {
   perspective: 1000px;
+  z-index: 2;
 }
 
 iframe {
@@ -177,10 +178,6 @@ iframe {
   background-color: white;
   z-index: 2;
 }
-
-// section {
-//   z-index: 0;
-// }
 
 @media only screen and (max-width: 900px) {
   .wrapper__image:hover,
@@ -268,8 +265,8 @@ iframe {
 
 .home {
   height: 100vh;
-  position: relative;
-  background-image: linear-gradient(0deg, #ffffff 0%, #ffffff 100%);
+  // position: relative;
+  // background-image: linear-gradient(0deg, #ffffff 0%, #ffffff 100%);
 }
 
 .home__h4 {
@@ -328,62 +325,62 @@ iframe {
   stroke-dashoffset: 4000;
 }
 
-.home__cloud1 {
-  position: absolute;
-  width: 90vw;
-  top: calc(50vh - 50%);
-  left: calc(50vw - 35%);
-  z-index: 0;
-  overflow-x: hidden;
-  filter: blur(1px);
-}
+// .home__cloud1 {
+//   position: absolute;
+//   width: 90vw;
+//   top: calc(50vh - 50%);
+//   left: calc(50vw - 35%);
+//   z-index: 0;
+//   overflow-x: hidden;
+//   filter: blur(1px);
+// }
 
-.home__cloud2 {
-  position: absolute;
-  width: 90vw;
-  top: calc(50vh - 25%);
-  left: calc(50vw - 35%);
-  z-index: 0;
-  filter: blur(3px);
-}
+// .home__cloud2 {
+//   position: absolute;
+//   width: 90vw;
+//   top: calc(50vh - 25%);
+//   left: calc(50vw - 35%);
+//   z-index: 0;
+//   filter: blur(3px);
+// }
 
-.home__cloud3 {
-  position: absolute;
-  width: 80vw;
-  top: calc(50vh - 25%);
-  left: calc(50vw - 35%);
-  z-index: 0;
-  filter: blur(1px);
-}
+// .home__cloud3 {
+//   position: absolute;
+//   width: 80vw;
+//   top: calc(50vh - 25%);
+//   left: calc(50vw - 35%);
+//   z-index: 0;
+//   filter: blur(1px);
+// }
 
-.home__cloud4 {
-  position: absolute;
-  width: 80vw;
-  top: calc(50vh - 25%);
-  left: calc(50vw - 35%);
-  z-index: 0;
-  filter: blur(2px);
-}
+// .home__cloud4 {
+//   position: absolute;
+//   width: 80vw;
+//   top: calc(50vh - 25%);
+//   left: calc(50vw - 35%);
+//   z-index: 0;
+//   filter: blur(2px);
+// }
 
-.home__cloud5 {
-  position: absolute;
-  width: 90vw;
-  top: calc(50vh - 25%);
-  left: calc(50vw - 35%);
-  z-index: 0;
-  transform: rotate(180deg);
-  filter: blur(3px);
-}
+// .home__cloud5 {
+//   position: absolute;
+//   width: 90vw;
+//   top: calc(50vh - 25%);
+//   left: calc(50vw - 35%);
+//   z-index: 0;
+//   transform: rotate(180deg);
+//   filter: blur(3px);
+// }
 
-.home__cloud6 {
-  position: absolute;
-  width: 90vw;
-  top: calc(50vh - 25%);
-  left: calc(50vw - 50%);
-  z-index: 0;
-  transform: rotate(180deg);
-  filter: blur(1px);
-}
+// .home__cloud6 {
+//   position: absolute;
+//   width: 90vw;
+//   top: calc(50vh - 25%);
+//   left: calc(50vw - 50%);
+//   z-index: 0;
+//   transform: rotate(180deg);
+//   filter: blur(1px);
+// }
 
 @media only screen and (max-width: 900px) {
   .home img {
@@ -395,8 +392,8 @@ iframe {
 
 .linus {
   height: 100vh;
-  padding-top: 2px;
-  position: relative;
+  // padding-top: 2px;
+  // position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fit, calc(100vw / 8));
@@ -584,7 +581,7 @@ iframe {
 
 .programming {
   height: 100vh;
-  position: relative;
+  // position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fit, calc(100vw / 8));
@@ -749,6 +746,12 @@ iframe {
     bottom: -5vw;
   }
 
+  .scroll-inside{
+    top: -8%;
+    left: 5%;
+    transform: rotate(30deg) translateX(-25%) translateY(100%) scale(0.8);
+  }
+
   .example{
     font-size: 1rem;
     outline-width: 3px;
@@ -759,7 +762,7 @@ iframe {
 
 .design {
   height: 100vh;
-  position: relative;
+  // position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fit, calc(100vw / 8));
@@ -905,7 +908,7 @@ iframe {
 
 .music {
   height: 100vh;
-  position: relative;
+  // position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fill, calc(100vw / 8));
@@ -1077,7 +1080,7 @@ iframe {
 
 .contact {
   height: 100vh;
-  position: relative;
+  // position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;
   grid-template-rows: repeat(auto-fill, calc(100vw / 8));

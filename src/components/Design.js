@@ -356,9 +356,10 @@ function Design({ addTimeline }) {
             className="design__img"
             srcSet={`${MalmoSmall} 700w,
             ${Malmo} 1500w`}
-            src={Malmo}
+            sizes="(min-width: 1500px) 1500px, 700px"
+            src={MalmoSmall}
             loading="lazy"
-            alt=""
+            alt="Inset from 'Minnen från Malmö'"
           />
           <a href="https://www.akademibokhandeln.se/bok/minnen-fran-malmo-del-2-fran-regementsgatan-till-kopenhamnsvagen/9789163943034/">
             <h6>Inset from "Minnen från Malmö"</h6>
@@ -369,7 +370,8 @@ function Design({ addTimeline }) {
             className="design__img"
             srcSet={`${OlandSmall} 700w,
             ${Oland} 1500w`}
-            src={Oland}
+            sizes="(min-width: 1500px) 1500px, 700px"
+            src={OlandSmall}
             loading="lazy"
             alt=""
           />
@@ -382,7 +384,8 @@ function Design({ addTimeline }) {
             className="design__img"
             srcSet={`${BlandSmall} 700w,
             ${Bland} 1500w`}
-            src={Bland}
+            sizes="(min-width: 1500px) 1500px, 700px"
+            src={BlandSmall}
             loading="lazy"
             alt=""
           />

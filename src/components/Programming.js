@@ -37,7 +37,7 @@ function Programming({ addTimeline }) {
         maskProgramming,
         {
           strokeDashoffset: 0,
-          duration: 20,
+          duration: 30,
         },
         "start programming"
       )
