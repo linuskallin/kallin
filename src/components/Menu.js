@@ -39,34 +39,38 @@ const Menu = ({ addTimeline }) => {
     const sections = gsap.utils.toArray(".wrapper__perspective");
     const navLinks = gsap.utils.toArray(".menu__dot-svg");
 
-    console.log(sections);
-
     sections.forEach((section, i) => {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: "bottom top",
-        // markers: true,
+      if(i == 0){
+        ScrollTrigger.create({
+          trigger: section,
+          // start: "top top",
+          end: "bottom top",
+          // markers: true,
+  
+          onToggle: () => {
+            navLinks.forEach((e) => {
+              e.classList.remove("menu--active");
+            });
+            navLinks[i].classList.add("menu--active");
+          },
+        });
+      }else{
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top top",
+          end: "bottom top",
+          // markers: true,
+  
+          onToggle: () => {
+            navLinks.forEach((e) => {
+              e.classList.remove("menu--active");
+            });
+            navLinks[i].classList.add("menu--active");
+          },
+        });
 
-        onToggle: () => {
-          navLinks.forEach((e) => {
-            e.classList.remove("menu--active");
-          });
-          navLinks[i].classList.add("menu--active");
-        },
-        // onEnter: () => {
-        //   navLinks.forEach((e) => {
-        //     e.classList.remove("menu--active");
-        //   });
-        //   navLinks[i].classList.add("menu--active");
-        // },
-        // onEnterBack: () => {
-        //   navLinks.forEach((e) => {
-        //     e.classList.remove("menu--active");
-        //   });
-        //   navLinks[i].classList.add("menu--active");
-        // }
-      });
+      }
+
     });
   }, [addTimeline]);
 
@@ -79,7 +83,7 @@ const Menu = ({ addTimeline }) => {
   return (
     <div className="menu" ref={(el) => (menu = el)}>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: "top" })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 0 })}
         title="Home"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -88,7 +92,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Home} alt="Home" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3800 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 1450 })}
         title="Linus"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -97,7 +101,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Smiley} alt="Smiley" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 7800 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 2600 })}
         title="Programming"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -106,7 +110,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Code} alt="Code" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 10700 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3100 })}
         title="Graphic Design"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -115,7 +119,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Pen} alt="Pen" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 15000 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 4100 })}
         title="Music"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -124,7 +128,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Note} alt="Musical note" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 19000 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 5200 })}
         title="Contact"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}

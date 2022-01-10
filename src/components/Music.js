@@ -18,6 +18,25 @@ function Music({ addTimeline }) {
   let p = useRef(null);
   let p2 = useRef(null);
   let p3 = useRef(null);
+  let li1 = useRef(null);
+  let li2 = useRef(null);
+  let li3 = useRef(null);
+  let li4 = useRef(null);
+  let li5 = useRef(null);
+  let li6 = useRef(null);
+  let li7 = useRef(null);
+  let li8 = useRef(null);
+  let li9 = useRef(null);
+  let li10 = useRef(null);
+  let li11 = useRef(null);
+  let li12 = useRef(null);
+  let li13 = useRef(null);
+  let li14 = useRef(null);
+  let li15 = useRef(null);
+  let li16 = useRef(null);
+  let li17 = useRef(null);
+  let li18 = useRef(null);
+  let li19 = useRef(null);
   let img1 = useRef(null);
   let img2 = useRef(null);
   let img3 = useRef(null);
@@ -84,10 +103,24 @@ function Music({ addTimeline }) {
         },
         "start music"
       )
+      .fromTo(
+        [li1,li2,li3,li4,li5,li6,li7,li8],
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          stagger: 3,
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
+      )
       .to({}, { duration: 2 }, ">")
       .addLabel("part2")
       .to(
-        p,
+        [p],
         {
           autoAlpha: 0,
           y: -100,
@@ -131,6 +164,20 @@ function Music({ addTimeline }) {
           y: 0,
         },
         "part3"
+      )
+      .fromTo(
+        [li9,li10,li11,li12,li13,li14,li15],
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          stagger: 3,
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
       )
       .to({}, { duration: 8 }, ">")
       .addLabel("part4")
@@ -180,6 +227,20 @@ function Music({ addTimeline }) {
         },
         "part5"
       )
+      .fromTo(
+        [li16,li17,li18,li19],
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          stagger: 3,
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
+      )
       .to({}, { duration: 8 }, ">")
       .addLabel("end music")
       .to(music, {
@@ -190,7 +251,7 @@ function Music({ addTimeline }) {
       clouds.forEach((cloud, i) => {
         musicTl.from(cloud, {
           xPercent: Math.floor(Math.random() * 50),
-          duration: 65,
+          duration: 100,
         }, "music fadein")
       })
 
@@ -305,42 +366,42 @@ function Music({ addTimeline }) {
       <div className="music__p" ref={(el) => (p = el)}>
         <p>
           Music is my biggest passion. I've been playing piano since I was 12.
-          And since then I've been doing all kinds of stuff related to music:
+          And since about 2011 I've been doing a lot of different musical things professionally:
         </p>
         <ul>
-          <li>
-            Playing live gigs all over Sweden, Europe and even The World
+          <li ref={(el) => (li1 = el)}>
+            Playing live gigs all over Sweden, Europe and The World
           </li>
-          <li>Recording</li>
-          <li>Producing</li>
-          <li>Writing songs</li>
-          <li>Writing film scores</li>
-          <li>Mixing</li>
-          <li>Mastering</li>
-          <li>Creating music videos</li>
+          <li ref={(el) => (li2 = el)}>Recording</li>
+          <li ref={(el) => (li3 = el)}>Producing</li>
+          <li ref={(el) => (li4 = el)}>Writing songs</li>
+          <li ref={(el) => (li5 = el)}>Writing film scores</li>
+          <li ref={(el) => (li6 = el)}>Mixing</li>
+          <li ref={(el) => (li7 = el)}>Mastering</li>
+          <li ref={(el) => (li8 = el)}>Creating music videos</li>
         </ul>
         <br />
       </div>
       <div className="music__p2" ref={(el) => (p2 = el)}>
         <p>A selection of fun artists I've played with:</p>
         <ul>
-          <li>Looptroop Rockers</li>
-          <li>Svenska Akademien</li>
-          <li>Syster Sol</li>
-          <li>Dani M</li>
-          <li>Broder John</li>
-          <li>Beata Ehrnman</li>
-          <li>Amy Diamond</li>
+          <li ref={(el) => (li9 = el)}>Looptroop Rockers</li>
+          <li ref={(el) => (li10 = el)}>Svenska Akademien</li>
+          <li ref={(el) => (li11 = el)}>Syster Sol</li>
+          <li ref={(el) => (li12 = el)}>Dani M</li>
+          <li ref={(el) => (li13 = el)}>Broder John</li>
+          <li ref={(el) => (li14 = el)}>Beata Ehrnman</li>
+          <li ref={(el) => (li15 = el)}>Amy Diamond</li>
         </ul>
         <br />
       </div>
       <div className="music__p3" ref={(el) => (p3 = el)}>
         <p>Worked with sound and music at:</p>
         <ul>
-          <li>Sveriges Television (SVT)</li>
-          <li>Sveriges Radio (SR)</li>
-          <li>Medborgarskolan</li>
-          <li>Sensus</li>
+          <li ref={(el) => (li16 = el)}>Sveriges Television (SVT)</li>
+          <li ref={(el) => (li17 = el)}>Sveriges Radio (SR)</li>
+          <li ref={(el) => (li18 = el)}>Medborgarskolan</li>
+          <li ref={(el) => (li19 = el)}>Sensus</li>
         </ul>
       </div>
       <h5 className="music__h5">Music</h5>

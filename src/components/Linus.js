@@ -119,6 +119,7 @@ function Linus({ addTimeline }) {
         },
         "start linus>1"
       )
+      .to([], { duration: 3 })
       .addLabel("img2")
       .from(img2, {
         rotate: -10,
@@ -237,7 +238,11 @@ function Linus({ addTimeline }) {
             src={LinusImg}
             alt="Linus with hands behind head"
           />
-          <h6>Photo: Anton Torstensson</h6>
+          <h6>
+            My 35-year anniversary
+            <br />
+            Photo: Anton Torstensson
+          </h6>
         </div>
         <div className="boxes">
           <div className="box1" ref={(el) => (box1 = el)}></div>

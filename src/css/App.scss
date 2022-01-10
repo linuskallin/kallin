@@ -102,7 +102,7 @@ h6 {
   font-size: unquote("clamp(0.5rem, 0.3385rem + 0.5385vw, 1.2rem)");
   font-weight: 500;
   opacity: 0.7;
-  transition: all $medium ease-in-out;
+  transition: all $fast ease-in-out;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -155,9 +155,9 @@ div.pin-spacer{
 .wrapper__image2:hover,
 .wrapper__image3:hover,
 .wrapper__image4:hover {
-  box-shadow: 0px 5px 30px -6px rgba(0, 0, 0, 0.5);
-  transition: all $fast ease-in-out;
-  transform: scale(1.05);
+  box-shadow: 0px 5px 40px -6px rgba(0, 0, 0, 0.5);
+  transition: all $fast ease-in-out !important;
+  filter: contrast(1.05) brightness(1.05);
 }
 
 .wrapper__image:hover h6,
@@ -297,6 +297,7 @@ iframe {
   z-index: 50;
   opacity: 0;
   font-weight: 300;
+  pointer-events: none;
 }
 
 .arrow {

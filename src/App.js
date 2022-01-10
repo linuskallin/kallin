@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState, lazy, Suspense, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import loadable from "@loadable/component";
@@ -15,6 +15,11 @@ import Contact from "./components/Contact";
 // const Design = lazy(() => import("./components/Design"));
 // const Music = lazy(() => import("./components/Music"));
 // const Contact = lazy(() => import("./components/Contact"));
+// const Linus = loadable(() => import("./components/Linus"));
+// const Programming = loadable(() => import("./components/Programming"));
+// const Design = loadable(() => import("./components/Design"));
+// const Music = loadable(() => import("./components/Music"));
+// const Contact = loadable(() => import("./components/Contact"));
 
 import "./css/App.scss";
 
@@ -30,11 +35,15 @@ function App() {
   return (
     <div className="App">
       <Home addTimeline={addTimeline} />
-        <Linus addTimeline={addTimeline} />
-        <Programming addTimeline={addTimeline} />
-        <Design addTimeline={addTimeline} />
-        <Music addTimeline={addTimeline} />
-        <Contact addTimeline={addTimeline} />
+      {/* <Suspense fallback={<div>Loading...</div>}>
+        <div> */}
+          <Linus addTimeline={addTimeline} />
+          <Programming addTimeline={addTimeline} />
+          <Design addTimeline={addTimeline} />
+          <Music addTimeline={addTimeline} />
+          <Contact addTimeline={addTimeline} />
+        {/* </div>
+      </Suspense> */}
       <Menu addTimeline={addTimeline} />
     </div>
   );

@@ -8,9 +8,16 @@ function Programming({ addTimeline }) {
 
   let programming = useRef(null);
   let p = useRef(null);
+  let p2 = useRef(null);
   let li1 = useRef(null);
   let li2 = useRef(null);
   let li3 = useRef(null);
+  let li4 = useRef(null);
+  let li5 = useRef(null);
+  let li6 = useRef(null);
+  let li7 = useRef(null);
+  let li8 = useRef(null);
+  let li9 = useRef(null);
   let iframe1 = useRef(null);
   let maskProgramming = useRef(null);
 
@@ -55,7 +62,21 @@ function Programming({ addTimeline }) {
         "start programming"
       )
       .fromTo(
-        li1,
+        [li1, li2, li3],
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          stagger: 7,
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
+      )
+      .fromTo(
+        p2,
         {
           opacity: 0,
           x: 100,
@@ -68,27 +89,15 @@ function Programming({ addTimeline }) {
         ">"
       )
       .fromTo(
-        li2,
+        [li4, li5, li6, li7, li8, li9],
         {
           opacity: 0,
           x: 100,
         },
         {
+          stagger: 1,
           opacity: 1,
-          duration: 6,
-          x: 0,
-        },
-        ">"
-      )
-      .fromTo(
-        li3,
-        {
-          opacity: 0,
-          x: 100,
-        },
-        {
-          opacity: 1,
-          duration: 6,
+          duration: 3,
           x: 0,
         },
         ">"
@@ -140,7 +149,7 @@ function Programming({ addTimeline }) {
         }
         `,
           ease: "none",
-          duration: 20,
+          duration: 30,
         },
         "start programming"
       )
@@ -332,6 +341,16 @@ function Programming({ addTimeline }) {
               which I did as my examination project. It took me about one month
               to complete it.
             </li>
+          </ul>
+          <br/>
+          <p ref={(el) => (p2 = el)}>Worked with the following technologies/languages/frameworks:</p>
+          <ul>
+            <li ref={(el) => (li4 = el)}>HTML</li>
+            <li ref={(el) => (li5 = el)}>CSS</li>
+            <li ref={(el) => (li6 = el)}>JavaScript</li>
+            <li ref={(el) => (li7 = el)}>React</li>
+            <li ref={(el) => (li8 = el)}>Node</li>
+            <li ref={(el) => (li9 = el)}>Git</li>
           </ul>
         </div>
         <h5 className="programming__h5">Programming</h5>

@@ -17,6 +17,10 @@ function Design({ addTimeline }) {
   let maskGraphic = useRef(null);
   let maskDesign = useRef(null);
   let p = useRef(null);
+  let li1 = useRef(null);
+  let li2 = useRef(null);
+  let li3 = useRef(null);
+  let li4 = useRef(null);
   let img1 = useRef(null);
   let img2 = useRef(null);
   let img3 = useRef(null);
@@ -75,6 +79,20 @@ function Design({ addTimeline }) {
         },
         "start design"
       )
+      .fromTo(
+        [li1, li2, li3, li4],
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          stagger: 7,
+          opacity: 1,
+          duration: 6,
+          x: 0,
+        },
+        ">"
+      )
       .addLabel("boxes")
       .from(
         box1,
@@ -116,7 +134,7 @@ function Design({ addTimeline }) {
           duration: 10,
           ease: "circ.in",
         },
-        "start design"
+        "boxes-=9"
       )
       .to(
         img1,
@@ -138,7 +156,7 @@ function Design({ addTimeline }) {
           duration: 5,
           ease: "circ.in",
         },
-        "boxes click"
+        ">"
       )
       .to(
         img1,
@@ -397,10 +415,17 @@ function Design({ addTimeline }) {
         </div>
         <p className="design__p" ref={(el) => (p = el)}>
           Graphic design is something I've been doing since about 2014 but have
-          had a lifelong interest in. I've mostly done books, both insets and
-          covers, but also some LP/CD-covers, posters, websites, etc. I'm always
-          evolving and learning more about both static and animated design and
-          layout.
+          had a lifelong interest in. I'm always evolving and learning more
+          about both static and animated design and layout. Through the years
+          I've done a variety of different stuff:
+        <ul>
+          <li ref={(el) => (li1 = el)}>
+            A lot of Books, both insets and covers
+          </li>
+          <li ref={(el) => (li2 = el)}>LP/CD-covers</li>
+          <li ref={(el) => (li3 = el)}>Posters</li>
+          <li ref={(el) => (li4 = el)}>Websites</li>
+        </ul>
         </p>
         <h5 className="design__h5">Graphic&nbsp;Design</h5>
         <div className="boxes">
