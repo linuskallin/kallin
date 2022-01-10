@@ -110,7 +110,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Code} alt="Code" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3100 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3360 })}
         title="Graphic Design"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -119,7 +119,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Pen} alt="Pen" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 4100 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 4200 })}
         title="Music"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
