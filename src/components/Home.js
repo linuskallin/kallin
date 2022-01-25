@@ -57,12 +57,12 @@ const Home = ({ addTimeline }) => {
       .fromTo(
         scroll,
         {
-          opacity: 0,
+          autoAlpha: 0,
         },
         {
           onEnter: () => {
             gsap.to(scroll, {
-              opacity: 1,
+              autoAlpha: 1,
               duration: 2,
               delay: 4.5,
             });
@@ -175,10 +175,6 @@ const Home = ({ addTimeline }) => {
                 className="signatur-text"
                 d="M343.85,256.45v1.11l-.37-.08c.13-.33.27-.65.4-1Z"
               />
-              <path d="M386.56,13.07l-3,1C383.9,12.88,384.72,12.51,386.56,13.07Z" />
-              <path d="M362.88,29.48c0-.74.23-1.23,1.21-1.17,0,1-.59,1.11-1.27,1.12Z" />
-              <path d="M369.45,23.64l-.19.26-.31-.3c.09-.07.18-.19.27-.19S369.37,23.55,369.45,23.64Z" />
-              <path d="M345.29,183.2l2-1.52c-.13,1.66-.82,2-1.74,2Z" />
             </g>
           </svg>
         </div>

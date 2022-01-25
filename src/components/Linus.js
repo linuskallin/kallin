@@ -96,11 +96,11 @@ function Linus({ addTimeline }) {
       .fromTo(
         img1,
         {
-          opacity: 0,
+          autoAlpha: 0,
           y: 100,
         },
         {
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           y: 0,
         },
@@ -109,11 +109,11 @@ function Linus({ addTimeline }) {
       .fromTo(
         p,
         {
-          opacity: 0,
+          autoAlpha: 0,
           y: 100,
         },
         {
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           y: 0,
         },
@@ -123,7 +123,7 @@ function Linus({ addTimeline }) {
       .addLabel("img2")
       .from(img2, {
         rotate: -10,
-        opacity: 0,
+        autoAlpha: 0,
         xPercent: -200,
         zIndex: 10,
         duration: 5,
@@ -131,7 +131,7 @@ function Linus({ addTimeline }) {
       .addLabel("img3")
       .from(img3, {
         rotate: -10,
-        opacity: 0,
+        autoAlpha: 0,
         xPercent: 200,
         zIndex: 10,
         duration: 5,
@@ -139,7 +139,7 @@ function Linus({ addTimeline }) {
       .addLabel("img4")
       .from(img4, {
         rotate: 10,
-        opacity: 0,
+        autoAlpha: 0,
         xPercent: -200,
         zIndex: 10,
         duration: 5,
@@ -148,7 +148,7 @@ function Linus({ addTimeline }) {
       // .addLabel("disperse")
       // .to([img2, img3, img4], {
       //   xPercent: 100,
-      //   opacity: 0,
+      //   autoAlpha: 0,
       //   duration: 5,
       // },
       // "disperse")

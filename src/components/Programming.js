@@ -51,11 +51,11 @@ function Programming({ addTimeline }) {
       .fromTo(
         p,
         {
-          opacity: 0,
+          autoAlpha: 0,
           y: 100,
         },
         {
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           y: 0,
         },
@@ -64,12 +64,12 @@ function Programming({ addTimeline }) {
       .fromTo(
         [li1, li2, li3],
         {
-          opacity: 0,
+          autoAlpha: 0,
           x: 100,
         },
         {
           stagger: 7,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           x: 0,
         },
@@ -78,11 +78,11 @@ function Programming({ addTimeline }) {
       .fromTo(
         p2,
         {
-          opacity: 0,
+          autoAlpha: 0,
           x: 100,
         },
         {
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           x: 0,
         },
@@ -91,12 +91,12 @@ function Programming({ addTimeline }) {
       .fromTo(
         [li4, li5, li6, li7, li8, li9],
         {
-          opacity: 0,
+          autoAlpha: 0,
           x: 100,
         },
         {
           stagger: 1,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 3,
           x: 0,
         },
@@ -159,7 +159,7 @@ function Programming({ addTimeline }) {
       .to(
         p,
         {
-          opacity: 0,
+          autoAlpha: 0,
           duration: 4,
         },
         "iframe"
@@ -168,11 +168,11 @@ function Programming({ addTimeline }) {
         iframe1,
         {
           xPercent: -150,
-          opacity: 0,
+          autoAlpha: 0,
         },
         {
           xPercent: 0,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 10,
         },
         "iframe"

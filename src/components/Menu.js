@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import MediaQuery from "react-responsive";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -23,7 +24,7 @@ const Menu = ({ addTimeline }) => {
     menuTl.from(
       menu,
       {
-        opacity: 0,
+        autoAlpha: 0,
         xPercent: -40,
         ease: "power3.in",
         // delay: 1,
@@ -81,6 +82,8 @@ const Menu = ({ addTimeline }) => {
   };
 
   return (
+    <>
+    <MediaQuery minWidth={901}>
     <div className="menu" ref={(el) => (menu = el)}>
       <div
         onClick={() => gsap.to(window, { duration: 1, scrollTo: 0 })}
@@ -92,7 +95,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Home} alt="Home" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 1450 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 1320 })}
         title="Linus"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -101,7 +104,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Smiley} alt="Smiley" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 2600 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 2300 })}
         title="Programming"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -110,7 +113,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Code} alt="Code" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3360 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 2980 })}
         title="Graphic Design"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -119,7 +122,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Pen} alt="Pen" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 4200 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3680 })}
         title="Music"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -128,7 +131,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Note} alt="Musical note" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: 5200 })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 4700 })}
         title="Contact"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -137,6 +140,66 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Mail} alt="Mail" />
       </div>
     </div>
+    </MediaQuery>
+    <MediaQuery maxWidth={900}>
+          <div className="menu" ref={(el) => (menu = el)}>
+      <div
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 0 })}
+        title="Home"
+        className="menu__dot-svg"
+        onMouseEnter={(e) => tooltipAdd(e)}
+      >
+        <div className="menu__dot"></div>
+        <img className="menu__img" src={Home} alt="Home" />
+      </div>
+      <div
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 1350 })}
+        title="Linus"
+        className="menu__dot-svg"
+        onMouseEnter={(e) => tooltipAdd(e)}
+      >
+        <div className="menu__dot"></div>
+        <img className="menu__img" src={Smiley} alt="Smiley" />
+      </div>
+      <div
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 2400 })}
+        title="Programming"
+        className="menu__dot-svg"
+        onMouseEnter={(e) => tooltipAdd(e)}
+      >
+        <div className="menu__dot"></div>
+        <img className="menu__img" src={Code} alt="Code" />
+      </div>
+      <div
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3070 })}
+        title="Graphic Design"
+        className="menu__dot-svg"
+        onMouseEnter={(e) => tooltipAdd(e)}
+      >
+        <div className="menu__dot"></div>
+        <img className="menu__img" src={Pen} alt="Pen" />
+      </div>
+      <div
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 3850 })}
+        title="Music"
+        className="menu__dot-svg"
+        onMouseEnter={(e) => tooltipAdd(e)}
+      >
+        <div className="menu__dot"></div>
+        <img className="menu__img" src={Note} alt="Musical note" />
+      </div>
+      <div
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: 5000 })}
+        title="Contact"
+        className="menu__dot-svg"
+        onMouseEnter={(e) => tooltipAdd(e)}
+      >
+        <div className="menu__dot"></div>
+        <img className="menu__img" src={Mail} alt="Mail" />
+      </div>
+    </div>
+    </MediaQuery>
+    </>
   );
 };
 

@@ -266,7 +266,7 @@ iframe {
 .home {
   height: 100vh;
   // position: relative;
-  // background-image: linear-gradient(0deg, #ffffff 0%, #ffffff 100%);
+  background: url("../images/svg/zebra.svg");
 }
 
 .home__h4 {
@@ -476,7 +476,7 @@ iframe {
   object-fit: cover;
   object-position: top;
   transform-origin: top;
-  filter: sepia(0.7);
+  // filter: sepia(0.7);
   opacity: 1;
   display: block;
 }
@@ -757,6 +757,10 @@ iframe {
     font-size: 1rem;
     outline-width: 3px;
   }
+
+  #code{
+    display: none;
+  }
 }
 
 // ------------------------------------------- GRAPHIC DESIGN
@@ -851,7 +855,7 @@ iframe {
 
 .boxes {
   position: relative;
-  top: 30vh;
+  top: 35vh;
   left: 10vw;
   transform: scale(1.4);
   z-index: -1;
@@ -892,6 +896,21 @@ iframe {
     width: 50vw;
     top: 40vh;
   }
+
+  // .box1::after, .box2::after, .box3::after{
+  //   content: "";
+  //   // position: relative;
+  //   box-shadow: 20px 200px 0 40px rgb(176, 218, 186);
+  // }
+
+  // .boxes::after{
+  //   content: "";
+  //   transform: rotate(180deg);
+  // }
+
+  // .box1, .box2, .box3{
+  //   box-shadow: 20px 200px 0 rgb(176, 218, 186);
+  // }
 
   .design__p {
     grid-area: 2 / 2 / 4 / 8;
@@ -1011,7 +1030,7 @@ iframe {
   left: -30vw;
   z-index: 0;
   overflow-x: hidden;
-  filter: blur(1px);
+  // filter: blur(1px);
 }
 
 .music__cloud2 {
@@ -1020,7 +1039,7 @@ iframe {
   top: 0;
   right: -10vw;
   z-index: 0;
-  filter: blur(1px);
+  // filter: blur(1px);
 }
 
 .music__cloud3 {
@@ -1029,7 +1048,7 @@ iframe {
   top: 40vh;
   right: -40vw;
   z-index: 0;
-  filter: blur(2px);
+  // filter: blur(2px);
 }
 
 .music__cloud4 {
@@ -1038,7 +1057,7 @@ iframe {
   top: 40vh;
   left: -20vw;
   z-index: 0;
-  filter: blur(1px);
+  // filter: blur(1px);
 }
 
 .music__cloud5 {
@@ -1047,7 +1066,7 @@ iframe {
   top: -10vh;
   right: -10vw;
   z-index: 0;
-  filter: blur(1px);
+  // filter: blur(1px);
 }
 
 .music__cloud6 {
@@ -1056,7 +1075,7 @@ iframe {
   top: 10vh;
   left: -20vw;
   z-index: 0;
-  filter: blur(3px);
+  // filter: blur(3px);
 }
 
 @media only screen and (max-width: 900px) {
@@ -1074,6 +1093,10 @@ iframe {
 
   .music__title {
     width: 16vw;
+  }
+
+  .music__cloud1, .music__cloud2, .music__cloud3, .music__cloud4, .music__cloud5, .music__cloud6{
+    display: none;
   }
 }
 

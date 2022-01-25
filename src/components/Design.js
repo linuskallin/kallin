@@ -69,11 +69,11 @@ function Design({ addTimeline }) {
       .fromTo(
         p,
         {
-          opacity: 0,
+          autoAlpha: 0,
           y: 100,
         },
         {
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           y: 0,
         },
@@ -82,17 +82,18 @@ function Design({ addTimeline }) {
       .fromTo(
         [li1, li2, li3, li4],
         {
-          opacity: 0,
+          autoAlpha: 0,
           x: 100,
         },
         {
           stagger: 7,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           x: 0,
         },
         ">"
       )
+      .to({}, { duration: 4 }, ">")
       .addLabel("boxes")
       .from(
         box1,

@@ -46,7 +46,8 @@ function Music({ addTimeline }) {
   let music__cloud4 = useRef(null);
   let music__cloud5 = useRef(null);
   let music__cloud6 = useRef(null);
-
+  let cloudPercent = Math.floor(Math.random() * 50)
+  
   useEffect(() => {
     const clouds = [music__cloud1, music__cloud2, music__cloud3, music__cloud4, music__cloud5, music__cloud6]
 
@@ -106,12 +107,12 @@ function Music({ addTimeline }) {
       .fromTo(
         [li1,li2,li3,li4,li5,li6,li7,li8],
         {
-          opacity: 0,
+          autoAlpha: 0,
           x: 100,
         },
         {
           stagger: 3,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           x: 0,
         },
@@ -168,12 +169,12 @@ function Music({ addTimeline }) {
       .fromTo(
         [li9,li10,li11,li12,li13,li14,li15],
         {
-          opacity: 0,
+          autoAlpha: 0,
           x: 100,
         },
         {
           stagger: 3,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           x: 0,
         },
@@ -230,12 +231,12 @@ function Music({ addTimeline }) {
       .fromTo(
         [li16,li17,li18,li19],
         {
-          opacity: 0,
+          autoAlpha: 0,
           x: 100,
         },
         {
           stagger: 3,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 6,
           x: 0,
         },
@@ -250,8 +251,8 @@ function Music({ addTimeline }) {
 
       clouds.forEach((cloud, i) => {
         musicTl.from(cloud, {
-          xPercent: Math.floor(Math.random() * 50),
-          duration: 100,
+          xPercent: cloudPercent,
+          duration: 150,
         }, "music fadein")
       })
 
