@@ -33,9 +33,10 @@ function Design({ addTimeline }) {
       scrollTrigger: {
         trigger: design,
         fastScrollEnd: true,
+        preventOverlaps: true,        
         pin: true,
         pinSpacing: false,
-        scrub: true,
+        scrub: 0.5,
         toggleActions: "play pause reverse none",
       },
     });
@@ -50,16 +51,16 @@ function Design({ addTimeline }) {
       .to(
         maskGraphic,
         {
-          strokeDashoffset: 0,
-          duration: 8,
+          strokeDashoffset: 500,
+          duration: 10,
         },
         "start design"
       )
       .to(
         maskDesign,
         {
-          strokeDashoffset: 0,
-          duration: 8,
+          strokeDashoffset: 500,
+          duration: 10,
         },
         ">-6.5"
       )
@@ -132,7 +133,7 @@ function Design({ addTimeline }) {
         },
         {
           xPercent: -100,
-          duration: 10,
+          duration: 15,
           ease: "circ.in",
         },
         "boxes-=9"
@@ -143,7 +144,7 @@ function Design({ addTimeline }) {
           xPercent: 0,
           scale: 1.6,
           rotate: 0,
-          duration: 5,
+          duration: 7,
           ease: "circ.out",
         },
         ">"
@@ -154,7 +155,7 @@ function Design({ addTimeline }) {
           xPercent: 100,
           scale: 1,
           rotate: -5,
-          duration: 5,
+          duration: 7,
           ease: "circ.in",
         },
         ">"
@@ -163,7 +164,7 @@ function Design({ addTimeline }) {
         img1,
         {
           xPercent: 300,
-          duration: 10,
+          duration: 15,
           ease: "circ.out",
         },
         ">"
@@ -176,63 +177,63 @@ function Design({ addTimeline }) {
         },
         {
           xPercent: -100,
-          duration: 10,
+          duration: 15,
           delay: 5,
+          ease: "circ.in",
+        },
+        "-=30"
+      )
+      .to(
+        img2,
+        {
+          xPercent: 0,
+          scale: 1.6,
+          rotate: 0,
+          duration: 7,
+          ease: "circ.out",
+        },
+        ">"
+      )
+      .to(
+        img2,
+        {
+          xPercent: 100,
+          scale: 1,
+          rotate: -5,
+          duration: 7,
+          ease: "circ.in",
+        },
+        ">"
+      )
+      .to(
+        img2,
+        {
+          xPercent: 300,
+          duration: 15,
+          ease: "circ.out",
+        },
+        ">"
+      )
+      .fromTo(
+        img3,
+        {
+          xPercent: -300,
+          rotate: 5,
+        },
+        {
+          xPercent: -100,
+          duration: 15,
           ease: "circ.in",
         },
         "-=25"
       )
       .to(
-        img2,
-        {
-          xPercent: 0,
-          scale: 1.6,
-          rotate: 0,
-          duration: 5,
-          ease: "circ.out",
-        },
-        ">"
-      )
-      .to(
-        img2,
-        {
-          xPercent: 100,
-          scale: 1,
-          rotate: -5,
-          duration: 5,
-          ease: "circ.in",
-        },
-        ">"
-      )
-      .to(
-        img2,
-        {
-          xPercent: 300,
-          duration: 10,
-          ease: "circ.out",
-        },
-        ">"
-      )
-      .fromTo(
-        img3,
-        {
-          xPercent: -300,
-          rotate: 5,
-        },
-        {
-          xPercent: -100,
-          duration: 10,
-          ease: "circ.in",
-        },
-        "-=20"
-      )
-      .to(
         img3,
         {
           xPercent: 0,
           scale: 1.6,
           rotate: 0,
-          duration: 5,
+          duration: 7,
           ease: "circ.out",
         },
         ">"
@@ -243,7 +244,7 @@ function Design({ addTimeline }) {
           xPercent: 100,
           scale: 1,
           rotate: -5,
-          duration: 5,
+          duration: 7,
           ease: "circ.in",
         },
         ">"
@@ -252,7 +253,7 @@ function Design({ addTimeline }) {
         img3,
         {
           xPercent: 300,
-          duration: 10,
+          duration: 15,
           ease: "circ.out",
         },
         ">"
@@ -264,11 +265,11 @@ function Design({ addTimeline }) {
       });
 
     addTimeline(designTl);
-  }, [addTimeline]);
+  }, []);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (design = el)}>
-      <section id="design" className="design">
+      <section className="design">
         <div className="design__title">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.82 37.18">
             <defs>
@@ -377,8 +378,8 @@ function Design({ addTimeline }) {
             ${Malmo} 1500w`}
             sizes="(min-width: 1500px) 1500px, 700px"
             src={MalmoSmall}
-            loading="lazy"
             alt="Inset from 'Minnen från Malmö'"
+            loading="lazy"
           />
           <a href="https://www.akademibokhandeln.se/bok/minnen-fran-malmo-del-2-fran-regementsgatan-till-kopenhamnsvagen/9789163943034/">
             <h6>Inset from "Minnen från Malmö"</h6>
@@ -391,8 +392,8 @@ function Design({ addTimeline }) {
             ${Oland} 1500w`}
             sizes="(min-width: 1500px) 1500px, 700px"
             src={OlandSmall}
-            loading="lazy"
             alt=""
+            loading="lazy"
           />
           <a href="https://www.naturbokhandeln.se/sv/articles/2.304.10957/under-olands-himlar-johansson">
             <h6>Cover of "Under Ölands himlar"</h6>
@@ -405,8 +406,8 @@ function Design({ addTimeline }) {
             ${Bland} 1500w`}
             sizes="(min-width: 1500px) 1500px, 700px"
             src={BlandSmall}
-            loading="lazy"
             alt=""
+            loading="lazy"
           />
           <a href="https://open.spotify.com/album/27Lwtp6YBQGHYXAzR2IxYY?si=18fD6qdwRT-LmT_95_vOSw">
             <h6>

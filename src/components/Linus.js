@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import LinusImg from "../images/other/linus4.jpg";
+import LinusImg from "../images/other/linus4.webp";
 import LinusImg2 from "../images/other/linus.webp";
 import LinusImg2Small from "../images/other/linus-s.webp";
 import LinusImg3 from "../images/other/linus2.webp";
@@ -27,7 +27,6 @@ function Linus({ addTimeline }) {
   let box1 = useRef(null);
 
   useEffect(() => {
-    // console.log(forwardRef)
 
     const linusTl = gsap.timeline({
       scrollTrigger: {
@@ -35,7 +34,8 @@ function Linus({ addTimeline }) {
         pin: true,
         pinSpacing: false,
         fastScrollEnd: true,
-        scrub: true,
+        preventOverlaps: true,
+        scrub: 0.5,
         toggleActions: "play pause reverse none",
       },
     });
@@ -92,7 +92,7 @@ function Linus({ addTimeline }) {
         },
         ">-0.4"
       )
-      .to([], { duration: 4 })
+      .to({}, { duration: 4 })
       .fromTo(
         img1,
         {
@@ -119,7 +119,7 @@ function Linus({ addTimeline }) {
         },
         "start linus>1"
       )
-      .to([], { duration: 3 })
+      .to({}, { duration: 3 })
       .addLabel("img2")
       .from(img2, {
         rotate: -10,
@@ -145,13 +145,13 @@ function Linus({ addTimeline }) {
         duration: 5,
       })
       .to({}, { duration: 4 })
-      // .addLabel("disperse")
-      // .to([img2, img3, img4], {
-      //   xPercent: 100,
-      //   autoAlpha: 0,
-      //   duration: 5,
-      // },
-      // "disperse")
+      .addLabel("disperse")
+      .to([img2, img3, img4], {
+        xPercent: 100,
+        autoAlpha: 0,
+        duration: 5,
+      },
+      "disperse")
       .addLabel("end linus")
       .to(linus, {
         autoAlpha: 0,
@@ -159,11 +159,11 @@ function Linus({ addTimeline }) {
       });
 
     addTimeline(linusTl);
-  }, [addTimeline]);
+  }, []);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (linus = el)}>
-      <section id="linus" className="linus">
+      <section className="linus">
         <div className="linus__title">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.1 20.84">
             <title>Linus written</title>
@@ -274,7 +274,6 @@ function Linus({ addTimeline }) {
               ${LinusImg2} 1500w`}
               sizes="(min-width: 1500px) 1500px, 700px"
               src={LinusImg2}
-              loading="lazy"
               alt="Linus jumping with crowd in the background"
             />
             <h6 className="sub-white">
@@ -290,7 +289,6 @@ function Linus({ addTimeline }) {
               ${LinusImg3} 1500w`}
               sizes="(min-width: 1500px) 1500px, 700px"
               src={LinusImg3}
-              loading="lazy"
               alt="Linus smiling"
             />
             <h6 className="sub-white">
@@ -306,7 +304,6 @@ function Linus({ addTimeline }) {
               ${LinusImg4} 1500w`}
               sizes="(min-width: 1500px) 1500px, 700px"
               src={LinusImg4}
-              loading="lazy"
               alt="Linus with dreadlocks"
             />
             <h6 className="sub-white">Dreads 2007</h6>

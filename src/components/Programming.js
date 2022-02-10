@@ -26,9 +26,10 @@ function Programming({ addTimeline }) {
       scrollTrigger: {
         trigger: programming,
         fastScrollEnd: true,
+        preventOverlaps: true,
         pin: true,
         pinSpacing: false,
-        scrub: true,
+        scrub: 0.5,
         toggleActions: "play pause reverse none",
       },
     });
@@ -186,12 +187,11 @@ function Programming({ addTimeline }) {
       });
 
     addTimeline(programmingTl);
-  }, [addTimeline]);
+  }, []);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (programming = el)}>
       <section
-        id="programming"
         className="programming"
         ref={(el) => (programming = el)}
       >
@@ -280,12 +280,12 @@ function Programming({ addTimeline }) {
           <iframe
             className="programming__iframe1"
             title="stockholmcityfilms.se"
-            src="https://www.stockholmcityfilms.se"
-            loading="lazy"
+            src="https://stockholmcityfilms.se"
             frameBorder="0"
+            loading="lazy"
           />
           <a
-            href="https://www.stockholmcityfilms.se"
+            href="https://stockholmcityfilms.se"
             target="_blank"
             rel="noreferrer noopener"
             frameBorder="0"

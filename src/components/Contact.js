@@ -15,9 +15,10 @@ function Contact({ addTimeline }) {
       scrollTrigger: {
         trigger: contact,
         fastScrollEnd: true,
+        preventOverlaps: true,
         // end: "4500",
         pin: true,
-        scrub: true,
+        scrub: 0.5,
         toggleActions: "play pause reverse none",
       },
     });
@@ -37,7 +38,7 @@ function Contact({ addTimeline }) {
         },
         "start contact"
       )
-      .to([], { duration: 12 })
+      .to({}, { duration: 12 })
       .to(
         maskDrawing,
         {
@@ -49,11 +50,11 @@ function Contact({ addTimeline }) {
       .addLabel("end contact");
 
     addTimeline(contactTl);
-  }, [addTimeline]);
+  }, []);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (contact = el)}>
-      <section id="contact" className="contact">
+      <section className="contact">
         <div className="contact__title">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.41 25.43">
             <defs>
@@ -123,8 +124,8 @@ function Contact({ addTimeline }) {
           <br />
           <a href="mailto:contact@linuskallin.se">contact@linuskallin.se</a>
           <br />
-          <a href="tel:+46738208415">0738-208415</a>
-          <br />
+          {/* <a href="tel:+46738208415">0738-208415</a>
+          <br /> */}
           www.linuskallin.se
           <br />
           <span>---------------------</span>
@@ -171,9 +172,9 @@ function Contact({ addTimeline }) {
           <br />
           <span>---------------------</span>
           <br />
-          Size: 4,1 MB
+          Size: 4,3 MB
           <br />
-          Files: 51
+          Files: 52
         </p>
         <h5 className="contact__h5">Contact</h5>
         <div className="contact__drawing">

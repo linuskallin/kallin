@@ -8,6 +8,8 @@ const Home = ({ addTimeline }) => {
 
   let home = useRef(null);
   let scroll = useRef(null);
+  let container = useRef(null);
+  let progressBar = useRef(null);
   let maskLinus = useRef(null);
   let maskPrick1 = useRef(null);
   let maskPrick2 = useRef(null);
@@ -19,7 +21,8 @@ const Home = ({ addTimeline }) => {
         pin: true,
         pinSpacing: false,
         fastScrollEnd: true,
-        scrub: true,
+        preventOverlaps: true,
+        scrub: 0.2,
         toggleActions: "play pause reverse none",
       },
     });
@@ -54,6 +57,12 @@ const Home = ({ addTimeline }) => {
         },
       })
       .addLabel("scroll")
+      .from(progressBar, {
+        transformOrigin: "bottom",
+        scaleY: 0,
+        autoAlpha: 0.3,
+        duration: 2,
+      })
       .fromTo(
         scroll,
         {
@@ -75,13 +84,14 @@ const Home = ({ addTimeline }) => {
         home,
         {
           autoAlpha: 0,
-          duration: 2,
+          duration: 1.5,
+          ease: "power3.in",
         },
         ">"
       );
 
     addTimeline(homeTl);
-  }, [addTimeline]);
+  }, []);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (home = el)}>
@@ -178,6 +188,7 @@ const Home = ({ addTimeline }) => {
             </g>
           </svg>
         </div>
+        <div className="progress-bar" ref={(el) => (progressBar = el)}></div>
       </section>
     </div>
   );

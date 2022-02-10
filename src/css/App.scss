@@ -67,7 +67,7 @@ h4 {
   text-decoration: none;
   // color: $orange;
   font-weight: 400;
-  visibility: hidden;
+  display: none;
 }
 
 h5 {
@@ -115,7 +115,7 @@ span {
 }
 
 @media only screen and (max-width: 900px) {
-  p{
+  p {
     margin-top: 1rem;
   }
   h5 {
@@ -130,7 +130,7 @@ span {
 
 // ------------------------------------------- WRAPPERS & STUFF
 
-div.pin-spacer{
+div.pin-spacer {
   z-index: initial !important;
 }
 
@@ -188,6 +188,13 @@ iframe {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  .wrapper__perspective {
+    perspective: none;
+  }
+}
+
+
 // ------------------------------------------- MENU
 
 .menu {
@@ -196,8 +203,8 @@ iframe {
   height: 160px;
   top: calc(50vh - 80px);
   left: calc(100vw / 16);
-  mix-blend-mode: normal;
   background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu a {
@@ -213,7 +220,7 @@ iframe {
   opacity: 0.3;
   margin-bottom: 10px;
   transition: all $fast ease-in;
-  mix-blend-mode: difference;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu__dot-svg:hover {
@@ -259,6 +266,24 @@ iframe {
   .menu__dot-svg {
     transform: scale(0.9);
   }
+
+  .menu__dot-svg:hover:after {
+    transform: scale(1.1);
+    opacity: 0;
+    animation: hoverMobile 1s ease-in;
+  }
+
+  @keyframes hoverMobile {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }
 
 // ------------------------------------------- HOME
@@ -294,7 +319,7 @@ iframe {
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 50;
+  z-index: 10;
   opacity: 0;
   font-weight: 300;
   pointer-events: none;
@@ -303,6 +328,7 @@ iframe {
 .arrow {
   transform: rotate(90deg) translateX(10px);
   transform-origin: center;
+  z-index: 10;
 }
 
 .home__signature {
@@ -324,6 +350,15 @@ iframe {
   stroke-width: 7.5px;
   stroke-dasharray: 4000;
   stroke-dashoffset: 4000;
+}
+
+.home .progress-bar {
+  position: absolute;
+  z-index: 20;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(95, 255, 215);
+  mix-blend-mode: exclusion;
 }
 
 // .home__cloud1 {
@@ -681,13 +716,13 @@ iframe {
   text-align: center;
 }
 
-.wrapper__example{
+.wrapper__example {
   grid-area: 1 / 8 / 2 / 9;
   display: inline-block;
   position: absolute;
 }
 
-.example{
+.example {
   align-self: flex-end;
   position: relative;
   left: -30%;
@@ -747,18 +782,18 @@ iframe {
     bottom: -5vw;
   }
 
-  .scroll-inside{
+  .scroll-inside {
     top: -8%;
     left: 5%;
     transform: rotate(30deg) translateX(-25%) translateY(100%) scale(0.8);
   }
 
-  .example{
+  .example {
     font-size: 1rem;
     outline-width: 3px;
   }
 
-  #code{
+  #code {
     display: none;
   }
 }
@@ -893,8 +928,9 @@ iframe {
   .design .wrapper__image,
   .design .wrapper__image2,
   .design .wrapper__image3 {
-    width: 50vw;
+    width: 60vw;
     top: 40vh;
+    left: 20%;
   }
 
   // .box1::after, .box2::after, .box3::after{
@@ -1095,7 +1131,12 @@ iframe {
     width: 16vw;
   }
 
-  .music__cloud1, .music__cloud2, .music__cloud3, .music__cloud4, .music__cloud5, .music__cloud6{
+  .music__cloud1,
+  .music__cloud2,
+  .music__cloud3,
+  .music__cloud4,
+  .music__cloud5,
+  .music__cloud6 {
     display: none;
   }
 }
