@@ -2,13 +2,14 @@ import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 const Home = ({ addTimeline }) => {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
 
   let home = useRef(null);
   let scroll = useRef(null);
-  let container = useRef(null);
   let progressBar = useRef(null);
   let maskLinus = useRef(null);
   let maskPrick1 = useRef(null);
@@ -19,10 +20,13 @@ const Home = ({ addTimeline }) => {
       scrollTrigger: {
         trigger: home,
         pin: true,
-        pinSpacing: false,
+        end: "+=2000",
+        pinSpacing: true,
+        // pinnedContainer: true,
         fastScrollEnd: true,
         preventOverlaps: true,
         scrub: 0.2,
+        // markers: true,
         toggleActions: "play pause reverse none",
       },
     });
@@ -61,8 +65,8 @@ const Home = ({ addTimeline }) => {
         transformOrigin: "bottom",
         scaleY: 0,
         autoAlpha: 0.3,
-        duration: 2,
-      })
+        duration: 3,
+      }, "start")
       .fromTo(
         scroll,
         {
@@ -84,7 +88,7 @@ const Home = ({ addTimeline }) => {
         home,
         {
           autoAlpha: 0,
-          duration: 1.5,
+          duration: 1,
           ease: "power3.in",
         },
         ">"
@@ -97,7 +101,7 @@ const Home = ({ addTimeline }) => {
     <div className="wrapper__perspective" ref={(el) => (home = el)}>
       <section id="home" className="home">
         <h4 className="home__h4">LINUS KALLIN - Portfolio</h4>
-        <div className="scroll" ref={(el) => (scroll = el)}>
+        <div className="scroll" ref={(el) => (scroll = el)} onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#linus", offsetY: -570} })}>
           <p>Scroll down</p>
           <p className="arrow">--{`>`}</p>
         </div>

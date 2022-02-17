@@ -113,7 +113,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Code} alt="Code" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#design", offsetY: -450} })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#design", offsetY: -300} })}
         title="Graphic Design"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -122,7 +122,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Pen} alt="Pen" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#music", offsetY: -240} })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#music", offsetY: -210} })}
         title="Music"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -162,7 +162,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Smiley} alt="Smiley" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#programming", offsetY: -600} })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#programming", offsetY: -570} })}
         title="Programming"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -171,7 +171,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Code} alt="Code" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#design", offsetY: -400} })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#design", offsetY: -390} })}
         title="Graphic Design"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -180,7 +180,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Pen} alt="Pen" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#music", offsetY: -220} })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#music", offsetY: -200} })}
         title="Music"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}

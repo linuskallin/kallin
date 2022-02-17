@@ -14,11 +14,13 @@ function Contact({ addTimeline }) {
     const contactTl = gsap.timeline({
       scrollTrigger: {
         trigger: contact,
+        end: "+=5000",
         fastScrollEnd: true,
         preventOverlaps: true,
-        // end: "4500",
         pin: true,
+        pinSpacing: true,
         scrub: 0.5,
+        // markers: true,
         toggleActions: "play pause reverse none",
       },
     });
@@ -43,7 +45,7 @@ function Contact({ addTimeline }) {
         maskDrawing,
         {
           strokeDashoffset: 0,
-          duration: 12,
+          duration: 10,
         },
         ">"
       )

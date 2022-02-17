@@ -25,11 +25,13 @@ function Programming({ addTimeline }) {
     const programmingTl = gsap.timeline({
       scrollTrigger: {
         trigger: programming,
+        end: "+=4000",
         fastScrollEnd: true,
         preventOverlaps: true,
         pin: true,
-        pinSpacing: false,
+        pinSpacing: true,
         scrub: 0.5,
+        // markers: true,
         toggleActions: "play pause reverse none",
       },
     });

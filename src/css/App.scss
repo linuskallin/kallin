@@ -5,9 +5,9 @@ html {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  overscroll-behavior-y: none;
   background-color: #fff;
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
 }
 
 // ------------------------------------------- COLORS
@@ -132,6 +132,7 @@ span {
 
 div.pin-spacer {
   z-index: initial !important;
+  height: 0px !important;
 }
 
 .wrapper__image,
@@ -322,7 +323,7 @@ iframe {
   z-index: 10;
   opacity: 0;
   font-weight: 300;
-  pointer-events: none;
+  // pointer-events: none;
 }
 
 .arrow {
@@ -359,6 +360,7 @@ iframe {
   width: 100vw;
   background-color: rgb(95, 255, 215);
   mix-blend-mode: exclusion;
+  pointer-events: none;
 }
 
 // .home__cloud1 {

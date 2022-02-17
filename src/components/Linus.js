@@ -31,11 +31,13 @@ function Linus({ addTimeline }) {
     const linusTl = gsap.timeline({
       scrollTrigger: {
         trigger: linus,
+        end: "+=4000",
         pin: true,
-        pinSpacing: false,
+        pinSpacing: true,
         fastScrollEnd: true,
         preventOverlaps: true,
         scrub: 0.5,
+        // markers: true,
         toggleActions: "play pause reverse none",
       },
     });
