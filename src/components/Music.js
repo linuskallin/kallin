@@ -75,7 +75,7 @@ function Music({ addTimeline }) {
       .addLabel("music fadein")
       .from(music, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
       .addLabel("start music")
       .to(
@@ -219,9 +219,9 @@ function Music({ addTimeline }) {
       .addLabel("end music")
       .to(music, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
-      .to({}, { duration: 1 })
+      // .to({}, { duration: 1 })
 
     clouds.forEach((cloud, i) => {
       musicTl.from(

@@ -47,7 +47,7 @@ function Design({ addTimeline }) {
       .addLabel("design fadein")
       .from(design, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
       .addLabel("start design")
       .to(
@@ -255,9 +255,9 @@ function Design({ addTimeline }) {
       .addLabel("end design")
       .to(design, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
-      .to({}, { duration: 1 })
+      // .to({}, { duration: 1 })
 
     addTimeline(designTl);
   }, []);

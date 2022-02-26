@@ -43,7 +43,7 @@ function Programming({ addTimeline }) {
       .addLabel("programming fadein")
       .from(programming, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
       .addLabel("start programming")
       .to(
@@ -164,13 +164,13 @@ function Programming({ addTimeline }) {
         "iframe"
       )
       .addLabel("paus")
-      .to({}, { duration: 10 }, "paus")
+      .to({}, { duration: 6 }, "paus")
       .addLabel("end programming")
       .to(programming, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
-      .to({}, { duration: 1 });
+      // .to({}, { duration: 1 });
 
     addTimeline(programmingTl);
   }, []);

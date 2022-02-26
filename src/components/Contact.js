@@ -14,7 +14,7 @@ function Contact({ addTimeline }) {
     const contactTl = gsap.timeline({
       scrollTrigger: {
         trigger: contact,
-        end: "+=5000",
+        end: "+=6000",
         fastScrollEnd: true,
         preventOverlaps: true,
         pin: true,
@@ -26,11 +26,11 @@ function Contact({ addTimeline }) {
     });
 
     contactTl
-      .to({}, { duration: 2 })
+      // .to({}, { duration: 2 })
       .addLabel("contact fadein")
       .from(contact, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
       .addLabel("start contact")
       .to(

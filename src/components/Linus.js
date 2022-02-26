@@ -48,7 +48,7 @@ function Linus({ addTimeline }) {
         linus,
         {
           autoAlpha: 0,
-          duration: 2,
+          duration: 1,
         },
         "linus fadein>-10"
       )
@@ -138,7 +138,7 @@ function Linus({ addTimeline }) {
         zIndex: 10,
         duration: 5,
       })
-      .to({}, { duration: 4 })
+      // .to({}, { duration: 4 })
       // .addLabel("disperse")
       // .to([img2, img3, img4], {
       //   xPercent: 100,
@@ -149,9 +149,9 @@ function Linus({ addTimeline }) {
       .addLabel("end linus")
       .to(linus, {
         autoAlpha: 0,
-        duration: 2,
+        duration: 1,
       })
-      .to({}, { duration: 1 })
+      // .to({}, { duration: 1 })
 
     addTimeline(linusTl);
   }, []);
