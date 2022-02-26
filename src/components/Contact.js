@@ -19,7 +19,7 @@ function Contact({ addTimeline }) {
         preventOverlaps: true,
         pin: true,
         pinSpacing: true,
-        scrub: 0.5,
+        scrub: 0.2,
         // markers: true,
         toggleActions: "play pause reverse none",
       },

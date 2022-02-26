@@ -104,7 +104,11 @@ const Home = ({ addTimeline }) => {
         <div className="scroll" ref={(el) => (scroll = el)} onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#linus", offsetY: -1600} })}>
           <p>Scroll down 
             <br/>
-            and don't stop</p>
+            and don't stop
+            <br/>
+            or use the menu
+            <br/>
+            to your left</p>
           <p className="arrow">--{`>`}</p>
         </div>
         <div className="home__signature">

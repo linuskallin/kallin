@@ -36,7 +36,7 @@ function Linus({ addTimeline }) {
         pinSpacing: true,
         fastScrollEnd: true,
         preventOverlaps: true,
-        scrub: 0.5,
+        scrub: 0.2,
         // markers: true,
         toggleActions: "play pause reverse none",
       },
@@ -95,29 +95,21 @@ function Linus({ addTimeline }) {
         ">-0.4"
       )
       // .to({}, { duration: 4 })
-      .fromTo(
+      .from(
         img1,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "start linus"
       )
-      .fromTo(
+      .from(
         p,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "start linus>1"
       )

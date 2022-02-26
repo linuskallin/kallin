@@ -33,7 +33,7 @@ function Programming({ addTimeline }) {
         preventOverlaps: true,
         pin: true,
         pinSpacing: true,
-        scrub: 0.5,
+        scrub: 0.2,
         // markers: true,
         toggleActions: "play pause reverse none",
       },
@@ -54,57 +54,41 @@ function Programming({ addTimeline }) {
         },
         "start programming"
       )
-      .fromTo(
+      .from(
         p,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "start programming"
       )
-      .fromTo(
+      .from(
         [li1, li2, li3, li4],
         {
           autoAlpha: 0,
           x: 100,
-        },
-        {
-          stagger: 7,
-          autoAlpha: 1,
           duration: 6,
-          x: 0,
+          stagger: 7,
         },
         ">"
       )
-      .fromTo(
+      .from(
         p2,
         {
           autoAlpha: 0,
           x: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          x: 0,
         },
         ">"
       )
-      .fromTo(
+      .from(
         [li5, li6, li7, li8, li9, li10],
         {
           autoAlpha: 0,
           x: 100,
-        },
-        {
-          stagger: 1,
-          autoAlpha: 1,
           duration: 3,
-          x: 0,
+          stagger: 1,
         },
         ">"
       )
@@ -170,15 +154,11 @@ function Programming({ addTimeline }) {
         },
         "iframe"
       )
-      .fromTo(
+      .from(
         iframe1,
         {
           xPercent: -150,
           autoAlpha: 0,
-        },
-        {
-          xPercent: 0,
-          autoAlpha: 1,
           duration: 10,
         },
         "iframe"

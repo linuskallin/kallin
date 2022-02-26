@@ -36,7 +36,6 @@ function Music({ addTimeline }) {
   let li16 = useRef(null);
   let li17 = useRef(null);
   let li18 = useRef(null);
-  let li19 = useRef(null);
   let img1 = useRef(null);
   let img2 = useRef(null);
   let img3 = useRef(null);
@@ -66,7 +65,7 @@ function Music({ addTimeline }) {
         preventOverlaps: true,
         pin: true,
         pinSpacing: true,
-        scrub: 0.5,
+        scrub: 0.2,
         // markers: true,
         toggleActions: "play pause reverse none",
       },
@@ -87,51 +86,39 @@ function Music({ addTimeline }) {
         },
         "start music"
       )
-      .fromTo(
+      .from(
         img1,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "start music"
       )
       .to({}, { duration: 1 }, ">")
-      .fromTo(
+      .from(
         p,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "start music"
       )
-      .fromTo(
-        [li1, li2, li3, li4, li5, li6, li7, li8],
+      .from(
+        [li1, li2, li3, li4, li5, li6, li7],
         {
           autoAlpha: 0,
           x: 100,
-        },
-        {
-          stagger: 3,
-          autoAlpha: 1,
           duration: 6,
-          x: 0,
+          stagger: 3,
         },
         ">"
       )
       .to({}, { duration: 2 }, ">")
       .addLabel("part2")
       .to(
-        [p],
+        p,
         {
           autoAlpha: 0,
           y: -100,
@@ -149,44 +136,32 @@ function Music({ addTimeline }) {
         "part2"
       )
       .addLabel("part3")
-      .fromTo(
+      .from(
         img2,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "part3"
       )
       .to({}, { duration: 1 }, ">")
-      .fromTo(
+      .from(
         p2,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "part3"
       )
-      .fromTo(
-        [li9, li10, li11, li12, li13, li14, li15],
+      .from(
+        [li8, li9, li10, li11, li12, li13, li14],
         {
           autoAlpha: 0,
           x: 100,
-        },
-        {
-          stagger: 3,
-          autoAlpha: 1,
           duration: 6,
-          x: 0,
+          stagger: 3,
         },
         ">"
       )
@@ -211,44 +186,32 @@ function Music({ addTimeline }) {
         "part4"
       )
       .addLabel("part5")
-      .fromTo(
+      .from(
         img3,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "part5"
       )
       .to({}, { duration: 1 }, ">")
-      .fromTo(
+      .from(
         p3,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "part5"
       )
-      .fromTo(
-        [li16, li17, li18, li19],
+      .from(
+        [li15, li16, li17, li18],
         {
           autoAlpha: 0,
           x: 100,
-        },
-        {
-          stagger: 3,
-          autoAlpha: 1,
           duration: 6,
-          x: 0,
+          stagger: 3,
         },
         ">"
       )
@@ -391,34 +354,33 @@ function Music({ addTimeline }) {
             </li>
             <li ref={(el) => (li2 = el)}>Recording</li>
             <li ref={(el) => (li3 = el)}>Producing</li>
-            <li ref={(el) => (li4 = el)}>Writing songs</li>
-            <li ref={(el) => (li5 = el)}>Writing film scores</li>
-            <li ref={(el) => (li6 = el)}>Mixing</li>
-            <li ref={(el) => (li7 = el)}>Mastering</li>
-            <li ref={(el) => (li8 = el)}>Creating music videos</li>
+            <li ref={(el) => (li4 = el)}>Writing songs and film scores</li>
+            <li ref={(el) => (li5 = el)}>Mixing</li>
+            <li ref={(el) => (li6 = el)}>Mastering</li>
+            <li ref={(el) => (li7 = el)}>Creating music videos</li>
           </ul>
           <br />
         </div>
         <div className="music__p2" ref={(el) => (p2 = el)}>
           <p>A selection of fun artists I've played with:</p>
           <ul>
-            <li ref={(el) => (li9 = el)}>Looptroop Rockers</li>
-            <li ref={(el) => (li10 = el)}>Svenska Akademien</li>
-            <li ref={(el) => (li11 = el)}>Syster Sol</li>
-            <li ref={(el) => (li12 = el)}>Dani M</li>
-            <li ref={(el) => (li13 = el)}>Broder John</li>
-            <li ref={(el) => (li14 = el)}>Navid Modiri</li>
-            <li ref={(el) => (li15 = el)}>Amy Diamond</li>
+            <li ref={(el) => (li8 = el)}>Looptroop Rockers</li>
+            <li ref={(el) => (li9 = el)}>Svenska Akademien</li>
+            <li ref={(el) => (li10 = el)}>Syster Sol</li>
+            <li ref={(el) => (li11 = el)}>Dani M</li>
+            <li ref={(el) => (li12 = el)}>Broder John</li>
+            <li ref={(el) => (li13 = el)}>Navid Modiri</li>
+            <li ref={(el) => (li14 = el)}>Amy Diamond</li>
           </ul>
           <br />
         </div>
         <div className="music__p3" ref={(el) => (p3 = el)}>
           <p>Worked with sound and music at:</p>
           <ul>
-            <li ref={(el) => (li16 = el)}>Sveriges Television (SVT)</li>
-            <li ref={(el) => (li17 = el)}>Sveriges Radio (SR)</li>
-            <li ref={(el) => (li18 = el)}>Medborgarskolan</li>
-            <li ref={(el) => (li19 = el)}>Sensus</li>
+            <li ref={(el) => (li15 = el)}>Sveriges Television (SVT)</li>
+            <li ref={(el) => (li16 = el)}>Sveriges Radio (SR)</li>
+            <li ref={(el) => (li17 = el)}>Medborgarskolan</li>
+            <li ref={(el) => (li18 = el)}>Sensus</li>
           </ul>
         </div>
         <h5 className="music__h5">Music</h5>

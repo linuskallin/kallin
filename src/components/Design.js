@@ -37,7 +37,7 @@ function Design({ addTimeline }) {
         preventOverlaps: true,        
         pin: true,
         pinSpacing: true,
-        scrub: 0.5,
+        scrub: 0.2,
         // markers: true,
         toggleActions: "play pause reverse none",
       },
@@ -69,30 +69,22 @@ function Design({ addTimeline }) {
       .from(design, {
         rotationX: 0,
       })
-      .fromTo(
+      .from(
         p,
         {
           autoAlpha: 0,
           y: 100,
-        },
-        {
-          autoAlpha: 1,
           duration: 6,
-          y: 0,
         },
         "start design"
       )
-      .fromTo(
+      .from(
         [li1, li2, li3, li4],
         {
           autoAlpha: 0,
           x: 100,
-        },
-        {
-          stagger: 7,
-          autoAlpha: 1,
           duration: 6,
-          x: 0,
+          stagger: 7,
         },
         ">"
       )
