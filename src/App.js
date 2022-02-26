@@ -9,6 +9,7 @@ import Programming from "./components/Programming";
 import Design from "./components/Design";
 import Music from "./components/Music";
 import Contact from "./components/Contact";
+import Rotate from "./components/Rotate";
 
 import "./css/App.scss";
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      <Rotate />
       <Home addTimeline={addTimeline} />
       <Suspense fallback={<div>Loading...</div>}>
         <div>

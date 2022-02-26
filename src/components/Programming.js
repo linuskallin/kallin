@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
+import Movie from "../images/other/websites.mp4";
+
 function Programming({ addTimeline }) {
   gsap.registerPlugin(TextPlugin);
 
@@ -18,6 +20,7 @@ function Programming({ addTimeline }) {
   let li7 = useRef(null);
   let li8 = useRef(null);
   let li9 = useRef(null);
+  let li10 = useRef(null);
   let iframe1 = useRef(null);
   let maskProgramming = useRef(null);
 
@@ -65,7 +68,7 @@ function Programming({ addTimeline }) {
         "start programming"
       )
       .fromTo(
-        [li1, li2, li3],
+        [li1, li2, li3, li4],
         {
           autoAlpha: 0,
           x: 100,
@@ -92,7 +95,7 @@ function Programming({ addTimeline }) {
         ">"
       )
       .fromTo(
-        [li4, li5, li6, li7, li8, li9],
+        [li5, li6, li7, li8, li9, li10],
         {
           autoAlpha: 0,
           x: 100,
@@ -157,7 +160,7 @@ function Programming({ addTimeline }) {
         "start programming"
       )
       .addLabel("pause")
-      .to({}, { duration: 8 }, "pause")
+      // .to({}, { duration: 8 }, "pause")
       .addLabel("iframe")
       .to(
         p,
@@ -186,17 +189,15 @@ function Programming({ addTimeline }) {
       .to(programming, {
         autoAlpha: 0,
         duration: 2,
-      });
+      })
+      .to({}, { duration: 1 });
 
     addTimeline(programmingTl);
   }, []);
 
   return (
     <div className="wrapper__perspective" ref={(el) => (programming = el)}>
-      <section
-        className="programming"
-        ref={(el) => (programming = el)}
-      >
+      <section className="programming" ref={(el) => (programming = el)}>
         <div className="programming__title">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.53 35.5">
             <defs>
@@ -276,16 +277,14 @@ function Programming({ addTimeline }) {
         </div>
         <div className="programming__line"></div>
         <div className="wrapper__image" ref={(el) => (iframe1 = el)}>
-        <div className="wrapper__example">
+          <div className="wrapper__example">
             <p className="example">I DID THIS</p>
           </div>
-          <iframe
-            className="programming__iframe1"
-            title="stockholmcityfilms.se"
-            src="https://stockholmcityfilms.se"
-            frameBorder="0"
-            loading="lazy"
-          />
+          <div className="wrapper__video">
+            <video className="programming__video" autoPlay loop muted>
+              <source src={Movie} type="video/mp4" />
+            </video>
+          </div>
           <a
             href="https://stockholmcityfilms.se"
             target="_blank"
@@ -293,6 +292,15 @@ function Programming({ addTimeline }) {
             frameBorder="0"
           >
             <h6>stockholmcityfilms.se</h6>
+          </a>
+          <a
+            className="programming__h6"
+            href="https://sprakkraft.se"
+            target="_blank"
+            rel="noreferrer noopener"
+            frameBorder="0"
+          >
+            <h6>sprakkraft.se</h6>
           </a>
           <div className="scroll-inside">
             <p className="arrow-up">--{`>`}</p>
@@ -305,10 +313,8 @@ function Programming({ addTimeline }) {
         </div>
         <div className="programming__p" ref={(el) => (p = el)}>
           <p>
-            I haven't been programming for so long, I actually started studying
-            front-end-programming in the fall of 2019. But I've still managed to
-            make a few things and be a part of a few projects that I can show
-            you. Below you can find three websites that I've built.
+            I started studying front-end-programming in the fall of 2019. Below
+            you can find four websites that I've built or been a part of.
           </p>
           <ul>
             <li ref={(el) => (li1 = el)}>
@@ -329,10 +335,19 @@ function Programming({ addTimeline }) {
               >
                 <i>stockholmcityfilms.se</i>
               </a>{" "}
-              for a production company that produces movies and tv-shows. I
-              spent a few days on it.
+              for a production company that produces movies and tv-shows.
             </li>
             <li ref={(el) => (li3 = el)}>
+              <a
+                href="https://theheroloop.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <i>theheroloop.com</i>
+              </a>{" "}
+              as part of a large international team during my second internship.
+            </li>
+            <li ref={(el) => (li4 = el)}>
               <a
                 href="https://linuskallin.se"
                 target="_blank"
@@ -340,19 +355,20 @@ function Programming({ addTimeline }) {
               >
                 <i>linuskallin.se</i>
               </a>{" "}
-              which I did as my examination project. It took me about one month
-              to complete it.
+              which I did as my examination project.
             </li>
           </ul>
-          <br/>
-          <p ref={(el) => (p2 = el)}>Worked with the following technologies/languages/frameworks:</p>
+          <br />
+          <p ref={(el) => (p2 = el)}>
+            Worked with the following and more:
+          </p>
           <ul>
-            <li ref={(el) => (li4 = el)}>HTML</li>
-            <li ref={(el) => (li5 = el)}>CSS</li>
-            <li ref={(el) => (li6 = el)}>JavaScript</li>
-            <li ref={(el) => (li7 = el)}>React</li>
-            <li ref={(el) => (li8 = el)}>Node</li>
-            <li ref={(el) => (li9 = el)}>Git</li>
+            <li ref={(el) => (li5 = el)}>HTML</li>
+            <li ref={(el) => (li6 = el)}>CSS</li>
+            <li ref={(el) => (li7 = el)}>JavaScript</li>
+            <li ref={(el) => (li8 = el)}>React</li>
+            <li ref={(el) => (li9 = el)}>Node</li>
+            <li ref={(el) => (li10 = el)}>Git</li>
           </ul>
         </div>
         <h5 className="programming__h5">Programming</h5>

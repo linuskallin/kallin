@@ -26,6 +26,7 @@ function Contact({ addTimeline }) {
     });
 
     contactTl
+      .to({}, { duration: 2 })
       .addLabel("contact fadein")
       .from(contact, {
         autoAlpha: 0,
@@ -40,7 +41,7 @@ function Contact({ addTimeline }) {
         },
         "start contact"
       )
-      .to({}, { duration: 12 })
+      .to({}, { duration: 8 })
       .to(
         maskDrawing,
         {
@@ -174,9 +175,9 @@ function Contact({ addTimeline }) {
           <br />
           <span>---------------------</span>
           <br />
-          Size: 4,3 MB
+          Size: 5.7 MB
           <br />
-          Files: 52
+          Files: 53
         </p>
         <h5 className="contact__h5">Contact</h5>
         <div className="contact__drawing">

@@ -257,7 +257,8 @@ function Music({ addTimeline }) {
       .to(music, {
         autoAlpha: 0,
         duration: 2,
-      });
+      })
+      .to({}, { duration: 1 })
 
     clouds.forEach((cloud, i) => {
       musicTl.from(
@@ -268,7 +269,7 @@ function Music({ addTimeline }) {
         },
         "music fadein"
       );
-    });
+    })
 
     addTimeline(musicTl);
   }, []);

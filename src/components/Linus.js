@@ -94,7 +94,7 @@ function Linus({ addTimeline }) {
         },
         ">-0.4"
       )
-      .to({}, { duration: 4 })
+      // .to({}, { duration: 4 })
       .fromTo(
         img1,
         {
@@ -121,7 +121,7 @@ function Linus({ addTimeline }) {
         },
         "start linus>1"
       )
-      .to({}, { duration: 3 })
+      // .to({}, { duration: 3 })
       .addLabel("img2")
       .from(img2, {
         rotate: -10,
@@ -147,18 +147,19 @@ function Linus({ addTimeline }) {
         duration: 5,
       })
       .to({}, { duration: 4 })
-      .addLabel("disperse")
-      .to([img2, img3, img4], {
-        xPercent: 100,
-        autoAlpha: 0,
-        duration: 5,
-      },
-      "disperse")
+      // .addLabel("disperse")
+      // .to([img2, img3, img4], {
+      //   xPercent: 100,
+      //   autoAlpha: 0,
+      //   duration: 5,
+      // },
+      // "disperse")
       .addLabel("end linus")
       .to(linus, {
         autoAlpha: 0,
         duration: 2,
-      });
+      })
+      .to({}, { duration: 1 })
 
     addTimeline(linusTl);
   }, []);

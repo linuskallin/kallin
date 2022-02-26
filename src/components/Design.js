@@ -96,7 +96,7 @@ function Design({ addTimeline }) {
         },
         ">"
       )
-      .to({}, { duration: 4 }, ">")
+      // .to({}, { duration: 4 }, ">")
       .addLabel("boxes")
       .from(
         box1,
@@ -264,7 +264,8 @@ function Design({ addTimeline }) {
       .to(design, {
         autoAlpha: 0,
         duration: 2,
-      });
+      })
+      .to({}, { duration: 1 })
 
     addTimeline(designTl);
   }, []);

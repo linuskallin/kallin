@@ -22,7 +22,6 @@ const Home = ({ addTimeline }) => {
         pin: true,
         end: "+=2000",
         pinSpacing: true,
-        // pinnedContainer: true,
         fastScrollEnd: true,
         preventOverlaps: true,
         scrub: 0.2,
@@ -92,7 +91,8 @@ const Home = ({ addTimeline }) => {
           ease: "power3.in",
         },
         ">"
-      );
+      )
+      // .to({}, { duration: 1 })
 
     addTimeline(homeTl);
   }, []);
@@ -101,8 +101,10 @@ const Home = ({ addTimeline }) => {
     <div className="wrapper__perspective" ref={(el) => (home = el)}>
       <section id="home" className="home">
         <h4 className="home__h4">LINUS KALLIN - Portfolio</h4>
-        <div className="scroll" ref={(el) => (scroll = el)} onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#linus", offsetY: -570} })}>
-          <p>Scroll down</p>
+        <div className="scroll" ref={(el) => (scroll = el)} onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#linus", offsetY: -1600} })}>
+          <p>Scroll down 
+            <br/>
+            and don't stop</p>
           <p className="arrow">--{`>`}</p>
         </div>
         <div className="home__signature">
