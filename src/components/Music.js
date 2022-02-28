@@ -60,13 +60,13 @@ function Music({ addTimeline }) {
     const musicTl = gsap.timeline({
       scrollTrigger: {
         trigger: music,
-        end: "+=5000",
+        end: "+=4500",
         fastScrollEnd: true,
         preventOverlaps: true,
         pin: true,
-        pinSpacing: true,
-        scrub: 0.2,
-        // markers: true,
+        pinSpacing: false,
+        scrub: true,
+        markers: false,
         toggleActions: "play pause reverse none",
       },
     });

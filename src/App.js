@@ -25,19 +25,40 @@ function App() {
   return (
     <div className="App">
       <Rotate />
-      <Home addTimeline={addTimeline} />
+      <div className="menu-div">
+        <Home addTimeline={addTimeline} />
+        <div className="spacer1"></div>
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <div>
-          <div id="linus"></div>
-          <Linus addTimeline={addTimeline} />
-          <div id="programming"></div>
-          <Programming addTimeline={addTimeline} />
-          <div id="design"></div>
-          <Design addTimeline={addTimeline} />
-          <div id="music"></div>
-          <Music addTimeline={addTimeline} />
-          <div id="contact"></div>
-          <Contact addTimeline={addTimeline} />
+          <div className="menu-div">
+            <div id="linus"></div>
+            <Linus addTimeline={addTimeline} />
+            <div className="spacer2"></div>
+          </div>
+          <div className="menu-div">
+            <div id="programming"></div>
+            <Programming addTimeline={addTimeline} />
+            <div className="spacer3"></div>
+          </div>
+
+          <div className="menu-div">
+            <div id="design"></div>
+            <Design addTimeline={addTimeline} />
+            <div className="spacer4"></div>
+          </div>
+
+          <div className="menu-div">
+            <div id="music"></div>
+            <Music addTimeline={addTimeline} />
+            <div className="spacer5"></div>
+          </div>
+
+          <div className="menu-div">
+            <div id="contact"></div>
+            <Contact addTimeline={addTimeline} />
+            <div className="spacer6"></div>
+          </div>
         </div>
       </Suspense>
       <Menu addTimeline={addTimeline} />

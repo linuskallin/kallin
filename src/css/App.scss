@@ -159,8 +159,33 @@ span {
 
 // div.pin-spacer {
 //   z-index: initial !important;
-//   height: 0px !important;
+//   height: 10px !important;
 // }
+
+.spacer1{
+  z-index: initial;
+  height: calc(2000px - 100vh)
+}
+.spacer2{
+  z-index: initial;
+  height: calc(4000px - 100vh)
+}
+.spacer3{
+  z-index: initial;
+  height: calc(4000px - 100vh)
+}
+.spacer4{
+  z-index: initial;
+  height: calc(4000px - 100vh)
+}
+.spacer5{
+  z-index: -1;
+  height: calc(5000px - 100vh)
+}
+.spacer6{
+  z-index: initial;
+  height: calc(5000px - 100vh)
+}
 
 .wrapper__image,
 .wrapper__image2,
@@ -551,8 +576,8 @@ iframe{
   display: flex;
   position: absolute;
   z-index: 50;
-  left: 40vw;
-  top: calc(50vh - 50%);
+  left: 30vw;
+  top: calc(50vh - 40%);
 }
 
 .linus__img2,

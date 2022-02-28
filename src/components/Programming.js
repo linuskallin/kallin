@@ -32,9 +32,9 @@ function Programming({ addTimeline }) {
         fastScrollEnd: true,
         preventOverlaps: true,
         pin: true,
-        pinSpacing: true,
-        scrub: 0.2,
-        // markers: true,
+        pinSpacing: false,
+        scrub: true,
+        markers: false,
         toggleActions: "play pause reverse none",
       },
     });

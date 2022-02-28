@@ -14,13 +14,13 @@ function Contact({ addTimeline }) {
     const contactTl = gsap.timeline({
       scrollTrigger: {
         trigger: contact,
-        end: "+=6000",
+        end: "+=5000",
         fastScrollEnd: true,
         preventOverlaps: true,
         pin: true,
-        pinSpacing: true,
-        scrub: 0.2,
-        // markers: true,
+        pinSpacing: false,
+        scrub: true,
+        markers: false,
         toggleActions: "play pause reverse none",
       },
     });

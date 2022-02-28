@@ -37,7 +37,7 @@ const Menu = ({ addTimeline }) => {
   }, []);
 
   useEffect(() => {
-    const sections = gsap.utils.toArray(".wrapper__perspective");
+    const sections = gsap.utils.toArray(".menu-div");
     const navLinks = gsap.utils.toArray(".menu__dot-svg");
 
     sections.forEach((section, i) => {
@@ -59,7 +59,7 @@ const Menu = ({ addTimeline }) => {
         ScrollTrigger.create({
           trigger: section,
           start: "top top",
-          end: String(section.parentElement.clientHeight),
+          end: String(section.clientHeight),
           // markers: true,
   
           onToggle: () => {
