@@ -93,7 +93,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Home} alt="Home" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#linus", offsetY: -1700}})}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#linus", offsetY: -1900}})}
         title="Linus"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -102,7 +102,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Smiley} alt="Smiley" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo:{y:"#programming", offsetY: -2720}})}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo:{y:"#programming", offsetY: -2950}})}
         title="Programming"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}
@@ -120,7 +120,7 @@ const Menu = ({ addTimeline }) => {
         <img className="menu__img" src={Pen} alt="Pen" />
       </div>
       <div
-        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#music", offsetY: -1100} })}
+        onClick={() => gsap.to(window, { duration: 1, scrollTo: {y:"#music", offsetY: -950} })}
         title="Music"
         className="menu__dot-svg"
         onMouseEnter={(e) => tooltipAdd(e)}

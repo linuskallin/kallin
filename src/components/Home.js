@@ -87,7 +87,7 @@ const Home = ({ addTimeline }) => {
         home,
         {
           autoAlpha: 0,
-          duration: 1,
+          duration: 2,
           ease: "power3.in",
         },
         ">"

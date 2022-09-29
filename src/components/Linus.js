@@ -48,7 +48,7 @@ function Linus({ addTimeline }) {
         linus,
         {
           autoAlpha: 0,
-          duration: 1,
+          duration: 2,
         },
         "linus fadein>-10"
       )
@@ -149,7 +149,7 @@ function Linus({ addTimeline }) {
       .addLabel("end linus")
       .to(linus, {
         autoAlpha: 0,
-        duration: 1,
+        duration: 2,
       })
       // .to({}, { duration: 1 })
 

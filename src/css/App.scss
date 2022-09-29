@@ -179,12 +179,12 @@ span {
   height: calc(4000px - 100vh)
 }
 .spacer5{
-  z-index: -1;
+  z-index: initial;
   height: calc(5000px - 100vh)
 }
 .spacer6{
   z-index: initial;
-  height: calc(5000px - 100vh)
+  height: calc(5500px - 100vh)
 }
 
 .wrapper__image,
@@ -1222,6 +1222,7 @@ iframe{
 
 .contact {
   height: 100vh;
+  z-index: -1;
   // position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr) 5vw;

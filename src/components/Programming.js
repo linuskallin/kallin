@@ -4,6 +4,9 @@ import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
 import Movie from "../images/other/websites.mp4";
+import MovieWebm from "../images/other/websites.webm";
+import Placeholder from "../images/other/placeholder.jpeg";
+
 
 function Programming({ addTimeline }) {
   gsap.registerPlugin(TextPlugin);
@@ -43,7 +46,7 @@ function Programming({ addTimeline }) {
       .addLabel("programming fadein")
       .from(programming, {
         autoAlpha: 0,
-        duration: 1,
+        duration: 2,
       })
       .addLabel("start programming")
       .to(
@@ -168,7 +171,7 @@ function Programming({ addTimeline }) {
       .addLabel("end programming")
       .to(programming, {
         autoAlpha: 0,
-        duration: 1,
+        duration: 2,
       })
       // .to({}, { duration: 1 });
 
@@ -261,11 +264,13 @@ function Programming({ addTimeline }) {
             <p className="example">I DID THIS</p>
           </div>
           <div className="wrapper__video">
-            <video className="programming__video" autoPlay loop muted>
+            <video className="programming__video" autoPlay loop muted playsinline preload="auto" poster={Placeholder}>
               <source src={Movie} type="video/mp4" />
+              <source src={MovieWebm} type="video/webm" />
+              <img src={Placeholder} title="Your browser does not support the <video> tag" />
             </video>
           </div>
-          <a
+          {/* <a
             href="https://stockholmcityfilms.se"
             target="_blank"
             rel="noreferrer noopener"
@@ -281,7 +286,7 @@ function Programming({ addTimeline }) {
             frameBorder="0"
           >
             <h6>sprakkraft.se</h6>
-          </a>
+          </a> */}
           <div className="scroll-inside">
             <p className="arrow-up">--{`>`}</p>
             <p>

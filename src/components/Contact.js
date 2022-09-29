@@ -26,11 +26,10 @@ function Contact({ addTimeline }) {
     });
 
     contactTl
-      // .to({}, { duration: 2 })
       .addLabel("contact fadein")
       .from(contact, {
         autoAlpha: 0,
-        duration: 1,
+        duration: 2,
       })
       .addLabel("start contact")
       .to(

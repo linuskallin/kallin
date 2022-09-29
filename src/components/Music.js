@@ -75,7 +75,7 @@ function Music({ addTimeline }) {
       .addLabel("music fadein")
       .from(music, {
         autoAlpha: 0,
-        duration: 1,
+        duration: 2,
       })
       .addLabel("start music")
       .to(
@@ -219,7 +219,7 @@ function Music({ addTimeline }) {
       .addLabel("end music")
       .to(music, {
         autoAlpha: 0,
-        duration: 1,
+        duration: 2,
       })
       // .to({}, { duration: 1 })
 
@@ -364,6 +364,7 @@ function Music({ addTimeline }) {
         <div className="music__p2" ref={(el) => (p2 = el)}>
           <p>A selection of fun artists I've played with:</p>
           <ul>
+            <li ref={(el) => (li8 = el)}>Eek-A-Mouse</li>
             <li ref={(el) => (li8 = el)}>Looptroop Rockers</li>
             <li ref={(el) => (li9 = el)}>Svenska Akademien</li>
             <li ref={(el) => (li10 = el)}>Syster Sol</li>
