@@ -174,9 +174,9 @@ function Contact({ addTimeline }) {
           <br />
           <span>---------------------</span>
           <br />
-          Size: 5.7 MB
+          Size: 9.1 MB
           <br />
-          Files: 53
+          Files: 55
         </p>
         <h5 className="contact__h5">Contact</h5>
         <div className="contact__drawing">
