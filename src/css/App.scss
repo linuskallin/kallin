@@ -754,6 +754,10 @@ iframe{
 //   justify-content: center;
 // }
 
+.slick-prev:before, .slick-next:before{
+  color: black !important;
+}
+
 .wrapper__video img{
   max-height: 700px;
   width: 100%;
@@ -849,14 +853,6 @@ iframe{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) !important;
-  }
-
-  .programming .wrapper__image button{
-    color: black !important;
-  }
-
-  .slick-prev:before, .slick-next:before{
-    color: black !important;
   }
 
   .programming .wrapper__image h6 {
