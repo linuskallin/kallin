@@ -1,12 +1,18 @@
 import { useEffect, useRef } from "react";
 
+import Slider from "react-slick"
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
-import Movie from "../images/other/websites.mp4";
-import MovieWebm from "../images/other/websites.webm";
-import Placeholder from "../images/other/placeholder.jpeg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+import Img1 from "../images/other/scf.webp"
+import Img2 from "../images/other/sprakkraft.webp"
+import Img3 from "../images/other/lillapappa.webp"
+// import Movie from "../images/other/websites.mp4";
+// import MovieWebm from "../images/other/websites.webm";
+// import Placeholder from "../images/other/placeholder.jpeg";
 
 function Programming({ addTimeline }) {
   gsap.registerPlugin(TextPlugin);
@@ -26,6 +32,19 @@ function Programming({ addTimeline }) {
   let li10 = useRef(null);
   let iframe1 = useRef(null);
   let maskProgramming = useRef(null);
+
+const settings = {
+      autoplay: true,
+      infinite: true,
+      speed: 600,
+      fade: true,
+      // centerMode: true,
+      // centerPadding: "50px",
+      lazyLoad: "progressive",
+      // variableWidth: true,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
 
   useEffect(() => {
     const programmingTl = gsap.timeline({
@@ -261,14 +280,25 @@ function Programming({ addTimeline }) {
         <div className="programming__line"></div>
         <div className="wrapper__image" ref={(el) => (iframe1 = el)}>
           <div className="wrapper__example">
-            <p className="example">I DID THIS</p>
+            <p className="example">I MADE THESE</p>
           </div>
           <div className="wrapper__video">
-            <video className="programming__video" autoPlay loop muted playsinline preload="auto" poster={Placeholder}>
+            <Slider {...settings}>
+              <div>
+                  <img src={Img1} alt="Stockholm City Films" />
+              </div>
+              <div>
+                  <img src={Img2} alt="Språkkraft" />
+              </div>
+              <div>
+                  <img src={Img3} alt="Lilla pappa" />
+              </div>
+            </Slider>
+            {/* <video className="programming__video" autoPlay loop muted playsinline preload="auto" poster={Placeholder}>
               <source src={Movie} type="video/mp4" />
               <source src={MovieWebm} type="video/webm" />
               <img src={Placeholder} title="Your browser does not support the <video> tag" />
-            </video>
+            </video> */}
           </div>
           {/* <a
             href="https://stockholmcityfilms.se"

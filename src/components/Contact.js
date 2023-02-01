@@ -32,14 +32,14 @@ function Contact({ addTimeline }) {
         duration: 2,
       })
       .addLabel("start contact")
-      .to(
-        maskContact,
-        {
-          strokeDashoffset: 0,
-          duration: 6,
-        },
-        "start contact"
-      )
+      // .to(
+      //   maskContact,
+      //   {
+      //     strokeDashoffset: 1,
+      //     duration: 6,
+      //   },
+      //   "start contact"
+      // )
       .to({}, { duration: 8 })
       .to(
         maskDrawing,
